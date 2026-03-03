@@ -29,11 +29,11 @@ Physical AI trains upon data generated in two important data augmentation workfl
   </tr>
   <tr>
     <td valign="top" width="33%">
-      <video src="https://github.com/user-attachments/assets/531ac99e-834a-4122-958e-fe2f677174c7" width="100%" alt="Control map video" controls></video>
+      <video src="https://github.com/user-attachments/assets/0e69bf77-cb8f-48ae-9022-3200fedf7588" width="100%" alt="Control map video" controls></video>
       <details>
         <summary>See more computed controls</summary>
-        <video src="https://github.com/user-attachments/assets/213bc7cf-430e-4645-b6b1-eb5e4fda0ead" width="100%" alt="Control map video" controls></video>
-        <video src="https://github.com/user-attachments/assets/cc50cde0-0a00-44d3-b23d-b8288fafa642" width="100%" alt="Control map video" controls></video>
+        <video src="https://github.com/user-attachments/assets/35817783-5a61-4302-a38d-fcd7c32944d9" width="100%" alt="Control map video" controls></video>
+        <video src="https://github.com/user-attachments/assets/253afe1b-55ad-417c-9a4f-301dc1fb852c" width="100%" alt="Control map video" controls></video>
       </details>
     </td>
     <td valign="top" width="33%">
@@ -74,9 +74,7 @@ Physical AI trains upon data generated in two important data augmentation workfl
 
 <video src="https://github.com/user-attachments/assets/7022851f-18d4-4565-9739-5c34dd9ea480" width="100%" alt="Input video" controls></video>
 
-## Cosmos-Transfer2.5 Model Family
-
-Cosmos-Transfer supports data generation in multiple industry verticals, outlined below. Please check back as we continue to add more specialized models to the Transfer family!
+## Cosmos-H-Surgical-Transfer Model Family
 
 [**Cosmos-H-Surgical-Transfer**](docs/inference.md): General [checkpoints](https://huggingface.co/nvidia/Cosmos-Transfer2.5-2B), trained from the ground up for Physical AI and robotics for surgical tasks.
 
