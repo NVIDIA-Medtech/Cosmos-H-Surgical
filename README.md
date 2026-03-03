@@ -13,7 +13,7 @@ Each sub-project has its own virtual environment, dependencies, and docs. Use th
 ## Project structure
 
 ```
-Cosmos-H-Surgical-gitlab/
+Cosmos-H-Surgical/
 ├── predict/                          # Cosmos-H-Surgical-Predict
 │   ├── cosmos_predict2/               # Predict package (experiments, datasets, etc.)
 │   ├── packages/                      # Workspace dependencies
