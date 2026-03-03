@@ -29,15 +29,15 @@ Physical AI trains upon data generated in two important data augmentation workfl
   </tr>
   <tr>
     <td valign="top" width="33%">
-      <video src="https://github.com/user-attachments/assets/64c49407-f0ca-49a9-80ae-2a5ad9ae7102" width="100%" alt="Control map video" controls></video>
+      <video src="https://github.com/user-attachments/assets/531ac99e-834a-4122-958e-fe2f677174c7" width="100%" alt="Control map video" controls></video>
       <details>
         <summary>See more computed controls</summary>
-        <video src="https://github.com/user-attachments/assets/c7b4cb74-2e6d-4ad2-aa13-95b91c5ef05a" width="100%" alt="Control map video" controls></video>
-        <video src="https://github.com/user-attachments/assets/1017d1c6-01f0-4ea9-89ca-7c9affa61b67" width="100%" alt="Control map video" controls></video>
+        <video src="https://github.com/user-attachments/assets/213bc7cf-430e-4645-b6b1-eb5e4fda0ead" width="100%" alt="Control map video" controls></video>
+        <video src="https://github.com/user-attachments/assets/cc50cde0-0a00-44d3-b23d-b8288fafa642" width="100%" alt="Control map video" controls></video>
       </details>
     </td>
     <td valign="top" width="33%">
-      <video src="https://github.com/user-attachments/assets/6d1bb0b2-154d-4a28-9b67-aaf245b6c261" width="100%" alt="Output video" controls></video>
+      <video src="https://github.com/user-attachments/assets/a712073a-40d3-4ed7-884c-416695ec4f55" width="100%" alt="Output video" controls></video>
     </td>
   </tr>
 </table>
@@ -55,24 +55,24 @@ Physical AI trains upon data generated in two important data augmentation workfl
   </tr>
   <tr>
     <td valign="top" width="33%">
-      <video src="https://github.com/user-attachments/assets/2c4f099f-843c-4caa-b54d-e78c8887fd13" width="100%" alt="Input video" controls></video>
+      <video src="https://github.com/user-attachments/assets/fbc14bfc-d465-42d0-960a-d02664ec097d" width="100%" alt="Input video" controls></video>
     </td>
     <td valign="top" width="33%">
-      <video src="https://github.com/user-attachments/assets/3ff59c54-978b-4ebc-aa74-5cc076d56b5c" width="100%" alt="Control map video" controls></video>
+      <video src="https://github.com/user-attachments/assets/c66e7533-0d7f-47d9-a9fe-3fa34f58b1c8" width="100%" alt="Control map video" controls></video>
       <details>
         <summary>See more computed controls</summary>
-        <video src="https://github.com/user-attachments/assets/b3cc35d1-911b-45e5-903c-7b76376aeffe" width="100%" alt="Guided Generation Mask" controls></video>
+        <video src="https://github.com/user-attachments/assets/658c60bd-6307-45ca-a47a-4d8096608d9e" width="100%" alt="Guided Generation Mask" controls></video>
       </details>
     </td>
     <td valign="top" width="33%">
-      <video src="https://github.com/user-attachments/assets/70044c14-39e6-4316-b30b-45baee4d3f96" width="100%" alt="Output video" controls></video>
+      <video src="https://github.com/user-attachments/assets/c707ec7e-4e32-48cd-97fa-e970636a78d1" width="100%" alt="Output video" controls></video>
     </td>
   </tr>
 </table>
 
 ### Scaling World State Diversity Examples
 
-<video src="https://github.com/user-attachments/assets/9ba56017-5dfb-452f-bf71-320157225656" width="100%" alt="Input video" controls></video>
+<video src="https://github.com/user-attachments/assets/7022851f-18d4-4565-9739-5c34dd9ea480" width="100%" alt="Input video" controls></video>
 
 ## Cosmos-Transfer2.5 Model Family
 

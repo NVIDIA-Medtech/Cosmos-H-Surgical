@@ -79,13 +79,13 @@ Parameters can be specified as json:
   </tr>
   <tr>
     <td valign="middle" width="33%">
-      <video src="https://github.com/user-attachments/assets/2c4f099f-843c-4caa-b54d-e78c8887fd13" width="100%" controls></video>
+      <video src="https://github.com/user-attachments/assets/fbc14bfc-d465-42d0-960a-d02664ec097d" width="100%" controls></video>
     </td>
     <td valign="middle" width="33%">
-      <video src="https://github.com/user-attachments/assets/3ff59c54-978b-4ebc-aa74-5cc076d56b5c" width="100%" controls></video>
+      <video src="https://github.com/user-attachments/assets/c66e7533-0d7f-47d9-a9fe-3fa34f58b1c8" width="100%" controls></video>
     </td>
     <td valign="middle" width="33%">
-      <video src="https://github.com/user-attachments/assets/b3cc35d1-911b-45e5-903c-7b76376aeffe" width="100%" controls></video>
+      <video src="https://github.com/user-attachments/assets/658c60bd-6307-45ca-a47a-4d8096608d9e" width="100%" controls></video>
     </td>
   </tr>
 </table>
@@ -97,7 +97,7 @@ Parameters can be specified as json:
   </tr>
   <tr>
     <td valign="middle" width="60%">
-      <video src="https://github.com/user-attachments/assets/70044c14-39e6-4316-b30b-45baee4d3f96" width="60%" controls></video>
+      <video src="https://github.com/user-attachments/assets/c707ec7e-4e32-48cd-97fa-e970636a78d1" width="60%" controls></video>
     </td>
   </tr>
 </table>

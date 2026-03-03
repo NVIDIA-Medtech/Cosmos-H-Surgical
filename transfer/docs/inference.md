@@ -133,16 +133,16 @@ If you would like the control inputs to only be used for some regions, you can d
   </tr>
   <tr>
     <td valign="middle" width="25%">
-      <video src="https://github.com/user-attachments/assets/c7b4cb74-2e6d-4ad2-aa13-95b91c5ef05a" width="100%" controls></video>
+      <video src="https://github.com/user-attachments/assets/213bc7cf-430e-4645-b6b1-eb5e4fda0ead" width="100%" controls></video>
     </td>
     <td valign="middle" width="25%">
-      <video src="https://github.com/user-attachments/assets/1017d1c6-01f0-4ea9-89ca-7c9affa61b67" width="100%" controls></video>
+      <video src="https://github.com/user-attachments/assets/cc50cde0-0a00-44d3-b23d-b8288fafa642" width="100%" controls></video>
     </td>
     <td valign="middle" width="25%">
-      <video src="https://github.com/user-attachments/assets/64c49407-f0ca-49a9-80ae-2a5ad9ae7102" width="100%" controls></video>
+      <video src="https://github.com/user-attachments/assets/531ac99e-834a-4122-958e-fe2f677174c7" width="100%" controls></video>
     </td>
     <td valign="middle" width="25%">
-      <video src="https://github.com/user-attachments/assets/53519181-34e8-4354-9a72-fad35f30a8a7" width="100%" controls></video>
+      <video src="https://github.com/user-attachments/assets/476cb4ff-5913-49cd-abb2-40180b423673" width="100%" controls></video>
     </td>
   </tr>
 </table>
@@ -154,7 +154,7 @@ If you would like the control inputs to only be used for some regions, you can d
   </tr>
   <tr>
     <td valign="middle" width="60%">
-      <video src="https://github.com/user-attachments/assets/6d1bb0b2-154d-4a28-9b67-aaf245b6c261" width="60%" controls></video>
+      <video src="https://github.com/user-attachments/assets/a712073a-40d3-4ed7-884c-416695ec4f55" width="60%" controls></video>
     </td>
   </tr>
 </table>
