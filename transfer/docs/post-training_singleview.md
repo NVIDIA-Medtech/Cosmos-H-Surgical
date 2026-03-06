@@ -499,7 +499,7 @@ num_frames = (state_t - 1) * 4 + 1
 - [Post-Training Overview](post-training.md)
 
 **Example Datasets:**
-- [nvidia/Cosmos-H-Surgical-Assets](https://huggingface.co/datasets/pengfeig/Cosmos-H-Surgical-Assets) - 10 synthetic videos.
+- [nvidia/Cosmos-H-Surgical-Assets](https://huggingface.co/datasets/nvidia/Cosmos-H-Surgical-Assets) - 10 synthetic videos.
 
 ## Citation
 

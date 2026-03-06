@@ -32,18 +32,18 @@ def register_checkpoints():
     register_checkpoint(
         CheckpointConfig(
             uuid="151e7270-c0ee-41aa-af6e-2a3f2f6ce9d0",
-            name="pengfeig/Cosmos-H-Surgical/transfer/edge",
+            name="nvidia/Cosmos-H-Surgical/transfer/edge",
             experiment="edge_720p_t24or1_spaced_layer4_cr1pt1_sdev2_lowsigma0.05_uniform_hqv3p1_20250714_64N_rectified_flow_refimdrop0pt5",
             metadata={
                 "resolution": "720p",
                 "fps": 16,
             },
             s3=CheckpointDirS3(
-                uri="s3://bucket/pengfeig/Cosmos-H-Surgical/transfer/edge/cosmos-h-surgical-transfer-edge_model_ema_bf16.pt",
+                uri="s3://bucket/nvidia/Cosmos-H-Surgical/transfer/edge/cosmos-h-surgical-transfer-edge_model_ema_bf16.pt",
             ),
             hf=CheckpointFileHf(
-                repository="pengfeig/Cosmos-H-Surgical",
-                revision="2e464008ad641d53011773565479206d1c4cf507",
+                repository="nvidia/Cosmos-H-Surgical",
+                revision="6fa5b06413c088ee9a5fe1188f5d45400e5e9e90",
                 filename="transfer/edge/cosmos-h-surgical-transfer-edge_model_ema_bf16.pt",
             ),
         )
@@ -52,18 +52,18 @@ def register_checkpoints():
     register_checkpoint(
         CheckpointConfig(
             uuid="65f06dcc-25cd-4efe-ae07-8ce08665479f",
-            name="pengfeig/Cosmos-H-Surgical/transfer/depth",
+            name="nvidia/Cosmos-H-Surgical/transfer/depth",
             experiment="depth_720p_t24or1_spaced_layer4_cr1pt1_sdev2_lowsigma0.05_uniform_hqv4p1_20250823_64N_rectified_flow_refimdrop0pt5",
             metadata={
                 "resolution": "720p",
                 "fps": 16,
             },
             s3=CheckpointDirS3(
-                uri="s3://bucket/pengfeig/Cosmos-H-Surgical/transfer/depth/cosmos-h-surgical-transfer-depth_model_ema_bf16.pt",
+                uri="s3://bucket/nvidia/Cosmos-H-Surgical/transfer/depth/cosmos-h-surgical-transfer-depth_model_ema_bf16.pt",
             ),
             hf=CheckpointFileHf(
-                repository="pengfeig/Cosmos-H-Surgical",
-                revision="2e464008ad641d53011773565479206d1c4cf507",
+                repository="nvidia/Cosmos-H-Surgical",
+                revision="6fa5b06413c088ee9a5fe1188f5d45400e5e9e90",
                 filename="transfer/depth/cosmos-h-surgical-transfer-depth_model_ema_bf16.pt",
             ),
         )
@@ -72,18 +72,18 @@ def register_checkpoints():
     register_checkpoint(
         CheckpointConfig(
             uuid="268d5750-5590-4145-8ba3-9f24763e2ec5",
-            name="pengfeig/Cosmos-H-Surgical/transfer/vis",
+            name="nvidia/Cosmos-H-Surgical/transfer/vis",
             experiment="vis_720p_t24or1_spaced_layer4_cr1pt1_sdev2_lowsigma0.05_uniform_hqv3p1_20250714_64N_rectified_flow_refimdrop0pt5_filterb3g5m2",
             metadata={
                 "resolution": "720p",
                 "fps": 16,
             },
             s3=CheckpointDirS3(
-                uri="s3://bucket/pengfeig/Cosmos-H-Surgical/transfer/vis/cosmos-h-surgical-transfer-vis_model_ema_bf16.pt",
+                uri="s3://bucket/nvidia/Cosmos-H-Surgical/transfer/vis/cosmos-h-surgical-transfer-vis_model_ema_bf16.pt",
             ),
             hf=CheckpointFileHf(
-                repository="pengfeig/Cosmos-H-Surgical",
-                revision="2e464008ad641d53011773565479206d1c4cf507",
+                repository="nvidia/Cosmos-H-Surgical",
+                revision="6fa5b06413c088ee9a5fe1188f5d45400e5e9e90",
                 filename="transfer/vis/cosmos-h-surgical-transfer-vis_model_ema_bf16.pt",
             ),
         )
@@ -92,18 +92,18 @@ def register_checkpoints():
     register_checkpoint(
         CheckpointConfig(
             uuid="00277b38-615e-489e-b6ec-227e1ce0881d",
-            name="pengfeig/Cosmos-H-Surgical/transfer/seg",
+            name="nvidia/Cosmos-H-Surgical/transfer/seg",
             experiment="seg_720p_t24or1_spaced_layer4_cr1pt1_sdev2_lowsigma0.05_uniform_hqv4p2_20250823_64N_rectified_flow_refimdrop0pt5",
             metadata={
                 "resolution": "720p",
                 "fps": 16,
             },
             s3=CheckpointDirS3(
-                uri="s3://bucket/pengfeig/Cosmos-H-Surgical/transfer/seg/cosmos-h-surgical-transfer-seg_model_ema_bf16.pt",
+                uri="s3://bucket/nvidia/Cosmos-H-Surgical/transfer/seg/cosmos-h-surgical-transfer-seg_model_ema_bf16.pt",
             ),
             hf=CheckpointFileHf(
-                repository="pengfeig/Cosmos-H-Surgical",
-                revision="2e464008ad641d53011773565479206d1c4cf507",
+                repository="nvidia/Cosmos-H-Surgical",
+                revision="6fa5b06413c088ee9a5fe1188f5d45400e5e9e90",
                 filename="transfer/seg/cosmos-h-surgical-transfer-seg_model_ema_bf16.pt",
             ),
         )

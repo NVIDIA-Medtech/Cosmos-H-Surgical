@@ -35,18 +35,18 @@ def register_checkpoints():
     register_checkpoint(
         CheckpointConfig(
             uuid="672ceebc-a222-403f-b7e6-13c6c7133f37",
-            name="pengfeig/Cosmos-H-Surgical/predict",
+            name="nvidia/Cosmos-H-Surgical/predict",
             experiment="Stage-c_pt_4-Index-2-Size-2B-Res-720-Fps-16-Note-rf_with_edm_ckpt",
             metadata={
                 "resolution": "720p",
                 "fps": 16,
             },
             s3=CheckpointDirS3(
-                uri="s3://bucket/pengfeig/Cosmos-H-Surgical/predict/cosmos-h-surgical-predict_model_ema_bf16.pt"
+                uri="s3://bucket/nvidia/Cosmos-H-Surgical/predict/cosmos-h-surgical-predict_model_ema_bf16.pt"
             ),
             hf=CheckpointFileHf(
-                repository="pengfeig/Cosmos-H-Surgical",
-                revision="2e464008ad641d53011773565479206d1c4cf507",
+                repository="nvidia/Cosmos-H-Surgical",
+                revision="6fa5b06413c088ee9a5fe1188f5d45400e5e9e90",
                 filename="predict/cosmos-h-surgical-predict_model_ema_bf16.pt",
             ),
         ),

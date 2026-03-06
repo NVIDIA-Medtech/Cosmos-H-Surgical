@@ -32,7 +32,7 @@ The first step is downloading a dataset with videos.
 
 You must provide a folder containing a collection of videos in **MP4 format**, preferably 720p. These videos should focus on the subject throughout the entire video so that each video chunk contains the subject.
 
-You can use [nvidia/Cosmos-H-Surgical-Assets](https://huggingface.co/datasets/pengfeig/Cosmos-H-Surgical-Assets) for post-training.
+You can use [nvidia/Cosmos-H-Surgical-Assets](https://huggingface.co/datasets/nvidia/Cosmos-H-Surgical-Assets) for post-training.
 
 To download the dataset, please follow the following instructions:
 
@@ -40,7 +40,7 @@ To download the dataset, please follow the following instructions:
 mkdir -p datasets/cosmos-h-surgical-assets/
 
 # This command will download the videos for physical AI
-hf download pengfeig/Cosmos-H-Surgical-Assets \
+hf download nvidia/Cosmos-H-Surgical-Assets \
   --repo-type dataset \
   --local-dir datasets/cosmos-h-surgical-assets/ \
   --include "*.mp4*"

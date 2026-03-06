@@ -27,8 +27,8 @@ git lfs install
 Clone the repository:
 
 ```bash
-git clone git@github.com:nvidia-cosmos/<repository_name>.git
-cd <repository_name>
+git clone git@github.com:NVIDIA-Medtech/Cosmos-H-Surgical.git
+cd Cosmos-H-Surgical
 git lfs pull
 ```
 
@@ -52,6 +52,7 @@ source $HOME/.local/bin/env
 Install the package into a new environment:
 
 ```shell
+cd predict
 uv python install
 uv sync --extra=cu128
 source .venv/bin/activate
