@@ -1,6 +1,16 @@
 # Cosmos-H-Surgical
 
-Surgical video world foundation models built on [NVIDIA Cosmos](https://www.nvidia.com/en-us/ai/cosmos/), part of the NVIDIA Clara Open Models family. This repository contains two independent sub-projects:
+Cosmos-H-Surgical is a surgical video world foundation model suite based on [NVIDIA Cosmos](https://www.nvidia.com/en-us/ai/cosmos/) and [SurgWorld](https://arxiv.org/abs/2512.23162), part of the NVIDIA Clara Open Models family. It delivers high-quality video prediction and transfer for surgical scenes, including future-state simulation and control-conditioned generation across modalities. This project was conducted by NVIDIA in collaboration with [CUHK](https://www.cse.cuhk.edu.hk/~qdou/), [NUS](https://yuemingjin.github.io/), and [SJTU](https://gc.sjtu.edu.cn/about/faculty-staff/faculty-directory/faculty-detail/75745/). 
+
+<p align="center">
+ 🤗 <a href="https://huggingface.co/nvidia/Cosmos-H-Surgical">Hugging Face</a>&nbsp | <a href="https://arxiv.org/abs/2512.23162">Paper</a> | <a href="https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical">Repository</a>
+</p>
+
+<p align="center">
+<img width="935" height="224" alt="Image" src="https://github.com/user-attachments/assets/69656a2a-e6b0-4ca9-aa6c-5c2f572a2656" />
+</p>
+
+This repository contains two independent sub-projects:
 
 - **`predict/`** — **[Cosmos-H-Surgical-Predict](predict/README.md)**  
   Simulates and predicts future world states as video (Image2World). Flow-based model using Cosmos-Reason1 as the text encoder, built on [Cosmos-Predict2.5-2B](https://github.com/nvidia-cosmos/cosmos-predict2.5) and adapted for surgical video.
