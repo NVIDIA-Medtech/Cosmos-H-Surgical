@@ -68,7 +68,6 @@ imaginaire4-output/
 .cursorindexingignore
 
 /checkpoints/
-/datasets/
 /output/
 /outputs/
 /results/

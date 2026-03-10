@@ -9,7 +9,7 @@ This guide provides instructions on running post-training with the Cosmos-H-Surg
 - [Table of Contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [1. Preparing Data](#1-preparing-data)
-  - [1.1 Downloading Cosmos-H-Surgical-Assets](#11-downloading-cosmos-h-surgical-assets)
+  - [1.1 Cosmos-H-Surgical-Assets dataset](#11-cosmos-h-surgical-assets-dataset)
   - [1.2 Preprocessing the Data](#12-preprocessing-the-data)
     - [Creating Prompt Files](#creating-prompt-files)
 - [2. Post-training](#2-post-training)
@@ -26,30 +26,24 @@ Before proceeding, please read the [Post-training Guide](./post-training.md) for
 
 ## 1. Preparing Data
 
-### 1.1 Downloading Cosmos-H-Surgical-Assets
+### 1.1 Cosmos-H-Surgical-Assets dataset
 
-The first step is downloading a dataset with videos.
+The Cosmos-H-Surgical-Assets dataset is included in this repository. It contains a collection of videos in **MP4 format**.
 
-You must provide a folder containing a collection of videos in **MP4 format**, preferably 720p. These videos should focus on the subject throughout the entire video so that each video chunk contains the subject.
+The dataset is stored under `datasets/cosmos-h-surgical-assets/` and tracked with **Git LFS**. To get the dataset when cloning or after pulling:
 
-You can use [nvidia/Cosmos-H-Surgical-Assets](https://huggingface.co/datasets/nvidia/Cosmos-H-Surgical-Assets) for post-training.
-
-To download the dataset, please follow the following instructions:
+1. Ensure [Git LFS](https://git-lfs.com/) is installed (`git lfs install`).
+2. Clone the repo (LFS files are pulled automatically with a recent Git + LFS), or if you already have the repo, run:
 
 ```bash
-mkdir -p datasets/cosmos-h-surgical-assets/
-
-# This command will download the videos for physical AI
-hf download nvidia/Cosmos-H-Surgical-Assets \
-  --repo-type dataset \
-  --local-dir datasets/cosmos-h-surgical-assets/ \
-  --include "*.mp4*"
-
+git lfs pull
 ```
+
+The dataset will then be available at `datasets/cosmos-h-surgical-assets/` with the structure expected by the preprocessing and training scripts (see [Creating Prompt Files](#creating-prompt-files) and the folder format below).
 
 ### 1.2 Preprocessing the Data
 
-Cosmos-H-Surgical-Assets comes with a single caption for 4 long videos.
+Cosmos-H-Surgical-Assets comes with a single caption for 10 videos.
 
 #### Creating Prompt Files
 

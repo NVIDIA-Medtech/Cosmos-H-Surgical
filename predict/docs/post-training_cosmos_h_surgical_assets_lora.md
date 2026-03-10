@@ -54,20 +54,21 @@ The training approach uses the same video dataset to train all three generation 
 - **Video2World (2+ frames)**: Uses initial frames as condition, continues the video generation
 
 You must provide a folder containing a collection of videos in **MP4 format**, preferably 720p. These videos should focus on the subject throughout the entire video so that each video chunk contains the subject.
-You can use [nvidia/Cosmos-H-Surgical-Assets](https://huggingface.co/datasets/nvidia/Cosmos-H-Surgical-Assets) for post-training.
 
-### 1.2 Downloading Cosmos-H-Surgical-Assets
+### 1.2 Cosmos-H-Surgical-Assets dataset
 
-To download the dataset, please follow the following instructions:
+The Cosmos-H-Surgical-Assets dataset is included in this repository. It contains a collection of videos in **MP4 format**.
+
+The dataset is stored under `datasets/cosmos-h-surgical-assets/` and tracked with **Git LFS**. To get the dataset when cloning or after pulling:
+
+1. Ensure [Git LFS](https://git-lfs.com/) is installed (`git lfs install`).
+2. Clone the repo (LFS files are pulled automatically with a recent Git + LFS), or if you already have the repo, run:
+
 ```bash
-mkdir -p datasets/cosmos-h-surgical-assets/
-
-# This command will download the videos for physical AI
-hf download nvidia/Cosmos-H-Surgical-Assets \
-  --repo-type dataset \
-  --local-dir datasets/cosmos-h-surgical-assets/ \
-  --include "*.mp4*"
+git lfs pull
 ```
+
+The dataset will then be available at `datasets/cosmos-h-surgical-assets/` with the structure expected by the preprocessing and training scripts (see [Creating Prompt Files](#creating-prompt-files) and the folder format below).
 
 ### 1.3 Preprocessing the Data
 
