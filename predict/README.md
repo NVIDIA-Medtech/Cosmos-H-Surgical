@@ -35,7 +35,7 @@ real surgery scene: left needle driver passes needle to right needle driver.
 
 ### Scaling World State Diversity Examples
 
-<video src="https://github.com/user-attachments/assets/8f12a654-1460-43e8-bb7d-455f1f935d40" width="100%" alt="Input video" controls></video>
+<video src="https://github.com/user-attachments/assets/e6ab161c-0608-4521-b42c-339e0cc47baf" width="100%" alt="Diverse videos" controls></video>
 
 ## Cosmos-H-Surgical-Predict Model Family
 
