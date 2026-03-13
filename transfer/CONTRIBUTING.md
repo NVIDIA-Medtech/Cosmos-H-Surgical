@@ -23,7 +23,8 @@ just
 Run linting and formatting:
 
 ```shell
-just lint
+ruff check . --fix
+ruff format .
 ```
 
 This will also run auto-fixes and linting. We recommend that you commit your changes first.
