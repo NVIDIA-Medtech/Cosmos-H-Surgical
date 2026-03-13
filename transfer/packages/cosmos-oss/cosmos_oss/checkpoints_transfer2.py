@@ -43,7 +43,7 @@ def register_checkpoints():
             ),
             hf=CheckpointFileHf(
                 repository="nvidia/Cosmos-H-Surgical",
-                revision="6fa5b06413c088ee9a5fe1188f5d45400e5e9e90",
+                revision="e63d5d5372093ef9574e52ac80fb505cd97eb7c1",
                 filename="transfer/edge/cosmos-h-surgical-transfer-edge_model_ema_bf16.pt",
             ),
         )
@@ -63,7 +63,7 @@ def register_checkpoints():
             ),
             hf=CheckpointFileHf(
                 repository="nvidia/Cosmos-H-Surgical",
-                revision="6fa5b06413c088ee9a5fe1188f5d45400e5e9e90",
+                revision="e63d5d5372093ef9574e52ac80fb505cd97eb7c1",
                 filename="transfer/depth/cosmos-h-surgical-transfer-depth_model_ema_bf16.pt",
             ),
         )
@@ -83,7 +83,7 @@ def register_checkpoints():
             ),
             hf=CheckpointFileHf(
                 repository="nvidia/Cosmos-H-Surgical",
-                revision="6fa5b06413c088ee9a5fe1188f5d45400e5e9e90",
+                revision="e63d5d5372093ef9574e52ac80fb505cd97eb7c1",
                 filename="transfer/vis/cosmos-h-surgical-transfer-vis_model_ema_bf16.pt",
             ),
         )
@@ -103,7 +103,7 @@ def register_checkpoints():
             ),
             hf=CheckpointFileHf(
                 repository="nvidia/Cosmos-H-Surgical",
-                revision="6fa5b06413c088ee9a5fe1188f5d45400e5e9e90",
+                revision="e63d5d5372093ef9574e52ac80fb505cd97eb7c1",
                 filename="transfer/seg/cosmos-h-surgical-transfer-seg_model_ema_bf16.pt",
             ),
         )
