@@ -2,7 +2,7 @@
 
 ## Issues
 
-Also, check GitHub Issues for the [repository](https://github.com/orgs/nvidia-cosmos/repositories).
+Also, check GitHub Issues for the [repository](https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical/issues).
 
 ### Changing the cache directory
 We download packages and checkpoints to the home directory by default. To change this, you can set the following variables.

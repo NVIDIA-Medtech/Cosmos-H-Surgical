@@ -1,15 +1,11 @@
 <p align="center">
-    <img src="https://github.com/user-attachments/assets/28f2d612-bbd6-44a3-8795-833d05e9f05f" width="274" alt="NVIDIA Cosmos"/>
+  🤗 <a href="https://huggingface.co/nvidia/Cosmos-H-Surgical">Hugging Face</a>&nbsp | <a href="https://arxiv.org/abs/2512.23162">Paper</a>&nbsp | <a href="https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical">Repository</a>
 </p>
 
-<p align="center">
-  <a href="https://www.nvidia.com/en-us/ai/cosmos">Product Website</a>&nbsp | 🤗 <a href="https://huggingface.co/collections/nvidia/cosmos-predict25-68bb63255f2fc206c5e5b346">Hugging Face</a>&nbsp | <a href="https://arxiv.org/abs/2511.00062">Paper</a>&nbsp | <a href="https://research.nvidia.com/labs/dir/cosmos-predict2.5">Paper Website</a> | <a href="https://github.com/nvidia-cosmos/cosmos-cookbook">Cosmos Cookbook</a>
-</p>
+Cosmos-H-Surgical-Predict is a surgical video world foundation model for simulating and predicting future surgical states, part of the [Cosmos-H-Surgical](https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical) suite and the NVIDIA MedTech Open Models.
 
-NVIDIA Cosmos™ is a platform purpose-built for physical AI, featuring state-of-the-art generative world foundation models (WFMs), robust guardrails, and an accelerated data processing and curation pipeline. Designed specifically for real-world systems, Cosmos enables developers to rapidly advance physical AI applications such as robotic surgery, AV, robots, and video analytics AI agents.
-
-## News!
-* [Mrach 16, 2026] As part of the NVIDIA Clara Open Models family, we released [Cosmos-H-Surgical-Predict](https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical)
+## News
+* [March 16, 2026] As part of the NVIDIA MedTech Open Models, we released [Cosmos-H-Surgical-Predict](https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical/tree/main/predict)
 
 ## Cosmos-H-Surgical-Predict
 
@@ -59,9 +55,7 @@ Our world simulation models, Cosmos-Predict's fundamental capability is predicti
 
 ## Contributing
 
-We thrive on community collaboration! [NVIDIA-Cosmos](https://github.com/nvidia-cosmos/) wouldn't be where it is without contributions from developers like you. Check out our [Contributing Guide](CONTRIBUTING.md) to get started, and share your feedback through issues.
-
-Big thanks 🙏 to everyone helping us push the boundaries of open-source physical AI!
+We welcome contributions. Check out our [Contributing Guide](CONTRIBUTING.md) to get started, and share your feedback through issues.
 
 ## License and Contact
 

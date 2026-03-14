@@ -22,7 +22,7 @@ This guide provides instructions on running post-training with the Cosmos-H-Surg
 
 ## Prerequisites
 
-Before proceeding, please read the [Post-training Guide](./post-training.md) for detailed setup steps and important post-training instructions, including checkpointing and best practices. This will ensure you are fully prepared for post-training with Cosmos-Predict2.5.
+Before proceeding, please read the [Post-training Guide](./post-training.md) for detailed setup steps and important post-training instructions, including checkpointing and best practices. This will ensure you are fully prepared for post-training with Cosmos-H-Surgical-Predict.
 
 ## 1. Preparing Data
 
