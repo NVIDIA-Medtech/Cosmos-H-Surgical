@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
- 🤗 <a href="https://huggingface.co/nvidia/Cosmos-H-Surgical">Hugging Face</a>&nbsp | <a href="https://arxiv.org/abs/2512.23162">Paper</a> | <a href="https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical">Repository</a>
+ 🤗 <a href="https://huggingface.co/nvidia/Cosmos-H-Surgical">Hugging Face</a>&nbsp | <a href="https://arxiv.org/abs/2512.23162">Paper</a> | <a href="https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical">Repository</a> | <a href="https://isaac-for-healthcare.github.io/data-generation/surgical_robotic_video_generator/#1-cosmos-h-surgical-predict-with-idm-tutorial">Tutorial</a>
 </p>
 
 NVIDIA Cosmos™ is a platform purpose-built for physical AI, featuring state-of-the-art generative world foundation models (WFMs), robust guardrails, and an accelerated data processing and curation pipeline. Designed specifically for real-world systems, Cosmos enables developers to rapidly advance physical AI applications such as robotic surgery, AV, robots, and video analytics AI agents.

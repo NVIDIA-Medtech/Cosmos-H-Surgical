@@ -3,7 +3,7 @@
 **Cosmos-H-Surgical** is a surgical video world foundation model suite based on [NVIDIA Cosmos](https://www.nvidia.com/en-us/ai/cosmos/), part of the NVIDIA Clara Open Models family. It delivers high-quality video prediction and transfer for surgical scenes, including future-state simulation and control-conditioned generation across modalities. This project was conducted by NVIDIA in collaboration with [Chinese University of Hong Kong](https://www.cse.cuhk.edu.hk/~qdou/), [National University of Singapore](https://yuemingjin.github.io/), and [Shanghai Jiao Tong University](https://banyutong.github.io/sirius_lab_website). 
 
 <p align="center">
- 🤗 <a href="https://huggingface.co/nvidia/Cosmos-H-Surgical">Hugging Face</a>&nbsp | <a href="https://arxiv.org/abs/2512.23162">Paper</a> | <a href="https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical">Repository</a>
+ 🤗 <a href="https://huggingface.co/nvidia/Cosmos-H-Surgical">Hugging Face</a>&nbsp | <a href="https://arxiv.org/abs/2512.23162">Paper</a> | <a href="https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical">Repository</a> | <a href="https://isaac-for-healthcare.github.io/data-generation/surgical_robotic_video_generator/#6-cosmos-h-surgical-transfer-tutorial">Tutorial</a> 
 </p>
 
 <p align="center">
