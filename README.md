@@ -14,7 +14,7 @@ A surgical video world foundation model suite based on [NVIDIA Cosmos](https://w
 
 ## Overview
 
-Cosmos-H-Surgical delivers high-quality video prediction and transfer for surgical scenes, including future-state simulation and control-conditioned generation across modalities. It comprises two sub-projects — **Predict** for image-to-video generation and **Transfer** for multi-modal control-based generation — both adapted from NVIDIA Cosmos 2.5 for surgical video data.
+Cosmos-H-Surgical delivers high-quality video prediction and transfer for surgical scenes, including future-state simulation and control-conditioned generation across modalities. It comprises two sub-projects — **Predict** for image-to-video generation and **Transfer** for multi-modal control-based generation — both adapted from NVIDIA Cosmos 2.5 for surgical video data. For action-conditioned surgical simulation with robot kinematics, see the companion repo [Cosmos-H-Surgical-Simulator](https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical-Simulator).
 
 This project was conducted by NVIDIA in collaboration with [Chinese University of Hong Kong](https://www.cse.cuhk.edu.hk/~qdou/), [National University of Singapore](https://yuemingjin.github.io/), and [Shanghai Jiao Tong University](https://gc.sjtu.edu.cn/about/faculty-staff/faculty-directory/faculty-detail/75745/).
 
@@ -141,4 +141,5 @@ This project will download and install additional third-party open source softwa
 - [Paper (arXiv)](https://arxiv.org/abs/2512.23162)
 - [HuggingFace Collection](https://huggingface.co/nvidia/Cosmos-H-Surgical)
 - [NVIDIA Cosmos Platform](https://www.nvidia.com/en-us/ai/cosmos/)
+- [Cosmos-H-Surgical-Simulator](https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical-Simulator) — Sister repo (action-conditioned surgical simulation)
 - [NVIDIA MedTech Open Models](https://github.com/NVIDIA-Medtech)
