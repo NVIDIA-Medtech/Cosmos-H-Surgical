@@ -1,6 +1,6 @@
 # LoRA Post-training for Cosmos-H-Surgical-Assets
 
-This guide provides instructions on running LoRA (Low-Rank Adaptation) post-training with the Cosmos-Predict2.5 models for Image2World generation tasks.
+This guide provides instructions on running LoRA (Low-Rank Adaptation) post-training with the Cosmos-H-Surgical-Predict models for Image2World generation tasks.
 
 ## Table of Contents
 
@@ -16,7 +16,7 @@ This guide provides instructions on running LoRA (Low-Rank Adaptation) post-trai
 
 ## Prerequisites
 
-Before proceeding, please read the [Post-training Guide](./post-training.md) for detailed setup steps and important post-training instructions, including checkpointing and best practices. This will ensure you are fully prepared for post-training with Cosmos-Predict2.5.
+Before proceeding, please read the [Post-training Guide](./post-training.md) for detailed setup steps and important post-training instructions, including checkpointing and best practices. This will ensure you are fully prepared for post-training with Cosmos-H-Surgical-Predict.
 
 ## What is LoRA?
 

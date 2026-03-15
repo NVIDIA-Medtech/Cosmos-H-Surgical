@@ -45,7 +45,7 @@ This guide provides instructions for post-training Cosmos-Transfer2 models with 
 
 ## Prerequisites
 
-1.**Env**:  Before proceeding, please read the [Post-training Guide](./post-training.md) for detailed setup steps and important post-training instructions, including checkpointing and best practices. This will ensure you are fully prepared for post-training with Cosmos-Transfer2.5.
+1.**Env**:  Before proceeding, please read the [Post-training Guide](./post-training.md) for detailed setup steps and important post-training instructions, including checkpointing and best practices. This will ensure you are fully prepared for post-training with Cosmos-H-Surgical-Transfer.
 2. **Hardware**: 8x H100/A100 (80GB) for 2B model
 3. **Storage**: Sufficient space for dataset, checkpoints, and outputs
 4. **Cache Setup**: For containers with limited disk space, configure environment variables to redirect cache

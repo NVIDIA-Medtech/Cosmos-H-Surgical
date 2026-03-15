@@ -1,7 +1,7 @@
 # Diffusers Inference Guide
 
 This guide explains how to use `scripts/diffusers_inference.py` to run
-Cosmos-Predict2.5 Diffusers pipelines for Image2World. Review the [Inference Guide](inference.md) for broader context.
+Cosmos-H-Surgical-Predict Diffusers pipelines for Image2World. Review the [Inference Guide](inference.md) for broader context.
 
 ## Prerequisites
 
