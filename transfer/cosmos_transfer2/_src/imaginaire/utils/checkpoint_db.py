@@ -380,6 +380,21 @@ def _download_hf_checkpoint(checkpoint_hf: str) -> str:
     ).download()
 
 
+# Config file always downloaded alongside any model checkpoint (Cosmos-H-Surgical).
+_COSMOS_H_SURGICAL_CONFIG = CheckpointFileHf(
+    repository="nvidia/Cosmos-H-Surgical",
+    revision="main",
+    filename="config.json",
+)
+
+
+@functools.lru_cache(maxsize=1)
+def _download_cosmos_h_surgical_config() -> str:
+    """Download config.json from nvidia/Cosmos-H-Surgical (main). Cached after first call."""
+    log.info("Downloading Cosmos-H-Surgical config.json")
+    return _COSMOS_H_SURGICAL_CONFIG.download()
+
+
 @functools.lru_cache
 def download_checkpoint(checkpoint_uri: str, *, check_exists: bool = True) -> str:
     """Download a checkpoint by URI and return the local path.
@@ -399,8 +414,10 @@ def download_checkpoint(checkpoint_uri: str, *, check_exists: bool = True) -> st
     if INTERNAL:
         return checkpoint_uri
     if (checkpoint := CheckpointConfig.maybe_from_uri(checkpoint_uri)) is not None:
+        _download_cosmos_h_surgical_config()
         return checkpoint.download()
     if checkpoint_uri.startswith("hf://"):
+        _download_cosmos_h_surgical_config()
         return _download_hf_checkpoint(checkpoint_uri)
     if check_exists and not os.path.exists(checkpoint_uri):
         raise ValueError(f"Checkpoint path {checkpoint_uri} does not exist.")
