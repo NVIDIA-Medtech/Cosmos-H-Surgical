@@ -134,11 +134,22 @@ This project will download and install additional third-party open source softwa
   primaryClass={cs.RO},
   url={https://arxiv.org/abs/2512.23162},
 }
+
+@misc{xu2026generalizedrecognitionbasicsurgicalactions,
+  title={Generalized Recognition of Basic Surgical Actions Enables Skill Assessment and Vision-Language-Model-based Surgical Planning},
+  author={Mengya Xu and Daiyun Shen and Jie Zhang and Hon Chi Yip and Yujia Gao and Cheng Chen and Dillan Imans and Yonghao Long and Yiru Ye and Yixiao Liu and Rongyun Mai and Kai Chen and Hongliang Ren and Yutong Ban and Guangsuo Wang and Francis Wong and Chi-Fai Ng and Kee Yuan Ngiam and Russell H. Taylor and Daguang Xu and Yueming Jin and Qi Dou},
+  year={2026},
+  eprint={2603.12787},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2603.12787},
+}
 ```
 
 ## Resources
 
-- [Paper (arXiv)](https://arxiv.org/abs/2512.23162)
+- [Cosmos-H-Surgical Paper (arXiv)](https://arxiv.org/abs/2512.23162)
+- [Basic Surgical Actions Dataset Paper (arXiv)](https://arxiv.org/abs/2603.12787)
 - [HuggingFace Collection](https://huggingface.co/nvidia/Cosmos-H-Surgical)
 - [NVIDIA Cosmos Platform](https://www.nvidia.com/en-us/ai/cosmos/)
 - [Cosmos-H-Surgical-Simulator](https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical-Simulator) — Sister repo (action-conditioned surgical simulation)
