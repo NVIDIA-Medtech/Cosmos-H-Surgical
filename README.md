@@ -1,7 +1,7 @@
 # Cosmos-H-Surgical
 
 [![License](https://img.shields.io/badge/Code-Apache%202.0-blue)](LICENSE)
-[![Weights License](https://img.shields.io/badge/Weights-NVIDIA%20Open%20Model-green)](LICENSE.weights)
+[![Weights License](https://img.shields.io/badge/Weights-NVIDIA--OneWay--Noncommercial--License-green)](LICENSE.weights)
 [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-Hugging%20Face-yellow)](https://huggingface.co/nvidia/Cosmos-H-Surgical)
 [![arXiv](https://img.shields.io/badge/arXiv-2512.23162-b31b1b)](https://arxiv.org/abs/2512.23162)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB)](https://www.python.org/)
@@ -14,7 +14,7 @@ A surgical video world foundation model suite based on [NVIDIA Cosmos](https://w
 
 ## Overview
 
-Cosmos-H-Surgical delivers high-quality video prediction and transfer for surgical scenes, including future-state simulation and control-conditioned generation across modalities. It comprises two sub-projects — **Predict** for image-to-video generation and **Transfer** for multi-modal control-based generation — both adapted from NVIDIA Cosmos 2.5 for surgical video data.
+Cosmos-H-Surgical delivers high-quality video prediction and transfer for surgical scenes, including future-state simulation and control-conditioned generation across modalities. It comprises two sub-projects — **Predict** for image-to-video generation and **Transfer** for multi-modal control-based generation — both adapted from NVIDIA Cosmos 2.5 for surgical video data. For action-conditioned surgical simulation with robot kinematics, see the companion repo [Cosmos-H-Surgical-Simulator](https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical-Simulator).
 
 This project was conducted by NVIDIA in collaboration with [Chinese University of Hong Kong](https://www.cse.cuhk.edu.hk/~qdou/), [National University of Singapore](https://yuemingjin.github.io/), and [Shanghai Jiao Tong University](https://gc.sjtu.edu.cn/about/faculty-staff/faculty-directory/faculty-detail/75745/).
 
@@ -26,8 +26,8 @@ This project was conducted by NVIDIA in collaboration with [Chinese University o
 
 | Model | Base Model | Params | Capability | Input | HuggingFace | License |
 |-------|-----------|--------|------------|-------|-------------|---------|
-| [Cosmos-H-Surgical-Predict](predict/) | [Cosmos-Predict2.5-2B](https://github.com/nvidia-cosmos/cosmos-predict2.5) | 2B | Future-state video prediction (Image2World) | text + image | [Weights](https://huggingface.co/nvidia/Cosmos-H-Surgical) | [NVIDIA Open Model](https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/) |
-| [Cosmos-H-Surgical-Transfer](transfer/) | [Cosmos-Transfer2.5-2B](https://github.com/nvidia-cosmos/cosmos-transfer2.5) | 2B | Control-conditioned generation (depth, edge, seg, blur) | text + video + control maps | [Weights](https://huggingface.co/nvidia/Cosmos-H-Surgical) | [NVIDIA Open Model](https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/) |
+| [Cosmos-H-Surgical-Predict](predict/) | [Cosmos-Predict2.5-2B](https://github.com/nvidia-cosmos/cosmos-predict2.5) | 2B | Future-state video prediction (Image2World) | text + image | [Weights](https://huggingface.co/nvidia/Cosmos-H-Surgical) | [NVIDIA-OneWay-Noncommercial-License](https://developer.download.nvidia.com/licenses/NVIDIA-OneWay-Noncommercial-License-22Mar2022.pdf) |
+| [Cosmos-H-Surgical-Transfer](transfer/) | [Cosmos-Transfer2.5-2B](https://github.com/nvidia-cosmos/cosmos-transfer2.5) | 2B | Control-conditioned generation (depth, edge, seg, blur) | text + video + control maps | [Weights](https://huggingface.co/nvidia/Cosmos-H-Surgical) | [NVIDIA-OneWay-Noncommercial-License](https://developer.download.nvidia.com/licenses/NVIDIA-OneWay-Noncommercial-License-22Mar2022.pdf) |
 
 ## Repository Structure
 
@@ -50,7 +50,7 @@ Cosmos-H-Surgical/
 │   ├── Dockerfile
 │   └── pyproject.toml
 ├── LICENSE                           # Apache 2.0 (source code)
-└── LICENSE.weights                   # NVIDIA Open Model License (weights)
+└── LICENSE.weights                   # NVIDIA-OneWay-Noncommercial-License License (weights)
 ```
 
 ## Quick Start
@@ -117,8 +117,8 @@ End-to-end time measured for 121-frame input video (two 93-frame chunk generatio
 | Component | License |
 |-----------|---------|
 | Source code | [Apache 2.0](LICENSE) |
-| Cosmos-H-Surgical-Predict weights | [NVIDIA Open Model](https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/) |
-| Cosmos-H-Surgical-Transfer weights | [NVIDIA Open Model](https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/) |
+| Cosmos-H-Surgical-Predict weights | [NVIDIA-OneWay-Noncommercial-License](https://developer.download.nvidia.com/licenses/NVIDIA-OneWay-Noncommercial-License-22Mar2022.pdf) |
+| Cosmos-H-Surgical-Transfer weights | [NVIDIA-OneWay-Noncommercial-License](https://developer.download.nvidia.com/licenses/NVIDIA-OneWay-Noncommercial-License-22Mar2022.pdf) |
 
 This project will download and install additional third-party open source software projects. Review the license terms of these open source projects before use.
 
@@ -141,4 +141,5 @@ This project will download and install additional third-party open source softwa
 - [Paper (arXiv)](https://arxiv.org/abs/2512.23162)
 - [HuggingFace Collection](https://huggingface.co/nvidia/Cosmos-H-Surgical)
 - [NVIDIA Cosmos Platform](https://www.nvidia.com/en-us/ai/cosmos/)
+- [Cosmos-H-Surgical-Simulator](https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical-Simulator) — Sister repo (action-conditioned surgical simulation)
 - [NVIDIA MedTech Open Models](https://github.com/NVIDIA-Medtech)
