@@ -46,7 +46,7 @@ def register_checkpoints():
             ),
             hf=CheckpointFileHf(
                 repository="nvidia/Cosmos-H-Surgical",
-                revision="b035a46a0e9c9326555bf6ccc1ddb5d1afb511bb",
+                revision="ebbb7c6daf64f06c2dfe1b01654911789c5c9fdc",
                 filename="predict/cosmos-h-surgical-predict_model_ema_bf16.pt",
             ),
         ),
