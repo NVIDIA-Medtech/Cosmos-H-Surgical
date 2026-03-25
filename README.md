@@ -20,6 +20,8 @@ This project was conducted by NVIDIA in collaboration with [Chinese University o
 
 ## News
 
+- **[March 2026]** — Released [SurgΣ](https://arxiv.org/abs/2603.16822): a large-scale multimodal surgical dataset and foundation model suite for surgical intelligence.
+- **[March 2026]** — Released [BSA](https://arxiv.org/abs/2603.12787): generalized recognition of basic surgical actions enabling skill assessment and VLM-based surgical planning.
 - **[March 2026]** — Released [Cosmos-H-Surgical-Predict](predict/) and [Cosmos-H-Surgical-Transfer](transfer/) as part of the NVIDIA MedTech Open Models.
 
 ## Model Variants
@@ -133,6 +135,16 @@ This project will download and install additional third-party open source softwa
   archivePrefix={arXiv},
   primaryClass={cs.RO},
   url={https://arxiv.org/abs/2512.23162},
+}
+
+@misc{zeng2026surgsigma,
+  title={Surg$\Sigma$: A Spectrum of Large-Scale Multimodal Data and Foundation Models for Surgical Intelligence},
+  author={Zhitao Zeng and Mengya Xu and Jian Jiang and Pengfei Guo and Yunqiu Xu and Zhu Zhuo and Chang Han Low and Yufan He and Dong Yang and Chenxi Lin and Yiming Gu and Jiaxin Guo and Yutong Ban and Daguang Xu and Qi Dou and Yueming Jin},
+  year={2026},
+  eprint={2603.16822},
+  archivePrefix={arXiv},
+  primaryClass={cs.AI},
+  url={https://arxiv.org/abs/2603.16822},
 }
 
 @misc{xu2026generalizedrecognitionbasicsurgicalactions,

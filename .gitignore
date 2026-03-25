@@ -67,6 +67,10 @@ imaginaire4-output/
 .cursorignore
 .cursorindexingignore
 
+# Claude
+.claude/
+.mcp.json
+
 /checkpoints/
 /output/
 /outputs/
