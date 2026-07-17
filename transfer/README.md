@@ -72,7 +72,12 @@ Physical AI trains upon data generated in two important data augmentation workfl
 
 ## Cosmos-H-Surgical-Transfer Model Family
 
-[**Cosmos-H-Surgical-Transfer**](docs/inference.md): General [checkpoints](https://huggingface.co/nvidia/Cosmos-Transfer2.5-2B), trained from the ground up for Physical AI and robotics for surgical tasks.
+[**Cosmos-H-Surgical-Transfer**](docs/inference.md): Control-conditioned checkpoints adapted for Physical AI and surgical robotics tasks.
+
+| Checkpoint Edition | Model Keys | License |
+| --- | --- | --- |
+| Legacy | `depth`, `edge`, `seg`, `vis` | [NVIDIA-OneWay-Noncommercial-License](../LICENSE.weights) |
+| OpenMDW | `depth/openmdw-1.1`, `edge/openmdw-1.1`, `seg/openmdw-1.1`, `vis/openmdw-1.1`, `multicontrol/openmdw-1.1` | [OpenMDW-1.1](../LICENSE.OpenMDW-1.1) |
 
 ## User Guide
 
@@ -93,4 +98,4 @@ This project will download and install additional third-party open source softwa
 
 Cosmos-H-Surgical source code is released under the [Apache 2 License](https://www.apache.org/licenses/LICENSE-2.0).
 
-Cosmos-H-Surgical models are released under the [NVIDIA License](https://developer.download.nvidia.com/licenses/NVIDIA-OneWay-Noncommercial-License-22Mar2022.pdf?t=eyJscyI6ImdzZW8iLCJsc2QiOiJodHRwczovL3d3dy5nb29nbGUuY29tLyIsIm5jaWQiOiJzby15b3V0LTg3MTcwMS12dDQ4In0=). You are responsible for ensuring that your use of NVIDIA AI Foundation Models complies with all applicable laws.
+Legacy Cosmos-H-Surgical-Transfer checkpoints are released under [LICENSE.weights](../LICENSE.weights). Checkpoints under `openmdw-1.1/transfer/` are released under [OpenMDW-1.1](../LICENSE.OpenMDW-1.1). See [NOTICE.weights](../NOTICE.weights) and [release-manifest.json](../release-manifest.json) for the exact license scope and artifact checksums.

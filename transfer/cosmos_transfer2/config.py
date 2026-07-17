@@ -140,16 +140,26 @@ class CompileMode(str, enum.Enum):
     AGGRESSIVE = "aggressive"
 
 
+class CheckpointEdition(str, enum.Enum):
+    LEGACY = "legacy"
+    OPENMDW_1_1 = "openmdw-1.1"
+
+
 @dataclass(frozen=True, kw_only=True)
 class ModelKey:
     variant: ModelVariant = ModelVariant.EDGE
     distilled: bool = False
+    checkpoint_edition: CheckpointEdition = CheckpointEdition.LEGACY
 
     @cached_property
     def name(self) -> str:
         if self.distilled:
-            return f"{self.variant.value}/distilled"
-        return self.variant.value
+            parts = [self.variant.value, "distilled"]
+        else:
+            parts = [self.variant.value]
+        if self.checkpoint_edition != CheckpointEdition.LEGACY:
+            parts.append(self.checkpoint_edition.value)
+        return "/".join(parts)
 
     def __str__(self) -> str:
         return self.name
@@ -160,9 +170,29 @@ MODEL_CHECKPOINTS = {
     ModelKey(variant=ModelVariant.EDGE): CheckpointConfig.from_uri("151e7270-c0ee-41aa-af6e-2a3f2f6ce9d0"),
     ModelKey(variant=ModelVariant.SEG): CheckpointConfig.from_uri("00277b38-615e-489e-b6ec-227e1ce0881d"),
     ModelKey(variant=ModelVariant.VIS): CheckpointConfig.from_uri("268d5750-5590-4145-8ba3-9f24763e2ec5"),
+    ModelKey(variant=ModelVariant.DEPTH, checkpoint_edition=CheckpointEdition.OPENMDW_1_1): CheckpointConfig.from_uri(
+        "88ee68f4-6e02-4ff8-86a6-8a5b16df85d0"
+    ),
+    ModelKey(variant=ModelVariant.EDGE, checkpoint_edition=CheckpointEdition.OPENMDW_1_1): CheckpointConfig.from_uri(
+        "291746d0-4851-44a7-aa29-71b4a069b167"
+    ),
+    ModelKey(variant=ModelVariant.SEG, checkpoint_edition=CheckpointEdition.OPENMDW_1_1): CheckpointConfig.from_uri(
+        "2db84acf-a75f-4a7f-b357-cfdebb0b69f4"
+    ),
+    ModelKey(variant=ModelVariant.VIS, checkpoint_edition=CheckpointEdition.OPENMDW_1_1): CheckpointConfig.from_uri(
+        "3f518e70-fdb2-44e6-96cd-95aa16dc259c"
+    ),
 }
 
 MODEL_KEYS = {k.name: k for k in MODEL_CHECKPOINTS.keys()}
+
+# Multi-control inference loads every base control variant. This alias provides
+# an explicit CLI name while the mapped ModelKey selects the checkpoint edition.
+MULTICONTROL_OPENMDW_MODEL = "multicontrol/openmdw-1.1"
+MODEL_KEYS[MULTICONTROL_OPENMDW_MODEL] = ModelKey(
+    variant=ModelVariant.EDGE,
+    checkpoint_edition=CheckpointEdition.OPENMDW_1_1,
+)
 
 BASE_MODEL_VARIANTS = [ModelVariant.EDGE, ModelVariant.DEPTH, ModelVariant.SEG, ModelVariant.VIS]
 
@@ -175,10 +205,10 @@ DEFAULT_BASE_EXPERIMENT = "vid2vid_2B_control_720p_t24_control_layer4_cr1pt1_emb
 def get_model_literal(variants: list[ModelVariant] | None = None) -> Literal:
     """Get model literal for a given variant."""
     model_names: list[str] = []
-    for k in MODEL_CHECKPOINTS.keys():
+    for model_name, k in MODEL_KEYS.items():
         if variants is not None and k.variant not in variants:
             continue
-        model_names.append(k.name)
+        model_names.append(model_name)
     # pyrefly: ignore  # bad-return, invalid-literal
     return Literal[tuple(model_names)]
 

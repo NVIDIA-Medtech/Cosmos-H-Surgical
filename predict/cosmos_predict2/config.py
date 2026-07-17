@@ -143,12 +143,18 @@ class ModelVariant(str, enum.Enum):
         return self.value
 
 
+class CheckpointEdition(str, enum.Enum):
+    LEGACY = "legacy"
+    OPENMDW_1_1 = "openmdw-1.1"
+
+
 @dataclass(frozen=True, kw_only=True)
 class ModelKey:
     distilled: bool = False
     post_trained: bool = True
     size: ModelSize = ModelSize._2B
     variant: ModelVariant = ModelVariant.BASE
+    checkpoint_edition: CheckpointEdition = CheckpointEdition.LEGACY
 
     @cached_property
     def name(self) -> str:
@@ -162,6 +168,8 @@ class ModelKey:
                 parts.append("pre-trained")
         else:
             parts.append(str(self.variant))
+        if self.checkpoint_edition != CheckpointEdition.LEGACY:
+            parts.append(self.checkpoint_edition.value)
         return "/".join(parts)
 
     def __str__(self) -> str:
@@ -173,6 +181,9 @@ MODEL_CHECKPOINTS: dict[ModelKey, CheckpointConfig] = {
     # ModelKey(): CheckpointConfig.from_uri("81edfebe-bd6a-4039-8c1d-737df1a790bf"),
     ModelKey(post_trained=False): CheckpointConfig.from_uri("672ceebc-a222-403f-b7e6-13c6c7133f37"),
     ModelKey(): CheckpointConfig.from_uri("672ceebc-a222-403f-b7e6-13c6c7133f37"),
+    ModelKey(checkpoint_edition=CheckpointEdition.OPENMDW_1_1): CheckpointConfig.from_uri(
+        "930af493-8e65-4dbb-b6d5-4b61226e9a44"
+    ),
     # ModelKey(distilled=True): CheckpointConfig.from_uri("575edf0f-d973-4c74-b52c-69929a08d0a5"),
     # ModelKey(post_trained=False, size=ModelSize._14B): CheckpointConfig.from_uri(
     #     "54937b8c-29de-4f04-862c-e67b04ec41e8"

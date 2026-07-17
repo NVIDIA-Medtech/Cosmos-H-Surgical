@@ -18,6 +18,13 @@ Run inference with example asset:
 python examples/inference.py -i assets/base/coagulation.json -o outputs/base_video2world --inference-type=video2world
 ```
 
+The legacy checkpoint remains the default. To use the OpenMDW-1.1 checkpoint:
+
+```bash
+python examples/inference.py -i assets/base/coagulation.json -o outputs/openmdw_video2world \
+  --inference-type=video2world --model=2B/post-trained/openmdw-1.1
+```
+
 To enable multi-GPU inference with 8 GPUs, use [torchrun](https://docs.pytorch.org/docs/stable/elastic/run.html):
 
 ```bash

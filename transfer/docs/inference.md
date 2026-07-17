@@ -38,6 +38,21 @@ Individual control variants can be run on a single GPU:
 python examples/inference.py -i assets/coagulation_example/depth/coagulation_depth_spec.json -o outputs/depth
 ```
 
+The legacy checkpoints remain the default. To use an OpenMDW-1.1 checkpoint, append the edition to the model key:
+
+```bash
+python examples/inference.py -i assets/coagulation_example/depth/coagulation_depth_spec.json \
+  -o outputs/openmdw_depth --model=depth/openmdw-1.1
+```
+
+For multi-control inference, use the explicit `multicontrol/openmdw-1.1` model key. This loads the depth, edge, segmentation, and visibility checkpoints from the OpenMDW-1.1 edition:
+
+```bash
+python examples/inference.py \
+  -i assets/coagulation_example/multicontrol/coagulation_multicontrol_spec.json \
+  -o outputs/openmdw_multicontrol --model=multicontrol/openmdw-1.1
+```
+
 For multi-GPU inference on a single control or to run multiple control variants, use [torchrun](https://docs.pytorch.org/docs/stable/elastic/run.html):
 ```bash
 torchrun --nproc_per_node=8 --master_port=12341 examples/inference.py -i assets/coagulation_example/depth/coagulation_depth_spec.json -o outputs/depth
