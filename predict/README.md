@@ -37,12 +37,13 @@ real surgery scene: left needle driver passes needle to right needle driver.
 
 Our world simulation models, Cosmos-Predict's fundamental capability is predicting future world states in video form supporting multimodal inputs. We have open sourced both pre-trained foundation models as well as post-trained models accelerating multiple domains. Please check back as we continue to add more specialized models and capabilities to the Predict family!
 
-[**Cosmos-H-Surgical-Predict**](docs/inference.md): Base [2B checkpoints](https://huggingface.co/nvidia/Cosmos-Predict2.5-2B/tree/main/base), trained from the ground up for Physical AI and robotics for surgical tasks.
+[**Cosmos-H-Surgical-Predict**](docs/inference.md): 2B checkpoints adapted for Physical AI and surgical robotics tasks.
 
 
-| Model Name | Capability | Input |
-| --- | --- | --- |
-| [**Cosmos-H-Surgical-Predict**](docs/inference.md) | Base Model | text + image  |
+| Model Name | Model Key | Capability | Input | License |
+| --- | --- | --- | --- | --- |
+| [**Cosmos-H-Surgical-Predict**](docs/inference.md) (legacy) | `2B/post-trained` | Base Model | text + image | [NVIDIA-OneWay-Noncommercial-License](../LICENSE.weights) |
+| [**Cosmos-H-Surgical-Predict**](docs/inference.md) (OpenMDW) | `2B/post-trained/openmdw-1.1` | Base Model | text + image | [OpenMDW-1.1](../LICENSE.OpenMDW-1.1) |
 
 ## User Guide
 
@@ -63,4 +64,4 @@ This project will download and install additional third-party open source softwa
 
 Cosmos-H-Surgical source code is released under the [Apache 2 License](https://www.apache.org/licenses/LICENSE-2.0).
 
-Cosmos-H-Surgical models are released under the [NVIDIA License](https://developer.download.nvidia.com/licenses/NVIDIA-OneWay-Noncommercial-License-22Mar2022.pdf?t=eyJscyI6ImdzZW8iLCJsc2QiOiJodHRwczovL3d3dy5nb29nbGUuY29tLyIsIm5jaWQiOiJzby15b3V0LTg3MTcwMS12dDQ4In0=). You are responsible for ensuring that your use of NVIDIA AI Foundation Models complies with all applicable laws.
+Legacy Cosmos-H-Surgical-Predict checkpoints are released under [LICENSE.weights](../LICENSE.weights). Checkpoints under `openmdw-1.1/predict/` are released under [OpenMDW-1.1](../LICENSE.OpenMDW-1.1). See [NOTICE.weights](../NOTICE.weights) and [release-manifest.json](../release-manifest.json) for the exact license scope and artifact checksums.

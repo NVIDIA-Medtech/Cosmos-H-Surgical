@@ -22,6 +22,8 @@ from cosmos_transfer2._src.imaginaire.utils.checkpoint_db import (
     register_checkpoint,
 )
 
+_OPENMDW_REVISION = "92d2558c3329c91fa77002f6604987ba8a6ce29a"
+
 
 @functools.cache
 def register_checkpoints():
@@ -105,6 +107,90 @@ def register_checkpoints():
                 repository="nvidia/Cosmos-H-Surgical",
                 revision="ebbb7c6daf64f06c2dfe1b01654911789c5c9fdc",
                 filename="transfer/seg/cosmos-h-surgical-transfer-seg_model_ema_bf16.pt",
+            ),
+        )
+    )
+
+    register_checkpoint(
+        CheckpointConfig(
+            uuid="291746d0-4851-44a7-aa29-71b4a069b167",
+            name="nvidia/Cosmos-H-Surgical/openmdw-1.1/transfer/edge",
+            experiment="edge_720p_t24or1_spaced_layer4_cr1pt1_sdev2_lowsigma0.05_uniform_hqv3p1_20250714_64N_rectified_flow_refimdrop0pt5",
+            metadata={
+                "resolution": "720p",
+                "fps": 16,
+                "license": "OpenMDW-1.1",
+            },
+            s3=CheckpointDirS3(
+                uri="s3://bucket/nvidia/Cosmos-H-Surgical/openmdw-1.1/transfer/edge/cosmos-h-surgical-transfer-edge_model_ema_bf16.pt",
+            ),
+            hf=CheckpointFileHf(
+                repository="nvidia/Cosmos-H-Surgical",
+                revision=_OPENMDW_REVISION,
+                filename="openmdw-1.1/transfer/edge/cosmos-h-surgical-transfer-edge_model_ema_bf16.pt",
+            ),
+        )
+    )
+
+    register_checkpoint(
+        CheckpointConfig(
+            uuid="88ee68f4-6e02-4ff8-86a6-8a5b16df85d0",
+            name="nvidia/Cosmos-H-Surgical/openmdw-1.1/transfer/depth",
+            experiment="depth_720p_t24or1_spaced_layer4_cr1pt1_sdev2_lowsigma0.05_uniform_hqv4p1_20250823_64N_rectified_flow_refimdrop0pt5",
+            metadata={
+                "resolution": "720p",
+                "fps": 16,
+                "license": "OpenMDW-1.1",
+            },
+            s3=CheckpointDirS3(
+                uri="s3://bucket/nvidia/Cosmos-H-Surgical/openmdw-1.1/transfer/depth/cosmos-h-surgical-transfer-depth_model_ema_bf16.pt",
+            ),
+            hf=CheckpointFileHf(
+                repository="nvidia/Cosmos-H-Surgical",
+                revision=_OPENMDW_REVISION,
+                filename="openmdw-1.1/transfer/depth/cosmos-h-surgical-transfer-depth_model_ema_bf16.pt",
+            ),
+        )
+    )
+
+    register_checkpoint(
+        CheckpointConfig(
+            uuid="3f518e70-fdb2-44e6-96cd-95aa16dc259c",
+            name="nvidia/Cosmos-H-Surgical/openmdw-1.1/transfer/vis",
+            experiment="vis_720p_t24or1_spaced_layer4_cr1pt1_sdev2_lowsigma0.05_uniform_hqv3p1_20250714_64N_rectified_flow_refimdrop0pt5_filterb3g5m2",
+            metadata={
+                "resolution": "720p",
+                "fps": 16,
+                "license": "OpenMDW-1.1",
+            },
+            s3=CheckpointDirS3(
+                uri="s3://bucket/nvidia/Cosmos-H-Surgical/openmdw-1.1/transfer/vis/cosmos-h-surgical-transfer-vis_model_ema_bf16.pt",
+            ),
+            hf=CheckpointFileHf(
+                repository="nvidia/Cosmos-H-Surgical",
+                revision=_OPENMDW_REVISION,
+                filename="openmdw-1.1/transfer/vis/cosmos-h-surgical-transfer-vis_model_ema_bf16.pt",
+            ),
+        )
+    )
+
+    register_checkpoint(
+        CheckpointConfig(
+            uuid="2db84acf-a75f-4a7f-b357-cfdebb0b69f4",
+            name="nvidia/Cosmos-H-Surgical/openmdw-1.1/transfer/seg",
+            experiment="seg_720p_t24or1_spaced_layer4_cr1pt1_sdev2_lowsigma0.05_uniform_hqv4p2_20250823_64N_rectified_flow_refimdrop0pt5",
+            metadata={
+                "resolution": "720p",
+                "fps": 16,
+                "license": "OpenMDW-1.1",
+            },
+            s3=CheckpointDirS3(
+                uri="s3://bucket/nvidia/Cosmos-H-Surgical/openmdw-1.1/transfer/seg/cosmos-h-surgical-transfer-seg_model_ema_bf16.pt",
+            ),
+            hf=CheckpointFileHf(
+                repository="nvidia/Cosmos-H-Surgical",
+                revision=_OPENMDW_REVISION,
+                filename="openmdw-1.1/transfer/seg/cosmos-h-surgical-transfer-seg_model_ema_bf16.pt",
             ),
         )
     )

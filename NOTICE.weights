@@ -1,0 +1,21 @@
+Cosmos-H-Surgical Weight Notices
+
+Provider and origin: NVIDIA Corporation and affiliates.
+Project: NVIDIA Cosmos-H-Surgical.
+Base model family: NVIDIA Cosmos 2.5.
+
+OpenMDW-1.1 checkpoints
+-----------------------
+
+Only checkpoint artifacts explicitly marked with license_id "OpenMDW-1.1"
+in release-manifest.json are provided under LICENSE.OpenMDW-1.1.
+
+Redistributions of those artifacts must retain LICENSE.OpenMDW-1.1, this
+notice, and all other applicable copyright and origin notices.
+
+Legacy checkpoints
+------------------
+
+Existing checkpoint artifacts outside the openmdw-1.1/ directory are not
+relicensed by this notice. They remain subject to their existing license terms,
+including LICENSE.weights where applicable.

@@ -47,11 +47,18 @@ class Control2WorldInference:
         self.setup_args = args
         self.batch_hint_keys = batch_hint_keys
         self.is_distilled = args.model_key.distilled
+        self.checkpoint_edition = args.model_key.checkpoint_edition
 
         # Get checkpoint paths - same pattern for distilled and non-distilled
         if len(self.batch_hint_keys) == 1:
             # pyrefly: ignore  # bad-argument-type
-            checkpoint = MODEL_CHECKPOINTS[ModelKey(variant=self.batch_hint_keys[0], distilled=self.is_distilled)]
+            checkpoint = MODEL_CHECKPOINTS[
+                ModelKey(
+                    variant=self.batch_hint_keys[0],
+                    distilled=self.is_distilled,
+                    checkpoint_edition=self.checkpoint_edition,
+                )
+            ]
             self.checkpoint_list = [checkpoint.s3.uri]
             self.experiment = checkpoint.experiment
             if args.has_checkpoint_override:
@@ -65,7 +72,11 @@ class Control2WorldInference:
             # Multi-control: load ALL control modalities even if some have control weight = 0
             self.checkpoint_list = [
                 MODEL_CHECKPOINTS[
-                    ModelKey(variant=key, distilled=self.is_distilled)  # pyrefly: ignore [bad-argument-type]
+                    ModelKey(  # pyrefly: ignore [bad-argument-type]
+                        variant=key,
+                        distilled=self.is_distilled,
+                        checkpoint_edition=self.checkpoint_edition,
+                    )
                 ].s3.uri
                 for key in CONTROL_KEYS
             ]

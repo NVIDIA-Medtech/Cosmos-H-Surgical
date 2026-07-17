@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "release": {
+    "name": "Cosmos-H-Surgical Cosmos 2.5 OpenMDW checkpoints",
+    "version": "v0.2.0",
+    "base_model_family": "NVIDIA Cosmos 2.5",
+    "hugging_face_repository": "nvidia/Cosmos-H-Surgical",
+    "release_revision": "v0.2.0"
+  },
+  "licenses": {
+    "OpenMDW-1.1": {
+      "file": "LICENSE.OpenMDW-1.1",
+      "notice": "NOTICE.weights"
+    },
+    "NVIDIA-OneWay-Noncommercial-License": {
+      "file": "LICENSE.weights"
+    }
+  },
+  "legacy_artifacts": {
+    "license_id": "NVIDIA-OneWay-Noncommercial-License",
+    "relicensed": false,
+    "path_prefixes": [
+      "predict/",
+      "transfer/"
+    ]
+  },
+  "artifacts": [
+    {
+      "model_key": "2B/post-trained/openmdw-1.1",
+      "path": "openmdw-1.1/predict/cosmos-h-surgical-predict_model_ema_bf16.pt",
+      "uuid": "930af493-8e65-4dbb-b6d5-4b61226e9a44",
+      "size_bytes": 4118575006,
+      "md5": "2a7dfbf75f657e3d883113f1cbe957f2",
+      "sha256": "998fe9ff9425e18c4d60eeb35bd9283d14404fbfafa6786c7a77ee6b82b16d12",
+      "license_id": "OpenMDW-1.1"
+    },
+    {
+      "model_key": "depth/openmdw-1.1",
+      "path": "openmdw-1.1/transfer/depth/cosmos-h-surgical-transfer-depth_model_ema_bf16.pt",
+      "uuid": "88ee68f4-6e02-4ff8-86a6-8a5b16df85d0",
+      "size_bytes": 4716357097,
+      "md5": "fb501dd37dff381fb74dc0001b59718d",
+      "sha256": "87244f08b22de0177e5e58bc470a29bb3f20cac1ffe87eb8356e7c5ed42a24d9",
+      "license_id": "OpenMDW-1.1"
+    },
+    {
+      "model_key": "seg/openmdw-1.1",
+      "path": "openmdw-1.1/transfer/seg/cosmos-h-surgical-transfer-seg_model_ema_bf16.pt",
+      "uuid": "2db84acf-a75f-4a7f-b357-cfdebb0b69f4",
+      "size_bytes": 4716357097,
+      "md5": "405652a07338f317a461a7165060046f",
+      "sha256": "cb7706afe87a2c59814aeeb1b541b84e23a49b318a8820fa2c04b7c1362c28d9",
+      "license_id": "OpenMDW-1.1"
+    },
+    {
+      "model_key": "edge/openmdw-1.1",
+      "path": "openmdw-1.1/transfer/edge/cosmos-h-surgical-transfer-edge_model_ema_bf16.pt",
+      "uuid": "291746d0-4851-44a7-aa29-71b4a069b167",
+      "size_bytes": 4716357097,
+      "md5": "32ae505b4acd5377a33cd44ce5435fbc",
+      "sha256": "136caf4b13eb61598ca61e65fdeaf7a2b54842ea8b20334f77c8b68aa7992fa8",
+      "license_id": "OpenMDW-1.1"
+    },
+    {
+      "model_key": "vis/openmdw-1.1",
+      "path": "openmdw-1.1/transfer/vis/cosmos-h-surgical-transfer-vis_model_ema_bf16.pt",
+      "uuid": "3f518e70-fdb2-44e6-96cd-95aa16dc259c",
+      "size_bytes": 4716357097,
+      "md5": "fd9076c4d7b92610af277c3bf72a6f8d",
+      "sha256": "396cd73a0c8b78fbd647010b1f848709c69d801e0d9179a85eb91937bee5de35",
+      "license_id": "OpenMDW-1.1"
+    }
+  ]
+}

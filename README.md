@@ -1,7 +1,8 @@
 # Cosmos-H-Surgical
 
 [![License](https://img.shields.io/badge/Code-Apache%202.0-blue)](LICENSE)
-[![Weights License](https://img.shields.io/badge/Weights-NVIDIA--OneWay--Noncommercial--License-green)](LICENSE.weights)
+[![Legacy Weights](https://img.shields.io/badge/Legacy%20Weights-NVIDIA--OneWay--Noncommercial-green)](LICENSE.weights)
+[![OpenMDW Weights](https://img.shields.io/badge/OpenMDW%20Weights-OpenMDW--1.1-blue)](LICENSE.OpenMDW-1.1)
 [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-Hugging%20Face-yellow)](https://huggingface.co/nvidia/Cosmos-H-Surgical)
 [![arXiv](https://img.shields.io/badge/arXiv-2512.23162-b31b1b)](https://arxiv.org/abs/2512.23162)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB)](https://www.python.org/)
@@ -20,6 +21,7 @@ This project was conducted by NVIDIA in collaboration with [Chinese University o
 
 ## News
 
+- **[July 2026]** — Added OpenMDW-1.1 checkpoint editions for Predict and Transfer while retaining the original checkpoint paths and license terms.
 - **[March 2026]** — Released [SurgΣ](https://arxiv.org/abs/2603.16822): a large-scale multimodal surgical dataset and foundation model suite for surgical intelligence.
 - **[March 2026]** — Released [BSA](https://arxiv.org/abs/2603.12787): generalized recognition of basic surgical actions enabling skill assessment and VLM-based surgical planning.
 - **[March 2026]** — Released [Cosmos-H-Surgical-Predict](predict/) and [Cosmos-H-Surgical-Transfer](transfer/) as part of the NVIDIA MedTech Open Models.
@@ -28,8 +30,10 @@ This project was conducted by NVIDIA in collaboration with [Chinese University o
 
 | Model | Base Model | Params | Capability | Input | HuggingFace | License |
 |-------|-----------|--------|------------|-------|-------------|---------|
-| [Cosmos-H-Surgical-Predict](predict/) | [Cosmos-Predict2.5-2B](https://github.com/nvidia-cosmos/cosmos-predict2.5) | 2B | Future-state video prediction (Image2World) | text + image | [Weights](https://huggingface.co/nvidia/Cosmos-H-Surgical) | [NVIDIA-OneWay-Noncommercial-License](https://developer.download.nvidia.com/licenses/NVIDIA-OneWay-Noncommercial-License-22Mar2022.pdf) |
-| [Cosmos-H-Surgical-Transfer](transfer/) | [Cosmos-Transfer2.5-2B](https://github.com/nvidia-cosmos/cosmos-transfer2.5) | 2B | Control-conditioned generation (depth, edge, seg, blur) | text + video + control maps | [Weights](https://huggingface.co/nvidia/Cosmos-H-Surgical) | [NVIDIA-OneWay-Noncommercial-License](https://developer.download.nvidia.com/licenses/NVIDIA-OneWay-Noncommercial-License-22Mar2022.pdf) |
+| [Cosmos-H-Surgical-Predict](predict/) (legacy) | [Cosmos-Predict2.5-2B](https://github.com/nvidia-cosmos/cosmos-predict2.5) | 2B | Future-state video prediction (Image2World) | text + image | [Weights](https://huggingface.co/nvidia/Cosmos-H-Surgical/tree/main/predict) | [NVIDIA-OneWay-Noncommercial-License](LICENSE.weights) |
+| [Cosmos-H-Surgical-Predict](predict/) (OpenMDW) | [Cosmos-Predict2.5-2B](https://github.com/nvidia-cosmos/cosmos-predict2.5) | 2B | Future-state video prediction (Image2World) | text + image | [Weights](https://huggingface.co/nvidia/Cosmos-H-Surgical/tree/main/openmdw-1.1/predict) | [OpenMDW-1.1](LICENSE.OpenMDW-1.1) |
+| [Cosmos-H-Surgical-Transfer](transfer/) (legacy) | [Cosmos-Transfer2.5-2B](https://github.com/nvidia-cosmos/cosmos-transfer2.5) | 2B | Control-conditioned generation (depth, edge, seg, blur) | text + video + control maps | [Weights](https://huggingface.co/nvidia/Cosmos-H-Surgical/tree/main/transfer) | [NVIDIA-OneWay-Noncommercial-License](LICENSE.weights) |
+| [Cosmos-H-Surgical-Transfer](transfer/) (OpenMDW) | [Cosmos-Transfer2.5-2B](https://github.com/nvidia-cosmos/cosmos-transfer2.5) | 2B | Control-conditioned generation (depth, edge, seg, blur) | text + video + control maps | [Weights](https://huggingface.co/nvidia/Cosmos-H-Surgical/tree/main/openmdw-1.1/transfer) | [OpenMDW-1.1](LICENSE.OpenMDW-1.1) |
 
 ## Repository Structure
 
@@ -52,7 +56,10 @@ Cosmos-H-Surgical/
 │   ├── Dockerfile
 │   └── pyproject.toml
 ├── LICENSE                           # Apache 2.0 (source code)
-└── LICENSE.weights                   # NVIDIA-OneWay-Noncommercial-License License (weights)
+├── LICENSE.weights                   # Legacy checkpoint license
+├── LICENSE.OpenMDW-1.1               # OpenMDW checkpoint license
+├── NOTICE.weights                    # Checkpoint origin and license scope
+└── release-manifest.json             # Released artifact paths and checksums
 ```
 
 ## Quick Start
@@ -92,6 +99,20 @@ cd transfer
 python examples/inference.py -i assets/coagulation_example/depth/coagulation_depth_spec.json -o outputs/depth
 ```
 
+The existing legacy checkpoints remain the default. Select an OpenMDW-1.1 checkpoint explicitly with the model key:
+
+```bash
+# From the repository root: Predict
+(cd predict && python examples/inference.py -i assets/base/coagulation.json \
+  -o outputs/openmdw_predict --inference-type=video2world \
+  --model=2B/post-trained/openmdw-1.1)
+
+# From the repository root: Transfer depth
+(cd transfer && python examples/inference.py \
+  -i assets/coagulation_example/depth/coagulation_depth_spec.json \
+  -o outputs/openmdw_depth --model=depth/openmdw-1.1)
+```
+
 ## Documentation
 
 | Topic | Predict | Transfer |
@@ -119,8 +140,12 @@ End-to-end time measured for 121-frame input video (two 93-frame chunk generatio
 | Component | License |
 |-----------|---------|
 | Source code | [Apache 2.0](LICENSE) |
-| Cosmos-H-Surgical-Predict weights | [NVIDIA-OneWay-Noncommercial-License](https://developer.download.nvidia.com/licenses/NVIDIA-OneWay-Noncommercial-License-22Mar2022.pdf) |
-| Cosmos-H-Surgical-Transfer weights | [NVIDIA-OneWay-Noncommercial-License](https://developer.download.nvidia.com/licenses/NVIDIA-OneWay-Noncommercial-License-22Mar2022.pdf) |
+| Legacy Predict weights under `predict/` | [NVIDIA-OneWay-Noncommercial-License](LICENSE.weights) |
+| Legacy Transfer weights under `transfer/` | [NVIDIA-OneWay-Noncommercial-License](LICENSE.weights) |
+| Predict weights under `openmdw-1.1/predict/` | [OpenMDW-1.1](LICENSE.OpenMDW-1.1) |
+| Transfer weights under `openmdw-1.1/transfer/` | [OpenMDW-1.1](LICENSE.OpenMDW-1.1) |
+
+Only artifacts identified as `OpenMDW-1.1` in [release-manifest.json](release-manifest.json) are provided under OpenMDW-1.1. Existing checkpoint artifacts are not relicensed. See [NOTICE.weights](NOTICE.weights) for origin and redistribution notices.
 
 This project will download and install additional third-party open source software projects. Review the license terms of these open source projects before use.
 

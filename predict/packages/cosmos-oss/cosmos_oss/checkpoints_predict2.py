@@ -24,6 +24,8 @@ from cosmos_predict2._src.imaginaire.utils.checkpoint_db import (
     register_checkpoint,
 )
 
+_OPENMDW_REVISION = "92d2558c3329c91fa77002f6604987ba8a6ce29a"
+
 
 @functools.cache
 def register_checkpoints():
@@ -48,6 +50,27 @@ def register_checkpoints():
                 repository="nvidia/Cosmos-H-Surgical",
                 revision="ebbb7c6daf64f06c2dfe1b01654911789c5c9fdc",
                 filename="predict/cosmos-h-surgical-predict_model_ema_bf16.pt",
+            ),
+        ),
+    )
+
+    register_checkpoint(
+        CheckpointConfig(
+            uuid="930af493-8e65-4dbb-b6d5-4b61226e9a44",
+            name="nvidia/Cosmos-H-Surgical/openmdw-1.1/predict",
+            experiment="Stage-c_pt_4-Index-2-Size-2B-Res-720-Fps-16-Note-rf_with_edm_ckpt",
+            metadata={
+                "resolution": "720p",
+                "fps": 16,
+                "license": "OpenMDW-1.1",
+            },
+            s3=CheckpointDirS3(
+                uri="s3://bucket/nvidia/Cosmos-H-Surgical/openmdw-1.1/predict/cosmos-h-surgical-predict_model_ema_bf16.pt"
+            ),
+            hf=CheckpointFileHf(
+                repository="nvidia/Cosmos-H-Surgical",
+                revision=_OPENMDW_REVISION,
+                filename="openmdw-1.1/predict/cosmos-h-surgical-predict_model_ema_bf16.pt",
             ),
         ),
     )
