@@ -1,0 +1,72 @@
+# SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-License-Identifier: OpenMDW-1.1
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cosmos-h-surgical"
+version = "0.3.0"
+authors = [
+  {name = "NVIDIA Corporation"},
+]
+description = "Surgical video world modeling with NVIDIA Cosmos 3"
+readme = "README.md"
+requires-python = ">=3.13"
+license = {text = "OpenMDW-1.1"}
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: GPU :: NVIDIA CUDA",
+  "Intended Audience :: Science/Research",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+  "cosmos-framework",
+  "iopath>=0.1.10",
+]
+
+[project.optional-dependencies]
+train = [
+  "cosmos-framework[train]",
+]
+
+[project.scripts]
+cosmos-h-surgical = "cosmos_h_surgical.cli:main"
+
+[project.urls]
+documentation = "https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical"
+homepage = "https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical"
+repository = "https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical"
+
+[dependency-groups]
+dev = [
+  "pytest>=8.0.0",
+  "ruff==0.12.7",
+]
+
+[tool.uv]
+required-version = ">=0.11.3"
+
+[tool.uv.sources]
+cosmos-framework = { git = "https://github.com/NVIDIA/cosmos-framework.git", rev = "ed8287fd7477113f8ac4f6b84290514d55cf0cdc" }
+
+[tool.hatch.build.targets.sdist]
+packages = ["cosmos_h_surgical"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["cosmos_h_surgical"]
+exclude = ["*_test.py"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]

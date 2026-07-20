@@ -1,0 +1,5 @@
+{
+  "model_mode": "text2video",
+  "name": "surgical_t2v",
+  "prompt": "A stable laparoscopic view of a surgical instrument carefully retracting soft tissue in a well-lit operative field. The camera remains fixed and the motion is smooth and anatomically plausible."
+}
