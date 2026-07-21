@@ -52,19 +52,27 @@ Cosmos-H-Surgical/
 ## Installation
 
 The supported environment manager is [uv](https://docs.astral.sh/uv/). CUDA
-12.8 or newer and an NVIDIA Ampere-generation GPU or newer are required for
-model inference. Python 3.13 matches the pinned framework's own development
-environment and is provisioned automatically by `uv`.
+13.0 is recommended and CUDA 12.8 is also supported. The selected group must
+match the CUDA major version supported by the NVIDIA driver. An NVIDIA
+Ampere-generation GPU or newer is required for model inference. Python 3.13
+matches the pinned framework's own development environment and is provisioned
+automatically by `uv`.
 
 ```bash
 git clone https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical.git
 cd Cosmos-H-Surgical
-uv sync --frozen
+
+# CUDA 13, recommended
+uv sync --group cu130
+
+# CUDA 12.8
+uv sync --group cu128
 ```
 
 The root `uv.lock` and the framework commit in `pyproject.toml` are the source
 of truth for the Python environment. `git-lfs` must be installed because the
-pinned framework repository contains LFS-managed files.
+pinned framework repository contains LFS-managed files. The commands below use
+`uv run --no-sync` so `uv` preserves the CUDA group selected during installation.
 
 ## Inference
 
@@ -72,7 +80,7 @@ The package exposes the Cosmos Framework inference interface through a stable
 project command:
 
 ```bash
-uv run cosmos-h-surgical infer \
+uv run --no-sync cosmos-h-surgical infer \
   -i examples/inference/t2v.json \
   -o outputs/t2v \
   --checkpoint-path <COSMOS3_CHECKPOINT> \
@@ -86,24 +94,23 @@ checkpoint candidate and its hashes are approved.
 Inspect the pinned framework dependency:
 
 ```bash
-uv run cosmos-h-surgical framework-info
+uv run --no-sync cosmos-h-surgical framework-info
 ```
 
 Validate the release metadata before staging:
 
 ```bash
-uv run cosmos-h-surgical validate-release
+uv run --no-sync cosmos-h-surgical validate-release
 ```
 
 ## Post-Training
 
-Install the optional training dependencies and run the project-owned training
-wrapper. It registers surgical experiments with the pinned framework before
-the framework composes the TOML configuration.
+The selected CUDA environment includes both inference and post-training
+dependencies. The project-owned training wrapper registers surgical experiments
+with the pinned framework before the framework composes the TOML configuration.
 
 ```bash
-uv sync --frozen --extra train
-uv run torchrun --nproc_per_node=8 -m cosmos_h_surgical.training \
+uv run --no-sync torchrun --nproc_per_node=8 -m cosmos_h_surgical.training \
   --sft-toml examples/post_training/cosmos_h_surgical_vision_lora_480p.toml
 ```
 
@@ -115,10 +122,10 @@ training remains a documented release gate rather than an unpublished API.
 ## Development
 
 ```bash
-uv sync --frozen --group dev
-uv run pytest
-uv run ruff check .
-uv run ruff format --check .
+uv sync --group cu130 --group dev
+uv run --no-sync pytest
+uv run --no-sync ruff check .
+uv run --no-sync ruff format --check .
 ```
 
 The development branch must not contain DFW paths, internal object-store URLs,

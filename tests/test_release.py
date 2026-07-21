@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: OpenMDW-1.1
 
 import json
+import tomllib
 from pathlib import Path
 
 from cosmos_h_surgical.checkpoints import load_checkpoint_registry
@@ -53,3 +54,19 @@ def test_manifest_is_formatted_json() -> None:
     value = json.loads(MANIFEST.read_text(encoding="utf-8"))
     expected = json.dumps(value, indent=2) + "\n"
     assert MANIFEST.read_text(encoding="utf-8") == expected
+
+
+def test_dependency_contract_has_one_full_environment_per_cuda_version() -> None:
+    project = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))
+
+    assert "cosmos-framework[train]" in project["project"]["dependencies"]
+    assert "optional-dependencies" not in project["project"]
+
+    groups = project["dependency-groups"]
+    assert "torch==2.10.0+cu128" in groups["cu128"]
+    assert "transformer-engine==2.12.0+cu128.torch210" in groups["cu128"]
+    assert "torch==2.10.0+cu130" in groups["cu130"]
+    assert "transformer-engine==2.12.0+cu130.torch210" in groups["cu130"]
+
+    assert project["tool"]["uv"]["conflicts"] == [[{"group": "cu128"}, {"group": "cu130"}]]
+    assert project["tool"]["uv"]["sources"]["torch"] == {"index": "pytorch"}

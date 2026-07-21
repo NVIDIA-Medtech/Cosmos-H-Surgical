@@ -38,7 +38,8 @@ def run_framework_cli(
         if error.name and error.name != "cosmos_framework":
             raise RuntimeError(
                 "Cosmos training dependencies are not installed. "
-                "Run `uv sync --frozen --extra train` before post-training."
+                "Run `uv sync --group cu130` for CUDA 13 or "
+                "`uv sync --group cu128` for CUDA 12.8 before post-training."
             ) from error
         raise
     finally:

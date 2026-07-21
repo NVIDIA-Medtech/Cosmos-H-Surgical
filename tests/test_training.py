@@ -49,5 +49,5 @@ def test_training_dependency_error_is_actionable() -> None:
     def missing_dependency(*args: object, **kwargs: object) -> dict[str, object]:
         raise ModuleNotFoundError("No module named 'webdataset'", name="webdataset")
 
-    with pytest.raises(RuntimeError, match="uv sync --frozen --extra train"):
+    with pytest.raises(RuntimeError, match="uv sync --group cu130"):
         run_framework_cli([], run_module=missing_dependency, register=fake_register)
