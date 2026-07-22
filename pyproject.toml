@@ -32,7 +32,7 @@ dependencies = [
 cosmos-h-surgical = "cosmos_h_surgical.cli:main"
 
 [project.urls]
-documentation = "https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical"
+documentation = "https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical/tree/main/docs"
 homepage = "https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical"
 repository = "https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical"
 

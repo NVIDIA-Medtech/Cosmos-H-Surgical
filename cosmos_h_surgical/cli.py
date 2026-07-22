@@ -10,6 +10,7 @@ from pathlib import Path
 
 from cosmos_h_surgical.__about__ import __version__
 from cosmos_h_surgical.inference import run_framework_cli
+from cosmos_h_surgical.prompt_upsampling import run_framework_cli as run_prompt_upsampling_cli
 from cosmos_h_surgical.provenance import FRAMEWORK_REPOSITORY, FRAMEWORK_REVISION, FRAMEWORK_STATUS
 from cosmos_h_surgical.release import validate_manifest
 from cosmos_h_surgical.training import run_framework_cli as run_training_cli
@@ -29,6 +30,11 @@ def _build_parser() -> argparse.ArgumentParser:
         "train",
         add_help=False,
         help="Run the pinned Cosmos Framework training CLI with surgical configs",
+    )
+    subparsers.add_parser(
+        "prompt-upsample",
+        add_help=False,
+        help="Generate structured Cosmos 3 prompts with OpenAI-compatible defaults",
     )
     subparsers.add_parser("framework-info", help="Print immutable framework provenance")
 
@@ -50,6 +56,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         return run_framework_cli(remainder or ["--help"])
     if args.command == "train":
         return run_training_cli(remainder or ["--help"])
+    if args.command == "prompt-upsample":
+        return run_prompt_upsampling_cli(remainder or ["--help"])
     if remainder:
         parser.error(f"unrecognized arguments: {' '.join(remainder)}")
     if args.command == "framework-info":

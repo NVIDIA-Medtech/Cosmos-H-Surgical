@@ -9,8 +9,9 @@ export COSMOS_H_SURGICAL_DATASET=/absolute/path/to/surgical_train.jsonl
 export BASE_CHECKPOINT_PATH=/absolute/path/to/cosmos3_base_checkpoint
 export WAN_VAE_PATH=/absolute/path/to/Wan2.2_VAE.pth
 
-uv sync --frozen --extra train
-uv run torchrun --nproc_per_node=8 -m cosmos_h_surgical.training \
+uv sync --group cu130
+uv run --no-sync torchrun --nproc_per_node=8 \
+  -m cosmos_h_surgical.training \
   --sft-toml examples/post_training/cosmos_h_surgical_vision_lora_480p.toml
 ```
 
@@ -22,3 +23,6 @@ one or more `t2w_windows`; structured surgical captions may use
 The current release candidate's mixed transfer/action recipe is not copied
 from the internal branch. It will be added after its public dataset adapters,
 control-sidecar contract, and clean-data smoke tests are ready.
+
+See [docs/post_training.md](../../docs/post_training.md) for the complete
+developer-preview documentation.

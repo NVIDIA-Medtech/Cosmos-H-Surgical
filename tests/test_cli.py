@@ -47,3 +47,15 @@ def test_train_forwards_framework_help(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setattr(cli, "run_training_cli", fake_framework_cli)
     assert main(["train", "--help"]) == 0
     assert observed == ["--help"]
+
+
+def test_prompt_upsample_forwards_framework_help(monkeypatch: pytest.MonkeyPatch) -> None:
+    observed: list[str] = []
+
+    def fake_framework_cli(argv: list[str]) -> int:
+        observed.extend(argv)
+        return 0
+
+    monkeypatch.setattr(cli, "run_prompt_upsampling_cli", fake_framework_cli)
+    assert main(["prompt-upsample", "--help"]) == 0
+    assert observed == ["--help"]

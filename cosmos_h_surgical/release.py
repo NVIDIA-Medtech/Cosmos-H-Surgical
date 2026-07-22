@@ -12,6 +12,7 @@ from cosmos_h_surgical.__about__ import __version__
 from cosmos_h_surgical.provenance import FRAMEWORK_REPOSITORY, FRAMEWORK_REVISION
 
 _SHA40 = re.compile(r"^[0-9a-f]{40}$")
+_SHA256 = re.compile(r"^[0-9a-f]{64}$")
 _INTERNAL_MARKERS = (
     "/home/",
     "/lustre/",
@@ -66,6 +67,16 @@ def validate_manifest(path: Path) -> list[str]:
     artifacts = manifest.get("artifacts")
     if not isinstance(artifacts, list):
         errors.append("artifacts must be a list")
+    else:
+        for index, artifact in enumerate(artifacts):
+            if not isinstance(artifact, dict):
+                errors.append(f"artifacts[{index}] must be an object")
+                continue
+            if not _SHA256.fullmatch(str(artifact.get("sha256", ""))):
+                errors.append(f"artifacts[{index}].sha256 must be a 64-character lowercase SHA-256")
+            for forbidden_key in ("capability", "source_checkpoint_iteration"):
+                if forbidden_key in artifact:
+                    errors.append(f"artifacts[{index}] must not contain {forbidden_key!r}")
 
     for text in _iter_strings(manifest):
         marker = next((item for item in _INTERNAL_MARKERS if item in text), None)

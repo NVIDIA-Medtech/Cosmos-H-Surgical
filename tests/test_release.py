@@ -5,7 +5,7 @@ import json
 import tomllib
 from pathlib import Path
 
-from cosmos_h_surgical.checkpoints import load_checkpoint_registry
+from cosmos_h_surgical.checkpoints import MODEL_CONFIG_PATH, load_checkpoint_registry
 from cosmos_h_surgical.release import validate_manifest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -30,9 +30,25 @@ FORBIDDEN_INTERNAL_MARKERS = (
 )
 
 
-def test_development_manifest_is_valid_and_has_no_artifacts() -> None:
+def test_release_candidate_manifest_is_valid_and_registers_public_model() -> None:
     assert validate_manifest(MANIFEST) == []
-    assert load_checkpoint_registry(MANIFEST) == {}
+    registry = load_checkpoint_registry(MANIFEST)
+    assert set(registry) == {"Cosmos-H-Surgical"}
+    assert registry["Cosmos-H-Surgical"].path == "."
+    assert registry["Cosmos-H-Surgical"].revision == "v0.3.0"
+
+
+def test_packaged_model_config_is_portable() -> None:
+    config = json.loads(MODEL_CONFIG_PATH.read_text(encoding="utf-8"))
+    model_config = config["model"]["config"]
+    tokenizer = model_config["tokenizer"]
+
+    assert model_config["enable_input_bias"] is True
+    assert tokenizer["bucket_name"] == "bucket"
+    assert tokenizer["vae_path"] == "pretrained/tokenizers/video/wan2pt2/Wan2.2_VAE.pth"
+    text = MODEL_CONFIG_PATH.read_text(encoding="utf-8")
+    for marker in FORBIDDEN_INTERNAL_MARKERS:
+        assert marker not in text
 
 
 def test_manifest_has_no_internal_or_moving_framework_references() -> None:

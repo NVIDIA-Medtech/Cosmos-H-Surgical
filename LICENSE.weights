@@ -1,0 +1,13 @@
+# Cosmos-H-Surgical Model Weights License
+
+The Cosmos-H-Surgical model weights are governed by the NVIDIA Open
+Model License.
+
+Full license text:
+https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/
+
+The source code in this repository is licensed separately as described in
+`LICENSE`.
+
+Cosmos 2.5 model artifacts and their applicable terms remain available from
+the `cosmos-2.5` release branch.

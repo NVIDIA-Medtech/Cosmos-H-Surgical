@@ -1,0 +1,10 @@
+real surgery scene: left fenestrated bipolar forceps holds tissue while right suction-irrigator aspirates blood on tissue
+real surgery scene: right instrument coagulates the cystic mesentery while  left instrument retracts the cystic mesentery
+real surgery scene: Use the surgical tool to dissect tissue.
+real surgery scene: right needle driver grasps suture, then left needle driver and right needle driver tie knot
+real surgery scene: left needle driver punctures tissue while right needle driver holds suture
+real surgery scene: right needle driver pulls needle, then left needle driver pulls suture
+real surgery scene: left needle driver passes needle to right needle driver
+real surgery scene: left fenestrated bipolar forceps holds tissue while right stapler begins stapling tissue
+real surgery scene: bottom atraumatic duckbill forceps places tissue into specimen bag while left fenestrated bipolar forceps and right fenestrated bipolar forceps holds specimen bag
+real surgery scene: left instrument retracts the gallbladder then right instrument retracts the adipose tissue

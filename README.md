@@ -1,6 +1,6 @@
 # Cosmos-H-Surgical
 
-[![License](https://img.shields.io/badge/Code%20and%20Weights-OpenMDW--1.1-blue)](LICENSE.OpenMDW-1.1)
+[![License](https://img.shields.io/badge/Code%20and%20Weights-OpenMDW--1.1-blue)](LICENSE)
 [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-Hugging%20Face-yellow)](https://huggingface.co/nvidia/Cosmos-H-Surgical)
 [![arXiv](https://img.shields.io/badge/arXiv-2512.23162-b31b1b)](https://arxiv.org/abs/2512.23162)
 [![Python](https://img.shields.io/badge/Python-3.13-3776AB)](https://www.python.org/)
@@ -20,8 +20,8 @@ branch prepares the Cosmos 3 codebase for the planned `v0.3.0` release.
 
 Cosmos-H-Surgical is a focused package layered on an immutable public revision
 of [NVIDIA Cosmos Framework](https://github.com/NVIDIA/cosmos-framework). The
-framework is installed as a commit-pinned dependency and is not modified at
-runtime.
+framework is installed as a commit-pinned dependency. Its installed source
+files are not overwritten.
 
 ```text
 NVIDIA/cosmos-framework@ed8287fd7477113f8ac4f6b84290514d55cf0cdc
@@ -42,6 +42,7 @@ Cosmos-H-Surgical/
 |-- examples/
 |   |-- inference/              # Cosmos 3 input specifications
 |   `-- post_training/          # Public post-training recipes
+|-- docs/                       # Setup, inference, and migration guides
 |-- tests/                      # Release and integration checks
 |-- pyproject.toml              # Package and uv configuration
 |-- uv.lock                     # Reproducible dependency lock
@@ -73,29 +74,53 @@ The root `uv.lock` and the framework commit in `pyproject.toml` are the source
 of truth for the Python environment. `git-lfs` must be installed because the
 pinned framework repository contains LFS-managed files. The commands below use
 `uv run --no-sync` so `uv` preserves the CUDA group selected during installation.
+See [docs/setup.md](docs/setup.md) for requirements and environment validation.
 
 ## Inference
 
-The package exposes the Cosmos Framework inference interface through a stable
-project command:
+The v0.3.0 release focuses on surgical I2V prediction and edge, depth,
+segmentation, and blur transfer. Inference requires a structured JSON prompt;
+plain natural-language prompts should first be converted with the prompt
+upsampler. The public `Cosmos-H-Surgical` checkpoint is selected by default.
 
 ```bash
-uv run --no-sync cosmos-h-surgical infer \
-  -i examples/inference/t2v.json \
-  -o outputs/t2v \
-  --checkpoint-path <COSMOS3_CHECKPOINT> \
+uv run --no-sync torchrun --nproc_per_node=8 \
+  -m cosmos_h_surgical infer \
+  -i inputs/predict/surgical_predict_smoke.json \
+  --output-dir outputs/i2v \
   --seed 0
 ```
 
-Until a `v0.3.0` checkpoint is published, pass an explicit compatible Cosmos 3
-checkpoint path. The release will add a stable model alias only after the
-checkpoint candidate and its hashes are approved.
+Pass `--checkpoint-path /path/to/checkpoint` only when testing an explicit
+local export. Private release candidates can override the Hugging Face
+repository and revision through the variables documented in
+[docs/environment_variables.md](docs/environment_variables.md).
+
+The [prepared input bundle](inputs/README.md) also includes a nine-action
+prediction manifest and two validation examples for every transfer control.
+See [docs/inference.md](docs/inference.md) for the structured input format,
+checkpoint contract, I2V, and transfer commands. See
+[docs/prompt_upsampling.md](docs/prompt_upsampling.md) for converting short
+surgical descriptions into structured prompts.
 
 Inspect the pinned framework dependency:
 
 ```bash
 uv run --no-sync cosmos-h-surgical framework-info
 ```
+
+## Documentation
+
+| Guide | Description |
+| --- | --- |
+| [Setup](docs/setup.md) | CUDA 13/12.8 installation and environment verification. |
+| [Inference](docs/inference.md) | Structured prompts, checkpoints, I2V, and all transfer controls. |
+| [Prompt upsampling](docs/prompt_upsampling.md) | Convert short surgical prompts into Cosmos 3 JSON prompts. |
+| [Environment variables](docs/environment_variables.md) | Inference, prompt-upsampling, and training variables. |
+| [Troubleshooting](docs/troubleshooting.md) | Installation, checkpoint, input, and distributed failures. |
+| [Code structure](docs/code_structure.md) | Package architecture and framework ownership boundary. |
+| [Cosmos 2.5 migration](docs/migration_from_cosmos25.md) | Archive locations, command mapping, and compatibility. |
+| [Post-training preview](docs/post_training.md) | Public surgical LoRA recipe and dataset contract. |
 
 Validate the release metadata before staging:
 
@@ -115,9 +140,9 @@ uv run --no-sync torchrun --nproc_per_node=8 -m cosmos_h_surgical.training \
 ```
 
 The first migrated recipe covers 480P surgical T2V and I2V LoRA training. See
-[examples/post_training/README.md](examples/post_training/README.md) for its
-dataset contract and required environment variables. Mixed transfer/action
-training remains a documented release gate rather than an unpublished API.
+[docs/post_training.md](docs/post_training.md) for its dataset contract and
+required environment variables. Mixed transfer/action training remains a
+documented release gate rather than an unpublished API.
 
 ## Development
 
@@ -145,7 +170,7 @@ after:
 ## License
 
 Cosmos 3 code added in this release and the planned Cosmos 3 model weights are
-provided under [OpenMDW-1.1](LICENSE.OpenMDW-1.1). Third-party software remains
+provided under [OpenMDW-1.1](LICENSE). Third-party software remains
 subject to its own license terms. See [NOTICE](NOTICE) and
 [ATTRIBUTIONS.md](ATTRIBUTIONS.md).
 
