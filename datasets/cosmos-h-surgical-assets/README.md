@@ -3,8 +3,7 @@
 This directory contains a small, training-ready synthetic surgical video
 dataset for the Cosmos-H-Surgical Predict and Transfer post-training examples.
 All ten RGB target videos are synthetic data selected from the corresponding
-action examples in the synthetic training corpus. Public filenames expose only
-the action label. Aligned caption, blur, depth, and segmentation sidecars
+action examples in the synthetic training corpus. Aligned caption, blur, depth, and segmentation sidecars
 support the repository's training data contract.
 
 ## Layout

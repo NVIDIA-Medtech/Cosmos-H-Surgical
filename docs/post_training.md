@@ -217,9 +217,16 @@ loads the prepared DCP directly. The DCP preserves the released surgical LoRA
 weights; the recipes continue optimizing those adapters instead of creating a
 base-only initialization.
 
-To test the private release candidate before publication, set
-`COSMOS_H_SURGICAL_HF_REPOSITORY=pengfeig/Cosmos-H-Surgical-staging` and the
-approved release-candidate revision before running the same commands.
+To use an alternate repository or private revision, set
+`COSMOS_H_SURGICAL_HF_REPOSITORY` and `COSMOS_H_SURGICAL_HF_REVISION` before
+running the same commands.
+
+Create the shared output root used by either training recipe:
+
+```bash
+export IMAGINAIRE_OUTPUT_ROOT="$PWD/outputs/train"
+mkdir -p "$IMAGINAIRE_OUTPUT_ROOT"
+```
 
 ## Predict Training
 
@@ -229,8 +236,6 @@ Set the Predict dataset variables:
 export COSMOS_H_SURGICAL_PREDICT_DATASET_DIRS=/data/surgical_dataset
 export COSMOS_H_SURGICAL_PREDICT_JSON_PATHS=/data/surgical_dataset/manifests/train.json
 export COSMOS_H_SURGICAL_PREDICT_ENLARGED_FACTORS=1.0
-export IMAGINAIRE_OUTPUT_ROOT="$PWD/outputs/train"
-mkdir -p $IMAGINAIRE_OUTPUT_ROOT
 ```
 
 Launch eight processes:

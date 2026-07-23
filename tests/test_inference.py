@@ -210,18 +210,18 @@ def test_default_checkpoint_is_appended_when_omitted() -> None:
     ]
 
 
-def test_checkpoint_alias_uses_staging_environment(monkeypatch: pytest.MonkeyPatch) -> None:
+def test_checkpoint_alias_uses_repository_overrides(monkeypatch: pytest.MonkeyPatch) -> None:
     from cosmos_framework.inference.args import _CHECKPOINTS
 
     previous = _CHECKPOINTS.get(DEFAULT_MODEL_KEY)
-    monkeypatch.setenv(HF_REPOSITORY_ENV, "pengfeig/Cosmos-H-Surgical-staging")
-    monkeypatch.setenv(HF_REVISION_ENV, "rc/v0.3.0-cosmos3")
+    monkeypatch.setenv(HF_REPOSITORY_ENV, "example-org/Cosmos-H-Surgical-private")
+    monkeypatch.setenv(HF_REVISION_ENV, "test-revision")
     try:
         register_checkpoint_alias()
         checkpoint = _CHECKPOINTS[DEFAULT_MODEL_KEY]
         assert checkpoint.config_file == str(MODEL_CONFIG_PATH)
-        assert checkpoint.hf.repository == "pengfeig/Cosmos-H-Surgical-staging"
-        assert checkpoint.hf.revision == "rc/v0.3.0-cosmos3"
+        assert checkpoint.hf.repository == "example-org/Cosmos-H-Surgical-private"
+        assert checkpoint.hf.revision == "test-revision"
         assert checkpoint.hf.subdirectory == ""
     finally:
         if previous is None:

@@ -51,8 +51,11 @@ def validate_manifest(path: Path) -> list[str]:
     release = manifest.get("release")
     if not isinstance(release, dict):
         errors.append("release must be an object")
-    elif release.get("version") != f"v{__version__}":
-        errors.append(f"release.version must be v{__version__}")
+    else:
+        if release.get("version") != f"v{__version__}":
+            errors.append(f"release.version must be v{__version__}")
+        if release.get("status") != "released":
+            errors.append("release.status must be released")
 
     framework = manifest.get("framework")
     if not isinstance(framework, dict):
@@ -63,6 +66,15 @@ def validate_manifest(path: Path) -> list[str]:
             errors.append(f"framework.revision must be the pinned 40-character SHA {FRAMEWORK_REVISION}")
         if framework.get("repository") != FRAMEWORK_REPOSITORY:
             errors.append(f"framework.repository must be {FRAMEWORK_REPOSITORY}")
+        if framework.get("status") != "pinned-release":
+            errors.append("framework.status must be pinned-release")
+
+    license_metadata = manifest.get("license")
+    weights_license = manifest.get("weights_license")
+    if not isinstance(license_metadata, dict) or license_metadata.get("id") != "OpenMDW-1.1":
+        errors.append("license.id must be OpenMDW-1.1")
+    if not isinstance(weights_license, dict) or weights_license.get("id") != "OpenMDW-1.1":
+        errors.append("weights_license.id must be OpenMDW-1.1")
 
     artifacts = manifest.get("artifacts")
     if not isinstance(artifacts, list):
@@ -74,6 +86,8 @@ def validate_manifest(path: Path) -> list[str]:
                 continue
             if not _SHA256.fullmatch(str(artifact.get("sha256", ""))):
                 errors.append(f"artifacts[{index}].sha256 must be a 64-character lowercase SHA-256")
+            if artifact.get("license_id") != "OpenMDW-1.1":
+                errors.append(f"artifacts[{index}].license_id must be OpenMDW-1.1")
             for forbidden_key in ("capability", "source_checkpoint_iteration"):
                 if forbidden_key in artifact:
                     errors.append(f"artifacts[{index}] must not contain {forbidden_key!r}")

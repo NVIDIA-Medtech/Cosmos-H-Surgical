@@ -4,7 +4,7 @@ Cosmos-H-Surgical uses the public NVIDIA Cosmos Framework as a read-only
 dependency. This repository does not patch installed framework files or depend
 on an NVIDIA-internal Git remote.
 
-## Audit Baseline
+## Pinned Release Dependency
 
 | Field | Value |
 | --- | --- |
@@ -13,26 +13,21 @@ on an NVIDIA-internal Git remote.
 | Revision subject | `Release 2026-07-20: Cosmos3-Edge + Distillation support (#119)` |
 | Dependency manager | `uv >= 0.11.3` |
 | Python | `3.13` |
-| Status | Audit baseline; not yet approved as the final release revision |
+| Status | Pinned release dependency |
 
 The revision is pinned in both `pyproject.toml` and `release-manifest.json`.
 `uv.lock` records the resolved Git source and must be regenerated whenever the
 revision changes.
 
-## Internal Development History
+## Porting Policy
 
-The surgical development branch originally diverged from Cosmos Framework at
-`90cd348877c37b888942c988b631eb1611bf2950`. That commit is used only to audit
-the historical development delta. It is not a supported runtime dependency.
-
-Surgical code is migrated according to these rules:
+Surgical integration follows these rules:
 
 1. Prefer public framework APIs and declarative configuration.
 2. Keep surgical datasets, preprocessing, model aliases, and examples in this
    repository.
 3. Do not use runtime monkeypatches or overwrite files in `cosmos_framework`.
-4. Do not publish DFW paths, internal object-store URLs, or internal Git URLs.
-5. If a release capability requires an unavoidable framework modification,
+4. If a release capability requires an unavoidable framework modification,
    document the exact blocker before selecting a public fork or vendoring a
    minimal licensed implementation.
 

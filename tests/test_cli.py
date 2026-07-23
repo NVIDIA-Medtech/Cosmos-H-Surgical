@@ -23,7 +23,7 @@ def test_framework_info(capsys: pytest.CaptureFixture[str]) -> None:
     value = json.loads(capsys.readouterr().out)
     assert value["repository"] == "https://github.com/NVIDIA/cosmos-framework.git"
     assert len(value["revision"]) == 40
-    assert value["status"] == "audit-baseline"
+    assert value["status"] == "pinned-release"
 
 
 def test_infer_forwards_framework_help(monkeypatch: pytest.MonkeyPatch) -> None:

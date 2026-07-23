@@ -35,13 +35,20 @@ Confirm that `uv sync` completed and that the framework revision is present in
 
 ## Checkpoints
 
-### No v0.3.0 checkpoint alias is available
+### The default checkpoint cannot be downloaded
 
-The release manifest remains in development until the checkpoint is approved.
-Pass an explicit directory with `--checkpoint-path`. The directory must contain
-`config.json` and all files referenced by that configuration.
+Confirm that the `v0.3.0` revision is reachable:
 
-### A release-candidate config lacks `enable_input_bias`
+```bash
+hf download nvidia/Cosmos-H-Surgical --revision v0.3.0
+```
+
+Check network access, Hugging Face authentication, and any
+`COSMOS_H_SURGICAL_HF_REPOSITORY` or `COSMOS_H_SURGICAL_HF_REVISION` overrides.
+For a local export, pass its directory with `--checkpoint-path`. The directory
+must contain `config.json` and all files referenced by that configuration.
+
+### An earlier Cosmos 3 config lacks `enable_input_bias`
 
 The wrapper supports the validated earlier config by creating a temporary
 checkpoint view with `enable_input_bias: true`. Existing model files are linked
@@ -85,21 +92,24 @@ topology, or a stalled process; increasing it is not a general fix.
 
 ### Transfer stalls before sampling
 
-For the current release candidate, run one transfer JSON per `torchrun` and
-disable compilation:
+Pass the Transfer specifications to one `torchrun` and disable compilation:
 
 ```bash
 torchrun --nproc_per_node=8 \
   -m cosmos_h_surgical infer \
-  -i inputs/transfer.json \
+  --parallelism-preset=latency \
+  --dp-shard-size=1 \
+  -i "inputs/transfer/specs/*.json" \
   --output-dir outputs/transfer \
-  --checkpoint-path "$COSMOS3_CHECKPOINT" \
   --seed 0 \
-  --no-use-torch-compile
+  --no-use-torch-compile \
+  --no-guardrails
 ```
 
-Batch I2V JSONL inference was validated separately and does not require this
-one-file recommendation.
+Keep the glob quoted. The wrapper expands it deterministically, keeps the model
+loaded once, and serializes Transfer samples internally so distributed
+collectives remain aligned. If a stall persists, retry one specification to
+isolate the failing input or control.
 
 ### Address already in use
 

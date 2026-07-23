@@ -13,6 +13,7 @@ MANIFEST = ROOT / "release-manifest.json"
 PUBLIC_TEXT_FILES = [
     ROOT / "README.md",
     ROOT / "UPSTREAM.md",
+    ROOT / "LICENSE.weights",
     ROOT / "NOTICE",
     ROOT / "ATTRIBUTIONS.md",
     ROOT / "pyproject.toml",
@@ -31,12 +32,18 @@ FORBIDDEN_INTERNAL_MARKERS = (
 )
 
 
-def test_release_candidate_manifest_is_valid_and_registers_public_model() -> None:
+def test_release_manifest_is_final_and_registers_public_model() -> None:
     assert validate_manifest(MANIFEST) == []
+    manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
+    assert manifest["release"]["status"] == "released"
+    assert manifest["framework"]["status"] == "pinned-release"
+    assert manifest["license"]["id"] == "OpenMDW-1.1"
+    assert manifest["weights_license"]["id"] == "OpenMDW-1.1"
     registry = load_checkpoint_registry(MANIFEST)
     assert set(registry) == {"Cosmos-H-Surgical"}
     assert registry["Cosmos-H-Surgical"].path == "."
     assert registry["Cosmos-H-Surgical"].revision == "v0.3.0"
+    assert registry["Cosmos-H-Surgical"].license_id == "OpenMDW-1.1"
 
 
 def test_packaged_model_config_is_portable() -> None:

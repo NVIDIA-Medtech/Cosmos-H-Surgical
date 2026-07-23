@@ -10,9 +10,9 @@ retains its own copyright, origin, and third-party notices:
   Revision: ed8287fd7477113f8ac4f6b84290514d55cf0cdc
   License: OpenMDW-1.1
 
-Project-owned files in this repository, including the surgical training
-integration, are provided under OpenMDW-1.1. Installed Cosmos Framework files
-are not overwritten.
+Project-owned files and the Cosmos-H-Surgical v0.3.0 model weights, including
+the surgical training integration, are provided under OpenMDW-1.1. Installed
+Cosmos Framework files are not overwritten.
 
-Dependency notices are listed separately in ATTRIBUTIONS.md. That file must be
-regenerated and reviewed after the v0.3.0 dependency lock is finalized.
+Third-party attribution information is summarized in ATTRIBUTIONS.md. The
+locked dependency graph is recorded in `uv.lock`.

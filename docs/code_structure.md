@@ -17,10 +17,11 @@ Cosmos-H-Surgical/
 |   |-- provenance.py
 |   |-- release.py
 |   `-- configs/
+|-- datasets/                 # Synthetic toy post-training dataset
 |-- docs/
 |-- examples/
-|   |-- inference/
-|   `-- post_training/
+|   |-- post_training/
+|-- inputs/                   # Predict, Transfer, and prompt examples
 |-- tests/
 |-- pyproject.toml
 |-- uv.lock
@@ -65,13 +66,13 @@ release-validation subcommands.
 ### `inference.py`
 
 Delegates to the public framework CLI. It also supports the validated surgical
-`resize_mode` contract, earlier release-candidate checkpoint configuration, and
+`resize_mode` contract, earlier Cosmos 3 checkpoint configuration, and
 the distributed timeout needed by the release test configuration.
 
 ### `checkpoints.py`
 
-Loads model metadata from `release-manifest.json`. It will expose the public
-model key after the v0.3.0 artifact is approved.
+Loads model metadata from `release-manifest.json` and registers the public
+`Cosmos-H-Surgical` model key at the pinned `v0.3.0` revision.
 
 ### `training.py`, `configs/`, and `data/`
 
@@ -81,9 +82,8 @@ caption, and transfer-control sidecar contract without embedding storage paths.
 
 ### `provenance.py` and `UPSTREAM.md`
 
-Record the immutable public framework repository, revision, and approval
-status. Framework changes require lockfile regeneration and compatibility
-testing.
+Record the immutable public framework repository, revision, and release status.
+Framework changes require lockfile regeneration and compatibility testing.
 
 ### `release.py`
 

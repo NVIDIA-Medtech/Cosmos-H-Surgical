@@ -48,8 +48,8 @@ from short natural-language descriptions.
 | `prompt` | Serialized structured JSON prompt. |
 | `prompt_path` | Alternative file containing the structured prompt. |
 | `vision_path` | Starting image or source video, depending on the mode. |
-| `resolution` | Resolution tier; the release candidate uses `480`. |
-| `aspect_ratio` | Aspect-ratio key; the release candidate uses `16,9`. |
+| `resolution` | Resolution tier; the v0.3.0 release uses `480`. |
+| `aspect_ratio` | Aspect-ratio key; the v0.3.0 release uses `16,9`. |
 | `fps` | Output frame rate; validated at 16 FPS. |
 | `num_frames` | Output frame count; validated at 93 frames. |
 | `seed` | Per-sample random seed. A CLI `--seed` override takes precedence. |
@@ -69,9 +69,10 @@ cosmos-h-surgical infer --help
 ```
 
 The wrapper injects `--checkpoint-path Cosmos-H-Surgical` when the option is
-omitted. That registered name resolves to `nvidia/Cosmos-H-Surgical`. The release manifest records the model name, revision, and
-SHA-256 digest. Cosmos 2.5 checkpoints are not compatible with this loader and
-remain available from the `cosmos-2.5` release branch.
+omitted. That registered name resolves to `nvidia/Cosmos-H-Surgical` at revision
+`v0.3.0`. The release manifest records the model name, revision, and SHA-256
+digest. Cosmos 2.5 checkpoints are not compatible with this loader and remain
+available from the `cosmos-2.5` release branch.
 
 To test a local export, provide an explicit path:
 
@@ -79,7 +80,8 @@ To test a local export, provide an explicit path:
 --checkpoint-path /path/to/cosmos-h-surgical-local-checkpoint-path
 ```
 
-To test a private release candidate while retaining the public model name, set
+To test an alternate repository or private revision while retaining the public
+model name, set
 `COSMOS_H_SURGICAL_HF_REPOSITORY` and `COSMOS_H_SURGICAL_HF_REVISION`. Explicit
 checkpoint options always take precedence over the default.
 
@@ -185,7 +187,7 @@ standalone input files.
 
 `preserve_aspect` uses the framework's aspect-preserving preprocessing.
 `stretch` resizes the control directly to the requested output dimensions. The
-wrapper accepts the release-candidate `resize_mode` field and passes its value
+wrapper accepts the surgical `resize_mode` field and passes its value
 through a process-local compatibility adapter.
 
 ### Recommended Launch Pattern

@@ -4,9 +4,6 @@ Cosmos-H-Surgical is a thin package over a commit-pinned revision of
 [NVIDIA Cosmos Framework](https://github.com/NVIDIA/cosmos-framework). The
 supported environment manager is [uv](https://docs.astral.sh/uv/).
 
-The Cosmos 3 release candidate is still under validation. Until the v0.3.0
-checkpoint is published, inference requires an explicit local checkpoint path.
-
 ## Requirements
 
 - Linux on `x86_64` or `aarch64`
@@ -16,7 +13,7 @@ checkpoint is published, inference requires an explicit local checkpoint path.
 - Git and Git LFS
 - uv 0.11.3 or newer
 
-The release candidate has been validated with eight H100 GPUs. Smaller GPU
+The v0.3.0 release has been validated with eight H100 GPUs. Smaller GPU
 configurations may require different parallelism or offloading settings and are
 not yet part of the release test matrix.
 

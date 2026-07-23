@@ -3,7 +3,7 @@
   "release": {
     "name": "Cosmos-H-Surgical Cosmos 3",
     "version": "v0.3.0",
-    "status": "release-candidate",
+    "status": "released",
     "base_model_family": "NVIDIA Cosmos 3",
     "hugging_face_repository": "nvidia/Cosmos-H-Surgical",
     "release_revision": "v0.3.0"
@@ -11,7 +11,7 @@
   "framework": {
     "repository": "https://github.com/NVIDIA/cosmos-framework.git",
     "revision": "ed8287fd7477113f8ac4f6b84290514d55cf0cdc",
-    "status": "audit-baseline"
+    "status": "pinned-release"
   },
   "license": {
     "id": "OpenMDW-1.1",
@@ -19,8 +19,8 @@
     "notice": "NOTICE"
   },
   "weights_license": {
-    "id": "NVIDIA-Open-Model-License",
-    "url": "https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/"
+    "id": "OpenMDW-1.1",
+    "file": "LICENSE"
   },
   "previous_release": {
     "branch": "cosmos-2.5",
@@ -32,7 +32,7 @@
       "path": ".",
       "revision": "v0.3.0",
       "sha256": "6f1b2988e63c81e08df0498e6fee784f2fa72c1bfa37662b382414cae6473f19",
-      "license_id": "NVIDIA-Open-Model-License"
+      "license_id": "OpenMDW-1.1"
     }
   ]
 }

@@ -65,11 +65,11 @@ export TORCH_NCCL_HEARTBEAT_TIMEOUT_SEC=1800
 export MASTER_PORT=29501
 ```
 
-For the private v0.3.0 release candidate:
+To test an alternate repository or private revision:
 
 ```bash
-export COSMOS_H_SURGICAL_HF_REPOSITORY=pengfeig/Cosmos-H-Surgical-staging
-export COSMOS_H_SURGICAL_HF_REVISION=rc/v0.3.0-cosmos3
+export COSMOS_H_SURGICAL_HF_REPOSITORY=your-org/Cosmos-H-Surgical-private
+export COSMOS_H_SURGICAL_HF_REVISION=your-revision
 ```
 
 For prompt upsampling:
