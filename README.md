@@ -26,7 +26,7 @@ Cosmos-H-Surgical delivers high-quality video prediction and transfer for surgic
 
 > The complete Cosmos 2.5 release remains available on the
 > [`cosmos-2.5`](https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical/tree/cosmos-2.5)
-> branch and under the signed
+> branch and under the
 > [`v0.2.0`](https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical/tree/v0.2.0)
 > tag.
 
