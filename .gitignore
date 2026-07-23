@@ -49,7 +49,7 @@ htmlcov/
 logs/
 
 # Data
-data/
+/data/
 outputs/
 cache/
 imaginaire4-output/

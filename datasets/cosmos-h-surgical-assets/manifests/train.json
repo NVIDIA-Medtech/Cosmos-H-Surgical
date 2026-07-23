@@ -1,0 +1,34 @@
+{
+  "training": [
+    {
+      "video": "videos/aspiration.mp4"
+    },
+    {
+      "video": "videos/clipping.mp4"
+    },
+    {
+      "video": "videos/coagulation.mp4"
+    },
+    {
+      "video": "videos/dissection.mp4"
+    },
+    {
+      "video": "videos/knotting.mp4"
+    },
+    {
+      "video": "videos/needleGrasping.mp4"
+    },
+    {
+      "video": "videos/needlePuncture.mp4"
+    },
+    {
+      "video": "videos/packing.mp4"
+    },
+    {
+      "video": "videos/suturePulling.mp4"
+    },
+    {
+      "video": "videos/tissueRetraction.mp4"
+    }
+  ]
+}

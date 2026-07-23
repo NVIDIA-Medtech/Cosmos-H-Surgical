@@ -1,0 +1,89 @@
+{
+  "caption_json": {
+    "subjects": [
+      {
+        "description": "A metallic laparoscopic grasper with a slender shaft and articulated jaws",
+        "appearance_details": "Shiny metallic finish, dark gray shaft with some moisture droplets on the surface",
+        "relationship": "Retracts the cystic mesentery to create tension for the second instrument",
+        "location": "Enters from the middle-left of the workspace",
+        "relative_size": "Medium within the operative field",
+        "orientation": "Facing towards the center-right",
+        "pose": "Clamped onto tissue and pulling it away from the background",
+        "action": "Retracts and holds the cystic mesentery taut",
+        "state_changes": "Maintains constant retraction throughout the interval",
+        "clothing": "",
+        "expression": "",
+        "gender": "",
+        "age": "",
+        "skin_tone_and_texture": "",
+        "facial_features": "",
+        "number_of_subjects": 1,
+        "number_of_arms": 0,
+        "number_of_legs": 0
+      },
+      {
+        "description": "An electrosurgical hook instrument with a blue-insulated tip and a metallic hook",
+        "appearance_details": "Silver metallic hook at the end of a shaft with blue insulation and silver markings",
+        "relationship": "Coagulates the cystic mesentery held by the first instrument",
+        "location": "Enters from the upper right of the workspace",
+        "relative_size": "Medium within the operative field",
+        "orientation": "Facing towards the center-left and slightly downward",
+        "pose": "Positioned against the mesenteric tissue",
+        "action": "Applies thermal energy to coagulate the tissue",
+        "state_changes": "Moves slightly across the tissue surface while activating",
+        "clothing": "",
+        "expression": "",
+        "gender": "",
+        "age": "",
+        "skin_tone_and_texture": "",
+        "facial_features": "",
+        "number_of_subjects": 1,
+        "number_of_arms": 0,
+        "number_of_legs": 0
+      }
+    ],
+    "background_setting": "Close-up laparoscopic dissection with red/pink tissue dominating the field, a localized dark pooled blood collection and small fresh active blood streaks centrally near the instrument tips. Visibility is slightly degraded by glare and instruments throughout, worsening to partial occlusion as smoke accumulates diffusely across the field in the final frames.",
+    "lighting": {
+      "conditions": "Bright, direct internal lighting from the laparoscopic camera",
+      "direction": "Front-lit from the camera's perspective",
+      "shadows": "Soft shadows within the folds of the internal organs",
+      "illumination_effect": "Highlights the moist surfaces and the rising smoke from coagulation"
+    },
+    "aesthetics": {
+      "composition": "Centered on the surgical interaction point",
+      "color_scheme": "Dominant tones of red, pink, and yellow from internal tissues, contrasted by metallic tool silver and blue insulation",
+      "mood_atmosphere": "Clinical and precise surgical environment",
+      "patterns": "Vascular patterns visible on the mesentery"
+    },
+    "cinematography": {
+      "camera_motion": "Static",
+      "framing": "Close-up",
+      "camera_angle": "Eye-level laparoscopic perspective",
+      "depth_of_field": "Shallow, with focus on the tool-tissue interface",
+      "focus": "Sharp focus on the area of coagulation",
+      "lens_focal_length": "Standard laparoscopic lens"
+    },
+    "style_medium": "Live-action video",
+    "artistic_style": "Realistic medical documentation",
+    "context": "Laparoscopic cholecystectomy or similar abdominal surgery",
+    "actions": [
+      {
+        "time": "0:00-0:06",
+        "description": "The left instrument maintains steady retraction on the cystic mesentery while the right hook instrument performs coagulation, causing plumes of smoke to rise"
+      }
+    ],
+    "text_and_signage_elements": [],
+    "segments": [
+      {
+        "segment_index": 0,
+        "time_range": "0:00-0:06",
+        "description": "Continuous surgical action of tissue retraction and coagulation",
+        "key_changes": "Increasing volume of surgical smoke from 0:01 onwards",
+        "camera": "Stationary throughout"
+      }
+    ],
+    "transitions": [],
+    "temporal_caption": "From the start at 0:00 until 0:06, a laparoscopic view shows two surgical instruments working in the cystic mesentery. A metallic grasper on the left holds and pulls the yellow-tinted mesenteric tissue toward the left side of the workspace. Simultaneously, a blue-tipped hook instrument on the right makes contact with the tissue. As the hook activates, white plumes of surgical smoke and steam begin to rise from the point of contact, becoming more dense as the coagulation continues. The liver is visible as a large, smooth, dark red structure in the upper right background. The camera remains fixed on the surgical site throughout the entire interval.",
+    "audio_description": ""
+  }
+}

@@ -9,8 +9,8 @@ inherited from the pinned Cosmos Framework and its dependencies.
 | --- | --- |
 | `HF_HOME` | Hugging Face cache root for downloaded models and tokenizers. |
 | `HF_TOKEN` | Optional Hugging Face token for gated artifacts or higher request limits. |
-| `COSMOS_H_SURGICAL_HF_REPOSITORY` | Override the default `nvidia/Cosmos-H-Surgical` repository, primarily for private RC validation. |
-| `COSMOS_H_SURGICAL_HF_REVISION` | Override the default `v0.3.0` model revision. |
+| `COSMOS_H_SURGICAL_HF_REPOSITORY` | Override the default `nvidia/Cosmos-H-Surgical` repository for inference and post-training. |
+| `COSMOS_H_SURGICAL_HF_REVISION` | Override the default `v0.3.0` model revision for inference and post-training. |
 | `TORCH_NCCL_HEARTBEAT_TIMEOUT_SEC` | Distributed timeout in seconds; defaults to `1800` in the surgical wrapper. |
 | `CUDA_VISIBLE_DEVICES` | Standard CUDA device selection. |
 | `MASTER_ADDR` | Distributed launch coordinator address. |
@@ -35,17 +35,27 @@ the framework creates its distributed mesh.
 The pinned framework reads `PROMPT_UPSAMPLER_MODEL`, not
 `PROMPT_UPSAMPLER_MODEL_NAME`.
 
-## Post-Training Preview
+## Post-Training
 
 The included surgical LoRA recipe uses:
 
 | Variable | Purpose |
 | --- | --- |
-| `COSMOS_H_SURGICAL_DATASET` | Absolute path to the surgical training JSONL. |
-| `BASE_CHECKPOINT_PATH` | Base Cosmos 3 checkpoint used to start training. |
-| `WAN_VAE_PATH` | Wan VAE checkpoint required by the recipe. |
+| `COSMOS_H_SURGICAL_PREDICT_DATASET_DIRS` | Comma-separated roots containing Predict target videos and caption sidecars. |
+| `COSMOS_H_SURGICAL_PREDICT_JSON_PATHS` | Comma-separated Predict manifest JSON files paired with the dataset roots. |
+| `COSMOS_H_SURGICAL_PREDICT_ENLARGED_FACTORS` | Optional comma-separated Predict repeat/subsample factors; defaults to `1.0`. |
+| `COSMOS_H_SURGICAL_TRANSFER_DATASET_DIRS` | Comma-separated roots containing Transfer targets, captions, and controls. |
+| `COSMOS_H_SURGICAL_TRANSFER_JSON_PATHS` | Comma-separated Transfer manifest JSON files paired with the dataset roots. |
+| `COSMOS_H_SURGICAL_TRANSFER_ENLARGED_FACTORS` | Optional comma-separated Transfer repeat/subsample factors; defaults to `1.0`. |
+| `BASE_CHECKPOINT_PATH` | Shared path to the released Cosmos-H-Surgical checkpoint after conversion to DCP. |
+| `WAN_VAE_PATH` | Resolved local path to `Wan2.2_VAE.pth`, normally returned by `hf download` under `HF_HOME`. |
 
-See [post_training.md](post_training.md) before using these variables.
+Download the released safetensors using the repository and revision variables
+above, then convert that complete snapshot once with
+`cosmos_framework.scripts.convert_model_to_dcp`. New post-training runs load
+the resulting `BASE_CHECKPOINT_PATH`; subsequent run checkpoints remain DCP
+until explicitly exported back to Hugging Face safetensors. See
+[post_training.md](post_training.md) for the conversion and export commands.
 
 ## Example
 

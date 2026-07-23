@@ -10,9 +10,9 @@ retains its own copyright, origin, and third-party notices:
   Revision: ed8287fd7477113f8ac4f6b84290514d55cf0cdc
   License: OpenMDW-1.1
 
-No Cosmos Framework source files are vendored in this development revision.
-If framework-derived source is added later, its applicable copyright and
-origin notices must be added here before release.
+Project-owned files in this repository, including the surgical training
+integration, are provided under OpenMDW-1.1. Installed Cosmos Framework files
+are not overwritten.
 
 Dependency notices are listed separately in ATTRIBUTIONS.md. That file must be
 regenerated and reviewed after the v0.3.0 dependency lock is finalized.

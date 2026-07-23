@@ -1,15 +1,15 @@
 # SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 # SPDX-License-Identifier: OpenMDW-1.1
 
-# The dataset JSONL is supplied through COSMOS_H_SURGICAL_DATASET. The base
-# Cosmos 3 checkpoint and Wan VAE are supplied through the variables below.
+# Predict dataset roots, manifests, and enlargement factors are supplied through
+# COSMOS_H_SURGICAL_PREDICT_* environment variables.
 
 [job]
 task = "vfm"
-experiment = "cosmos_h_surgical_vision_lora_480p"
+experiment = "cosmos_h_surgical_predict_lora_480p"
 project = "cosmos_h_surgical"
-group = "vision_lora_480p"
-name = "cosmos_h_surgical_vision_lora_480p"
+group = "predict_lora_480p"
+name = "cosmos_h_surgical_predict_lora_480p"
 wandb_mode = "disabled"
 
 [model]
@@ -68,7 +68,7 @@ logging_iter = 1
 max_iter = 100000
 
 [checkpoint]
-keys_to_skip_loading = ["net_ema.", "lora_"]
+keys_to_skip_loading = ["net_ema."]
 load_path = "${oc.env:BASE_CHECKPOINT_PATH}"
 save_iter = 50
 

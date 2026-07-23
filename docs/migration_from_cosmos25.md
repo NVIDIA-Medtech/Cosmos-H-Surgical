@@ -45,7 +45,7 @@ python examples/inference.py \
 Cosmos 3 I2V:
 
 ```bash
-uv run --no-sync torchrun --nproc_per_node=8 \
+torchrun --nproc_per_node=8 \
   -m cosmos_h_surgical infer \
   -i inputs/i2v.json \
   --output-dir outputs/i2v \
@@ -65,7 +65,7 @@ python examples/inference.py \
 Cosmos 3 Transfer:
 
 ```bash
-uv run --no-sync torchrun --nproc_per_node=8 \
+torchrun --nproc_per_node=8 \
   -m cosmos_h_surgical infer \
   -i inputs/depth_transfer.json \
   --output-dir outputs/depth \

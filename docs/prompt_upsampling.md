@@ -98,7 +98,7 @@ example lists without source case identifiers:
 Use `image2video` for the general Cosmos 3 I2V schema:
 
 ```bash
-uv run --no-sync python -m cosmos_h_surgical prompt-upsample \
+python -m cosmos_h_surgical prompt-upsample \
   --input inputs/surgical_prompts.txt \
   --image-list inputs/surgical_images.txt \
   --output outputs/upsampled-prompts \
@@ -127,7 +127,7 @@ Use `video` mode when the prompt upsampler should observe temporal changes
 across a source video instead of receiving only its first frame:
 
 ```bash
-uv run --no-sync python -m cosmos_h_surgical prompt-upsample \
+python -m cosmos_h_surgical prompt-upsample \
   --input inputs/video_prompts.txt \
   --video-list inputs/surgical_videos.txt \
   --output outputs/upsampled-video-prompts \

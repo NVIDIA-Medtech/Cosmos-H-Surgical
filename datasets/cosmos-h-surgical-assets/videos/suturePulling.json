@@ -1,0 +1,117 @@
+{
+  "caption_json": {
+    "subjects": [
+      {
+        "description": "A robotic needle driver with a metallic, articulated jaw",
+        "appearance_details": "Silver metal, textured grasping surface on jaws, jointed wrist",
+        "relationship": "Interacts with the needle and the right needle driver",
+        "location": "Left side of the operative field, moving towards the center",
+        "relative_size": "Large",
+        "orientation": "Facing towards the center-right",
+        "pose": "Jaws open initially, then closing to grasp the needle",
+        "action": "Receives the surgical needle from the right driver",
+        "state_changes": "Transitions from an idle state to grasping the needle",
+        "clothing": "",
+        "expression": "",
+        "gender": "Unknown",
+        "age": "",
+        "skin_tone_and_texture": "",
+        "facial_features": "",
+        "number_of_subjects": 1,
+        "number_of_arms": 0,
+        "number_of_legs": 0
+      },
+      {
+        "description": "A robotic needle driver with a metallic, articulated jaw",
+        "appearance_details": "Silver metal, blood-stained near the tip, jointed wrist",
+        "relationship": "Interacts with the needle and the left needle driver",
+        "location": "Right side of the operative field, moving towards the center",
+        "relative_size": "Large",
+        "orientation": "Facing towards the center-left",
+        "pose": "Jaws closed around the needle, then opening to release it",
+        "action": "Pulls the needle through tissue and passes it to the left driver",
+        "state_changes": "Releases the needle after the transfer is complete",
+        "clothing": "",
+        "expression": "",
+        "gender": "Unknown",
+        "age": "",
+        "skin_tone_and_texture": "",
+        "facial_features": "",
+        "number_of_subjects": 1,
+        "number_of_arms": 0,
+        "number_of_legs": 0
+      },
+      {
+        "description": "A curved metallic surgical needle with attached suture thread",
+        "appearance_details": "Shiny, silver, curved body; thin, dark suture thread",
+        "relationship": "Manipulated by both needle drivers",
+        "location": "Center of the operative field",
+        "relative_size": "Small",
+        "orientation": "Curving upwards and towards the left",
+        "pose": "Held by the right driver, then the left",
+        "action": "Passed from one tool to the other",
+        "state_changes": "Changes ownership from the right driver to the left driver",
+        "clothing": "",
+        "expression": "",
+        "gender": "Unknown",
+        "age": "",
+        "skin_tone_and_texture": "",
+        "facial_features": "",
+        "number_of_subjects": 1,
+        "number_of_arms": 0,
+        "number_of_legs": 0
+      }
+    ],
+    "background_setting": "Robotic instruments operate in a zoomed-close, stable field dominated by dark red-brown pooled blood across the central and lower workspace, with localized fresh active blood on tissue and instrument tips consistent with mild bleeding. Visibility is partially occluded throughout by the central blood pool, instruments entering from the upper left and right, and shifting specular glare near central instrument tips.",
+    "lighting": {
+      "conditions": "Bright, direct endoscopic lighting",
+      "direction": "Front-lit from the camera's perspective",
+      "shadows": "Minor, soft shadows within tissue crevices",
+      "illumination_effect": "Creates strong specular highlights on the metallic instruments and wet tissue surfaces"
+    },
+    "aesthetics": {
+      "composition": "Centered on the surgical instruments and needle",
+      "color_scheme": "Dominant reds and browns from blood and tissue, with silver metallic accents",
+      "mood_atmosphere": "Clinical, precise, focused",
+      "patterns": "None"
+    },
+    "cinematography": {
+      "camera_motion": "Static",
+      "framing": "Close-up",
+      "camera_angle": "Eye-level laparoscopic view",
+      "depth_of_field": "Shallow, focusing on the instruments in the center",
+      "focus": "Sharp on the needle and tool tips",
+      "lens_focal_length": "Wide-angle (endoscopic)"
+    },
+    "style_medium": "Live-action video",
+    "artistic_style": "Realistic, documentary-style medical footage",
+    "context": "Laparoscopic or robotic-assisted surgery",
+    "actions": [
+      {
+        "time": "0:00-0:02",
+        "description": "The right needle driver pulls the curved needle through the red tissue in the center of the workspace."
+      },
+      {
+        "time": "0:02-0:04",
+        "description": "The right needle driver maneuvers the needle into a position to be grasped by the left needle driver."
+      },
+      {
+        "time": "0:04-0:06",
+        "description": "The left needle driver grasps the needle body, and the right needle driver subsequently releases its grip."
+      }
+    ],
+    "text_and_signage_elements": [],
+    "segments": [
+      {
+        "segment_index": 0,
+        "time_range": "0:00-0:06",
+        "description": "A continuous action where one robotic tool passes a surgical needle to another in an operative field.",
+        "key_changes": "Needle transfer between instruments",
+        "camera": "Remains static throughout the segment"
+      }
+    ],
+    "transitions": [],
+    "temporal_caption": "At the start, the right needle driver is holding a curved surgical needle and pulls it through the bloody tissue in the center of the operative field. As the needle is pulled clear, the right driver rotates it towards the left. The left needle driver then enters the central workspace and prepares to take the needle. By the middle of the sequence, the left driver clamps onto the needle's body. Once the left driver has a firm grasp, the right driver opens its jaws to release the needle, completing the transfer. The whole process is captured from a static, close-up perspective.",
+    "audio_description": ""
+  }
+}

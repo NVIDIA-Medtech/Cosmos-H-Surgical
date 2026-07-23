@@ -1,0 +1,101 @@
+{
+  "caption_json": {
+    "subjects": [
+      {
+        "description": "A robotic-assisted surgical instrument, specifically a needle driver with metallic jaws and an articulated wrist joint, featuring a red 'S' logo.",
+        "appearance_details": "Silver metallic finish, articulated joint, red circular logo with a white 'S'",
+        "relationship": "Operates on the left side of the workspace, driving a needle through tissue.",
+        "location": "Center-left foreground",
+        "relative_size": "Medium",
+        "orientation": "Faces toward the center-right",
+        "pose": "Articulated at the wrist, jaws gripping a curved needle",
+        "action": "Executes a rotational motion to drive a needle through a tissue flap.",
+        "state_changes": "Initial positioning followed by a clockwise rotation to puncture tissue.",
+        "clothing": "",
+        "expression": "",
+        "gender": "Unknown",
+        "age": "Adult",
+        "skin_tone_and_texture": "",
+        "facial_features": "",
+        "number_of_subjects": 1,
+        "number_of_arms": 0,
+        "number_of_legs": 0
+      },
+      {
+        "description": "A second surgical needle driver instrument, visible only by its tip and jaws.",
+        "appearance_details": "Metallic, dark gray/silver appearance",
+        "relationship": "Operates on the right side, holding the suture thread to maintain tension.",
+        "location": "Upper-right foreground",
+        "relative_size": "Small",
+        "orientation": "Faces toward the center-left",
+        "pose": "Gripping a suture thread",
+        "action": "Holds suture thread steady during the needle driving process.",
+        "state_changes": "Remains relatively static while maintaining tension on the suture.",
+        "clothing": "",
+        "expression": "",
+        "gender": "Unknown",
+        "age": "Adult",
+        "skin_tone_and_texture": "",
+        "facial_features": "",
+        "number_of_subjects": 1,
+        "number_of_arms": 0,
+        "number_of_legs": 0
+      }
+    ],
+    "background_setting": "Robotic close-up of a dark red-brown dissection bed with stationary pooled blood across the central and right field and instruments entering from lower left and right; no active free flow or spreading droplets are visible. Visibility is slightly degraded by pooled blood and specular glare on wet tissue, with uneven lighting and dark peripheries.",
+    "lighting": {
+      "conditions": "Bright surgical lighting",
+      "direction": "Top-down, slightly from the front",
+      "shadows": "Deep shadows in the recessed areas of the cavity; sharp highlights on metallic tools and wet tissue",
+      "illumination_effect": "Glaring reflections on the wet surfaces and instruments"
+    },
+    "aesthetics": {
+      "composition": "Centered on the point of needle penetration",
+      "color_scheme": "Dominant reds, browns, and blacks with metallic silver highlights",
+      "mood_atmosphere": "Clinical, focused, high-stakes",
+      "patterns": "Repeating texture of moist tissue"
+    },
+    "cinematography": {
+      "camera_motion": "Static",
+      "framing": "Close-up",
+      "camera_angle": "High-angle, laparoscopic view",
+      "depth_of_field": "Shallow",
+      "focus": "Sharp focus on the needle and the tissue being punctured",
+      "lens_focal_length": "Wide-angle"
+    },
+    "style_medium": "Live-action video",
+    "artistic_style": "Realistic, documentary",
+    "context": "Robotic-assisted laparoscopic surgery",
+    "actions": [
+      {
+        "time": "0:00-0:02",
+        "description": "The left needle driver positions the needle against the underside of a tissue flap while the right driver holds the suture thread."
+      },
+      {
+        "time": "0:02-0:06",
+        "description": "The left needle driver rotates, puncturing the needle through the tissue and beginning to pull it through."
+      }
+    ],
+    "text_and_signage_elements": [
+      {
+        "text": "S",
+        "category": "logo",
+        "appearance": "White capital letter 'S' inside a red circle",
+        "spatial_temporal": "Visible on the wrist joint of the left instrument throughout the clip",
+        "context": "Manufacturer or model identification logo on the surgical tool"
+      }
+    ],
+    "segments": [
+      {
+        "segment_index": 0,
+        "time_range": "0:00-0:06",
+        "description": "A single continuous take of a surgical suturing step where a needle is driven through tissue.",
+        "key_changes": "The primary change is the rotation and penetration of the needle through the tissue.",
+        "camera": "Static throughout the segment."
+      }
+    ],
+    "transitions": [],
+    "temporal_caption": "Beginning with a close-up laparoscopic view, the operative field shows moist, red tissue and two surgical instruments. A metallic left needle driver, marked with a red 'S' logo, holds a curved needle. Simultaneously, a right needle driver holds a dark suture thread taut. Starting at approximately two seconds, the left instrument performs a controlled clockwise rotation, pushing the needle tip through the edge of a tissue flap from beneath. The needle emerges on the upper surface of the tissue. Throughout this action, the right instrument maintains its grip on the suture thread, keeping it clear of the needle's path. The static camera captures the precise movement under bright, reflective surgical lighting until the needle has fully penetrated the tissue layer.",
+    "audio_description": ""
+  }
+}

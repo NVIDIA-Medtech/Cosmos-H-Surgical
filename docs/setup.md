@@ -43,27 +43,34 @@ For CUDA 12.8:
 uv sync --group cu128
 ```
 
+Run exactly one sync command, then activate the project environment:
+
+```bash
+source .venv/bin/activate
+```
+
 The two CUDA groups conflict intentionally. Do not install both into the same
 environment. The root `uv.lock` and the full Cosmos Framework Git revision in
 `pyproject.toml` define the reproducible environment.
 
-Commands in this repository use `uv run --no-sync`. This prevents uv from
-re-resolving the environment without the CUDA group selected above.
+Commands in this repository assume `.venv` is active. Activating it preserves
+the CUDA group selected above without repeating dependency-group options on
+every command.
 
 ## Verify
 
 Confirm the package and immutable framework provenance:
 
 ```bash
-uv run --no-sync cosmos-h-surgical --version
-uv run --no-sync cosmos-h-surgical framework-info
+cosmos-h-surgical --version
+cosmos-h-surgical framework-info
 ```
 
 The reported repository and revision must match [UPSTREAM.md](../UPSTREAM.md).
 Inspect the available inference arguments with:
 
 ```bash
-uv run --no-sync cosmos-h-surgical infer --help
+cosmos-h-surgical infer --help
 ```
 
 ## Development Environment
@@ -72,9 +79,10 @@ Add the development dependency group to the selected CUDA environment:
 
 ```bash
 uv sync --group cu130 --group dev
-uv run --no-sync pytest
-uv run --no-sync ruff check .
-uv run --no-sync ruff format --check .
+source .venv/bin/activate
+pytest
+ruff check .
+ruff format --check .
 ```
 
 Replace `cu130` with `cu128` when testing the CUDA 12.8 environment.

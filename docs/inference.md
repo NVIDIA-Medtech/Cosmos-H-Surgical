@@ -65,7 +65,7 @@ Do not publish specifications containing private storage paths.
 No checkpoint option is required for the public release:
 
 ```bash
-uv run --no-sync cosmos-h-surgical infer --help
+cosmos-h-surgical infer --help
 ```
 
 The wrapper injects `--checkpoint-path Cosmos-H-Surgical` when the option is
@@ -94,7 +94,7 @@ Save one or more I2V records in `inputs/i2v.json` or `inputs/i2v.jsonl`. Run the
 validated eight-GPU configuration with:
 
 ```bash
-uv run --no-sync torchrun --nproc_per_node=8 \
+torchrun --nproc_per_node=8 \
   -m cosmos_h_surgical infer \
   -i inputs/i2v.json \
   --output-dir outputs/i2v \
@@ -196,7 +196,7 @@ deterministic order while keeping the model loaded once. The validated path
 disables `torch.compile`:
 
 ```bash
-uv run --no-sync torchrun --nproc_per_node=8 \
+torchrun --nproc_per_node=8 \
   -m cosmos_h_surgical infer \
   --parallelism-preset=latency \
   --dp-shard-size=1 \
@@ -218,7 +218,7 @@ The framework defaults to the `latency` parallelism preset and enables
 `torch.compile`. Inspect all available options with:
 
 ```bash
-uv run --no-sync cosmos-h-surgical infer --help
+cosmos-h-surgical infer --help
 ```
 
 Useful options include:

@@ -18,6 +18,7 @@ PUBLIC_TEXT_FILES = [
     ROOT / "pyproject.toml",
     ROOT / "release-manifest.json",
     *sorted(path for path in (ROOT / "cosmos_h_surgical").rglob("*.py") if path.name != "release.py"),
+    *sorted((ROOT / "docs").rglob("*.md")),
     *sorted((ROOT / "examples").rglob("*.md")),
     *sorted((ROOT / "examples").rglob("*.toml")),
 ]

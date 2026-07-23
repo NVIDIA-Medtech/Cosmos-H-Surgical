@@ -1,0 +1,96 @@
+{
+  "caption_json": {
+    "subjects": [
+      {
+        "description": "A pair of metallic, fenestrated bipolar forceps with serrated inner jaws.",
+        "appearance_details": "Shiny metallic finish, fenestrated (windowed) jaw design, serrated texture for grip.",
+        "relationship": "Used to grasp and retract tissue for better access by the other instrument.",
+        "location": "Center left foreground",
+        "relative_size": "Medium",
+        "orientation": "Facing right, angled slightly downwards",
+        "pose": "Jaws closed on a tissue fold",
+        "action": "Grasping and holding tissue to provide traction",
+        "state_changes": "Maintains a firm grip while the camera and other instrument adjust.",
+        "clothing": "",
+        "expression": "",
+        "gender": "Unknown",
+        "age": "Adult",
+        "skin_tone_and_texture": "Metallic",
+        "facial_features": "",
+        "number_of_subjects": 1,
+        "number_of_arms": 0,
+        "number_of_legs": 0
+      },
+      {
+        "description": "A cylindrical suction-irrigator tube with small aspiration holes near its tip.",
+        "appearance_details": "Satin-finished metallic tube, several small holes visible around the distal end.",
+        "relationship": "Aspirating blood and fluid near the tissue held by the forceps.",
+        "location": "Center right foreground",
+        "relative_size": "Medium",
+        "orientation": "Facing left, angled slightly downwards",
+        "pose": "Tip positioned against bloody tissue",
+        "action": "Aspirating blood to clear the surgical site",
+        "state_changes": "Moves slightly to target different areas of fluid accumulation.",
+        "clothing": "",
+        "expression": "",
+        "gender": "Unknown",
+        "age": "",
+        "skin_tone_and_texture": "Metallic",
+        "facial_features": "",
+        "number_of_subjects": 1,
+        "number_of_arms": 0,
+        "number_of_legs": 0
+      }
+    ],
+    "background_setting": "Laparoscopic close view with red/pink tissue dominating; a grasper at upper left and suction probe at right work in the central dissection area where localized active/free red blood and a small pooled collection are visible, with specular glare on wet surfaces. Visibility is dominantly slightly degraded by glare and instruments and worsens to partially occluded in later frames as pooled blood expands centrally and the suction probe covers more of the working field.",
+    "lighting": {
+      "conditions": "Bright, direct laparoscopic illumination",
+      "direction": "Front-lit from the camera's perspective",
+      "shadows": "Small, sharp shadows in tissue crevices",
+      "illumination_effect": "Creates strong specular highlights on wet, glistening tissue surfaces"
+    },
+    "aesthetics": {
+      "composition": "Centered on the interaction between the two instruments",
+      "color_scheme": "Dominant reds, pinks, and yellows with metallic silver highlights",
+      "mood_atmosphere": "Clinical, precise, focused",
+      "patterns": "Serrated jaw teeth, circular suction holes"
+    },
+    "cinematography": {
+      "camera_motion": "Static with very minor adjustments",
+      "framing": "Close-up",
+      "camera_angle": "Eye-level relative to the organ surface",
+      "depth_of_field": "Shallow, background tissues slightly out of focus",
+      "focus": "The point of contact between instruments and tissue",
+      "lens_focal_length": "Standard laparoscopic wide-angle"
+    },
+    "style_medium": "live-action video",
+    "artistic_style": "realistic, cinematic",
+    "context": "Surgical procedure, specifically clearing the field of blood during dissection.",
+    "actions": [
+      {
+        "time": "0:00-0:06",
+        "description": "The left forceps holds a tissue fold while the right suction-irrigator clears blood from the area."
+      }
+    ],
+    "text_and_signage_elements": [],
+    "segments": [
+      {
+        "segment_index": 0,
+        "time_range": "0:00-0:03",
+        "description": "Forceps grasp tissue on the left; suction tip approaches a pool of blood on the right.",
+        "key_changes": "Initial positioning of the suction tip.",
+        "camera": "Stable close-up."
+      },
+      {
+        "segment_index": 1,
+        "time_range": "0:03-0:06",
+        "description": "The suction tip clears most of the blood, revealing the tissue underneath while the forceps maintains traction.",
+        "key_changes": "Fluid removal improves visibility.",
+        "camera": "Stable close-up."
+      }
+    ],
+    "transitions": [],
+    "temporal_caption": "Beginning with a steady grip, the left fenestrated bipolar forceps holds a fold of pinkish tissue within the operative field. Simultaneously, a cylindrical suction-irrigator moves in from the right, its tip pressing against an area of dark red blood and fluid. Over the next several seconds, the suction device aspirates the blood, clearing the surface to reveal the underlying anatomy more clearly. The forceps remains locked on the tissue, providing the necessary tension for the procedure. The surrounding liver and fatty tissues remain glistening under the bright light throughout this controlled maneuver.",
+    "audio_description": ""
+  }
+}

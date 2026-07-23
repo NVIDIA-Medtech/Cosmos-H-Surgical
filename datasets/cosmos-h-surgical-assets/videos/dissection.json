@@ -1,0 +1,96 @@
+{
+  "caption_json": {
+    "subjects": [
+      {
+        "description": "A monopolar electrosurgical tool with a dark gray shaft and a white, tapered tip ending in a small metallic spatula or hook.",
+        "appearance_details": "Insulated white tip, metallic active electrode at the very end.",
+        "relationship": "Active instrument used for dissection on the central tissue structures.",
+        "location": "Enters from the right foreground, moving toward the center.",
+        "relative_size": "Medium",
+        "orientation": "Facing toward the center-left tissue plane.",
+        "pose": "Extended and angled toward the operative target.",
+        "action": "Applying thermal energy to dissect and cauterize connective tissue.",
+        "state_changes": "Moves progressively across the tissue interface, creating small charred spots.",
+        "clothing": "",
+        "expression": "",
+        "gender": "Unknown",
+        "age": "Adult",
+        "skin_tone_and_texture": "",
+        "facial_features": "",
+        "number_of_subjects": 1,
+        "number_of_arms": 0,
+        "number_of_legs": 0
+      },
+      {
+        "description": "Laparoscopic grasper or retractor partially visible in the upper-left.",
+        "appearance_details": "Metallic, reflective instrument tip.",
+        "relationship": "Providing counter-traction on the tissue to expose the dissection plane.",
+        "location": "Upper-left corner.",
+        "relative_size": "Small",
+        "orientation": "Grasping tissue and pulling it toward the top of the frame.",
+        "pose": "Fixed and steady tension.",
+        "action": "Maintaining traction on the gallbladder or liver bed tissue.",
+        "state_changes": "Remains relatively static throughout the interval.",
+        "clothing": "",
+        "expression": "",
+        "gender": "Unknown",
+        "age": "",
+        "skin_tone_and_texture": "",
+        "facial_features": "",
+        "number_of_subjects": 1,
+        "number_of_arms": 0,
+        "number_of_legs": 0
+      }
+    ],
+    "background_setting": "Zoomed-in laparoscopic dissection view with mixed purple/pink/tan tissue tones, adequate but uneven illumination and specular glare on the central wet tissue surface. Only trace active blood streaks and small dark clot-like specks are visible along the central tissue edge near the instrument tip, with intermittent tool blocking on the right.",
+    "lighting": {
+      "conditions": "Bright, direct laparoscopic light source.",
+      "direction": "Front-lit from the perspective of the laparoscope.",
+      "shadows": "Soft shadows within tissue folds.",
+      "illumination_effect": "Evenly illuminates the central workspace, highlighting the wet texture of internal organs."
+    },
+    "aesthetics": {
+      "composition": "Centered on the point of surgical contact.",
+      "color_scheme": "Dominant reds, purples, and off-white connective tissues.",
+      "mood_atmosphere": "Professional, clinical, focused.",
+      "patterns": "Visible vascular networks on the organ surfaces."
+    },
+    "cinematography": {
+      "camera_motion": "Slightly tracking the movement of the electrosurgical tool.",
+      "framing": "Close-up",
+      "camera_angle": "Eye-level laparoscopic view.",
+      "depth_of_field": "Shallow, with the central tissue in sharp focus.",
+      "focus": "The point where the tool tip contacts the tissue.",
+      "lens_focal_length": "Standard laparoscopic lens."
+    },
+    "style_medium": "live-action video",
+    "artistic_style": "cinematic medical documentary",
+    "context": "Laparoscopic cholecystectomy or similar abdominal surgery.",
+    "actions": [
+      {
+        "time": "0:00-0:06",
+        "description": "The electrosurgical tool continuously dissects the connective tissue interface, moving from center to right while applying thermal energy."
+      }
+    ],
+    "text_and_signage_elements": [],
+    "segments": [
+      {
+        "segment_index": 0,
+        "time_range": "0:00-0:03",
+        "description": "The tool tip initiates dissection at the base of the tissue fold, creating a visible charred line.",
+        "key_changes": "Small wisps of smoke appear as tissue is cauterized.",
+        "camera": "Stable laparoscopic view."
+      },
+      {
+        "segment_index": 1,
+        "time_range": "0:03-0:06",
+        "description": "The tool moves further to the right, continuing to separate the tissue layers with short bursts of energy.",
+        "key_changes": "The dissection plane widens, exposing more underlying tissue.",
+        "camera": "Slight adjustment to track the tool's lateral movement."
+      }
+    ],
+    "transitions": [],
+    "temporal_caption": "Starting at 0:00, the laparoscopic view shows an electrosurgical tool positioned against pale connective tissue. As it moves toward the right, it applies thermal energy, leaving a small charred trail and separating the tissue layers. By 0:03, the tool tip probes deeper into the junction between the reddish-brown organ and the lighter fatty tissue. Between 0:03 and 0:06, the tool continues its lateral dissection, with a grasper in the upper-left maintaining constant upward traction to keep the workspace open. The camera follows the tool's progress slightly, maintaining focus on the point of thermal contact until the end of the interval at 0:06.",
+    "audio_description": ""
+  }
+}

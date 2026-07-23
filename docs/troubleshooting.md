@@ -10,6 +10,7 @@ Install exactly one CUDA group:
 uv sync --group cu130
 # or
 uv sync --group cu128
+source .venv/bin/activate
 ```
 
 If the wrong group was installed, remove `.venv` and recreate it with the group
@@ -23,12 +24,14 @@ Initialize LFS and retrieve the pinned dependency assets:
 git lfs install
 git lfs pull
 uv sync --group cu130
+source .venv/bin/activate
 ```
 
 ### The framework cannot be imported
 
-Run commands from the repository root with `uv run --no-sync`. Confirm that
-`uv sync` completed and that the framework revision is present in `uv.lock`.
+Run commands from the repository root after `source .venv/bin/activate`.
+Confirm that `uv sync` completed and that the framework revision is present in
+`uv.lock`.
 
 ## Checkpoints
 
@@ -86,7 +89,7 @@ For the current release candidate, run one transfer JSON per `torchrun` and
 disable compilation:
 
 ```bash
-uv run --no-sync torchrun --nproc_per_node=8 \
+torchrun --nproc_per_node=8 \
   -m cosmos_h_surgical infer \
   -i inputs/transfer.json \
   --output-dir outputs/transfer \
@@ -103,7 +106,7 @@ one-file recommendation.
 Choose another rendezvous port:
 
 ```bash
-uv run --no-sync torchrun --master-port 29502 --nproc_per_node=8 \
+torchrun --master-port 29502 --nproc_per_node=8 \
   -m cosmos_h_surgical infer --help
 ```
 

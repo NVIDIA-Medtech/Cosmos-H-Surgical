@@ -1,0 +1,109 @@
+{
+  "caption_json": {
+    "subjects": [
+      {
+        "description": "A metallic laparoscopic grasper with serrated jaws",
+        "appearance_details": "Silver metallic finish, long straight shaft, fine serrations on the inner surface of the jaws",
+        "relationship": "Retracting the neck of the gallbladder toward the upper left",
+        "location": "Upper left to center foreground",
+        "relative_size": "Medium",
+        "orientation": "Facing right-downward towards the organ",
+        "pose": "Clamped and pulling on tissue",
+        "action": "Retracts the neck of the gallbladder",
+        "state_changes": "Maintains a firm grip and constant tension throughout the interval.",
+        "clothing": "",
+        "expression": "",
+        "gender": "",
+        "age": "",
+        "skin_tone_and_texture": "",
+        "facial_features": "",
+        "number_of_subjects": 1,
+        "number_of_arms": 0,
+        "number_of_legs": 0
+      },
+      {
+        "description": "The gallbladder, a pale, pear-shaped organ",
+        "appearance_details": "White and pale pink serosal surface with fine red vascular networks",
+        "relationship": "Being manipulated and tensed by the surgical grasper",
+        "location": "Center to upper right",
+        "relative_size": "Large",
+        "orientation": "Stretched toward the upper left",
+        "pose": "Tensed under surgical traction",
+        "action": "Being retracted to expose the cystic duct area",
+        "state_changes": "Tissue stretching is visible as the grasper maintains its pull.",
+        "clothing": "",
+        "expression": "",
+        "gender": "",
+        "age": "",
+        "skin_tone_and_texture": "",
+        "facial_features": "",
+        "number_of_subjects": 1,
+        "number_of_arms": 0,
+        "number_of_legs": 0
+      },
+      {
+        "description": "The liver, a large solid organ",
+        "appearance_details": "Dark reddish-brown, smooth, moist, and reflective surface",
+        "relationship": "Background structure providing the anatomical context",
+        "location": "Upper right and background",
+        "relative_size": "Large",
+        "orientation": "Stationary",
+        "pose": "N/A",
+        "action": "Static background",
+        "state_changes": "No significant change.",
+        "clothing": "",
+        "expression": "",
+        "gender": "",
+        "age": "",
+        "skin_tone_and_texture": "",
+        "facial_features": "",
+        "number_of_subjects": 1,
+        "number_of_arms": 0,
+        "number_of_legs": 0
+      }
+    ],
+    "background_setting": "Close-up laparoscopic field with mixed color tones \u2014 pale tubular tissue centrally, dark red-brown organ surfaces on the right, and yellow fat in the lower left. Lighting is adequate with specular glare on wet surfaces, and a grasper from the upper left manipulates tissue at the central dissection edge where localized fresh red blood and small dark clot-like material are stably visible without pooling.",
+    "lighting": {
+      "conditions": "Bright, direct internal lighting",
+      "direction": "Front-lit from the camera position",
+      "shadows": "Minimal, with soft shadows in deep anatomical crevices",
+      "illumination_effect": "Strong specular highlights on the moist, reflective serosal surfaces of the organs."
+    },
+    "aesthetics": {
+      "composition": "Centered on the junction where the grasper meets the tissue",
+      "color_scheme": "A mix of organic red-browns, yellows, and pale pinks",
+      "mood_atmosphere": "Clinical, precise, and controlled",
+      "patterns": "Repeating branch-like vascular patterns on the gallbladder wall"
+    },
+    "cinematography": {
+      "camera_motion": "Static",
+      "framing": "Close-up",
+      "camera_angle": "Eye-level laparoscopic view",
+      "depth_of_field": "Deep",
+      "focus": "Sharp focus on the point of instrument-tissue contact",
+      "lens_focal_length": "Wide-angle"
+    },
+    "style_medium": "Live-action video",
+    "artistic_style": "Realistic, clinical documentary",
+    "context": "Surgical procedure involving gallbladder retraction (cholecystectomy).",
+    "actions": [
+      {
+        "time": "0:00-0:06",
+        "description": "The left laparoscopic instrument maintains firm upward and leftward traction on the gallbladder neck while the adipose tissue at the bottom is retracted downward."
+      }
+    ],
+    "text_and_signage_elements": [],
+    "segments": [
+      {
+        "segment_index": 0,
+        "time_range": "0:00-0:06",
+        "description": "Sustained retraction of the gallbladder and adipose tissue to clear the operative field.",
+        "key_changes": "The left grasper holds position, while the yellow adipose tissue is increasingly pulled away from the dissection zone.",
+        "camera": "Static laparoscopic view throughout."
+      }
+    ],
+    "transitions": [],
+    "temporal_caption": "Starting at 0:00, the operative field shows a metallic laparoscopic grasper from the left side holding the neck of the pale gallbladder. The instrument maintains steady traction, pulling the organ toward the upper left to expose the connective tissues below. Simultaneously, yellow adipose tissue in the lower part of the workspace is retracted downward, likely by a second instrument out of the central focus. This double retraction clears a view of the anatomical structures against the dark background of the liver. The tension remains consistent through to 0:06, providing a stable visualization of the surgical area.",
+    "audio_description": ""
+  }
+}

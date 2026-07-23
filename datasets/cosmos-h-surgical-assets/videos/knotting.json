@@ -1,0 +1,128 @@
+{
+  "caption_json": {
+    "subjects": [
+      {
+        "description": "A metallic, articulated right needle driver with a serrated jaw",
+        "appearance_details": "Silver metal, robotic joints, visible hinge mechanism",
+        "relationship": "Interacts with the blue suture and the left needle driver to tie a knot",
+        "location": "Center-right foreground",
+        "relative_size": "Large",
+        "orientation": "Faces left and slightly downward into the tissue",
+        "pose": "Active grasping and pulling posture",
+        "action": "Grasps the blue suture and pulls it to the right to tighten a knot",
+        "state_changes": "Transitions from pulling at 0:02 to moving away at 0:03, then reaching back in at 0:05",
+        "clothing": "",
+        "expression": "",
+        "gender": "",
+        "age": "",
+        "skin_tone_and_texture": "",
+        "facial_features": "",
+        "number_of_subjects": 1,
+        "number_of_arms": 0,
+        "number_of_legs": 0
+      },
+      {
+        "description": "A metallic, articulated left needle driver",
+        "appearance_details": "Silver metal, similar to the right driver but positioned on the left",
+        "relationship": "Assists the right needle driver by providing counter-tension on the suture",
+        "location": "Center-left foreground",
+        "relative_size": "Large",
+        "orientation": "Faces right and downward",
+        "pose": "Supporting and tensioning posture",
+        "action": "Holds the other end of the suture to help form the knot",
+        "state_changes": "Moves in tandem with the right driver to tighten the knot and then repositions",
+        "clothing": "",
+        "expression": "",
+        "gender": "",
+        "age": "",
+        "skin_tone_and_texture": "",
+        "facial_features": "",
+        "number_of_subjects": 1,
+        "number_of_arms": 0,
+        "number_of_legs": 0
+      },
+      {
+        "description": "A thin blue suture thread",
+        "appearance_details": "Vibrant blue color, synthetic texture",
+        "relationship": "The material being knotted by the instruments",
+        "location": "Center of the operative field",
+        "relative_size": "Small",
+        "orientation": "Looped and tensioned between the drivers",
+        "pose": "Tensioned knot configuration",
+        "action": "Forming into a knot",
+        "state_changes": "Tightens against the tissue as the drivers pull it",
+        "clothing": "",
+        "expression": "",
+        "gender": "",
+        "age": "",
+        "skin_tone_and_texture": "",
+        "facial_features": "",
+        "number_of_subjects": 1,
+        "number_of_arms": 0,
+        "number_of_legs": 0
+      }
+    ],
+    "background_setting": "Close-up robotic suturing over dark red-brown tissue with pooled/clotted blood along the left and lower lateral recesses; no active free bleeding is visible. Lighting is adequate but uneven with specular glare on instrument shafts in the central field, and tools intermittently partially occlude the central view.",
+    "lighting": {
+      "conditions": "Bright endoscopic lighting",
+      "direction": "Front-lit from the camera's perspective",
+      "shadows": "Soft, localized shadows within tissue folds",
+      "illumination_effect": "Glistening reflections on the moist tissue surfaces"
+    },
+    "aesthetics": {
+      "composition": "Centered on the knot-tying action",
+      "color_scheme": "Red and tan tissue colors contrasted by the vibrant blue suture and silver metallic tools",
+      "mood_atmosphere": "Focused, clinical, surgical precision",
+      "patterns": "Repeating texture of the serrated tool jaws"
+    },
+    "cinematography": {
+      "camera_motion": "Static with minor vibration",
+      "framing": "Close-up",
+      "camera_angle": "Eye-level relative to the surgical workspace",
+      "depth_of_field": "Shallow, focusing on the instruments and suture",
+      "focus": "Sharp focus on the suture knot",
+      "lens_focal_length": "Standard laparoscopic lens"
+    },
+    "style_medium": "Live-action video",
+    "artistic_style": "Realistic medical documentary",
+    "context": "Robotic-assisted laparoscopic surgery knot-tying procedure",
+    "actions": [
+      {
+        "time": "0:00-0:02",
+        "description": "The right needle driver grasps the blue suture and pulls it firmly to the right."
+      },
+      {
+        "time": "0:02-0:03",
+        "description": "Both the left and right needle drivers pull in opposite directions to tighten the suture knot against the tissue."
+      },
+      {
+        "time": "0:03-0:05",
+        "description": "The instruments release tension and move away from the central suture to reposition."
+      },
+      {
+        "time": "0:05-0:06",
+        "description": "The needle drivers converge back toward the suture to prepare for another throw or further tightening."
+      }
+    ],
+    "text_and_signage_elements": [],
+    "segments": [
+      {
+        "segment_index": 0,
+        "time_range": "0:00-0:03",
+        "description": "Initial knot tightening phase where both drivers pull the blue suture.",
+        "key_changes": "Suture transitions from a loose loop to a tightened knot.",
+        "camera": "Static close-up."
+      },
+      {
+        "segment_index": 1,
+        "time_range": "0:03-0:06",
+        "description": "Repositioning phase where tools move away and then return to the suture.",
+        "key_changes": "Increased distance between tool tips before they converge again.",
+        "camera": "Static close-up."
+      }
+    ],
+    "transitions": [],
+    "temporal_caption": "The action begins with the right needle driver grasping a blue suture and pulling it across the center of the workspace. Between 0:00 and 0:03, both the left and right needle drivers work in coordination to tension the thread, successfully tightening a knot against the moist, red tissue. From 0:03 to 0:05, the drivers move slightly apart and away from the central knot, creating space. Finally, from 0:05 to 0:06, the articulated instruments move back toward the blue thread, with the right needle driver preparing to re-engage the suture for the next part of the knotting process.",
+    "audio_description": ""
+  }
+}

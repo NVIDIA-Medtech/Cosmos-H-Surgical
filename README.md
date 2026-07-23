@@ -70,11 +70,18 @@ uv sync --group cu130
 uv sync --group cu128
 ```
 
+Run exactly one of the two sync commands, then activate the selected
+environment for the rest of the session:
+
+```bash
+source .venv/bin/activate
+```
+
 The root `uv.lock` and the framework commit in `pyproject.toml` are the source
 of truth for the Python environment. `git-lfs` must be installed because the
-pinned framework repository contains LFS-managed files. The commands below use
-`uv run --no-sync` so `uv` preserves the CUDA group selected during installation.
-See [docs/setup.md](docs/setup.md) for requirements and environment validation.
+pinned framework repository contains LFS-managed files. Commands below assume
+the environment is active. See [docs/setup.md](docs/setup.md) for requirements
+and environment validation.
 
 ## Inference
 
@@ -84,7 +91,7 @@ plain natural-language prompts should first be converted with the prompt
 upsampler. The public `Cosmos-H-Surgical` checkpoint is selected by default.
 
 ```bash
-uv run --no-sync torchrun --nproc_per_node=8 \
+torchrun --nproc_per_node=8 \
   -m cosmos_h_surgical infer \
   -i inputs/predict/surgical_predict_smoke.json \
   --output-dir outputs/i2v \
@@ -106,7 +113,7 @@ surgical descriptions into structured prompts.
 Inspect the pinned framework dependency:
 
 ```bash
-uv run --no-sync cosmos-h-surgical framework-info
+cosmos-h-surgical framework-info
 ```
 
 ## Documentation
@@ -120,12 +127,12 @@ uv run --no-sync cosmos-h-surgical framework-info
 | [Troubleshooting](docs/troubleshooting.md) | Installation, checkpoint, input, and distributed failures. |
 | [Code structure](docs/code_structure.md) | Package architecture and framework ownership boundary. |
 | [Cosmos 2.5 migration](docs/migration_from_cosmos25.md) | Archive locations, command mapping, and compatibility. |
-| [Post-training preview](docs/post_training.md) | Public surgical LoRA recipe and dataset contract. |
+| [Post-training](docs/post_training.md) | Predict and Transfer LoRA recipes and dataset contracts. |
 
 Validate the release metadata before staging:
 
 ```bash
-uv run --no-sync cosmos-h-surgical validate-release
+cosmos-h-surgical validate-release
 ```
 
 ## Post-Training
@@ -135,22 +142,24 @@ dependencies. The project-owned training wrapper registers surgical experiments
 with the pinned framework before the framework composes the TOML configuration.
 
 ```bash
-uv run --no-sync torchrun --nproc_per_node=8 -m cosmos_h_surgical.training \
-  --sft-toml examples/post_training/cosmos_h_surgical_vision_lora_480p.toml
+torchrun --nproc_per_node=8 -m cosmos_h_surgical train \
+  --sft-toml examples/post_training/cosmos_h_surgical_predict_lora_480p.toml
 ```
 
-The first migrated recipe covers 480P surgical T2V and I2V LoRA training. See
-[docs/post_training.md](docs/post_training.md) for its dataset contract and
-required environment variables. Mixed transfer/action training remains a
-documented release gate rather than an unpublished API.
+Separate recipes cover 480P surgical Predict and Transfer LoRA training. See
+[docs/post_training.md](docs/post_training.md) for the development-format
+manifest, caption and control-sidecar contracts, preparation and validation
+commands, and required environment variables. Action training is not part of
+the v0.3.0 public interface.
 
 ## Development
 
 ```bash
 uv sync --group cu130 --group dev
-uv run --no-sync pytest
-uv run --no-sync ruff check .
-uv run --no-sync ruff format --check .
+source .venv/bin/activate
+pytest
+ruff check .
+ruff format --check .
 ```
 
 The development branch must not contain DFW paths, internal object-store URLs,

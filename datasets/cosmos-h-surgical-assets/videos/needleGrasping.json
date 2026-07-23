@@ -1,0 +1,131 @@
+{
+  "caption_json": {
+    "subjects": [
+      {
+        "description": "A metallic, articulated robotic needle driver positioned on the left side of the workspace",
+        "appearance_details": "Silver metallic finish, jointed wrist, serrated jaws holding a curved surgical needle",
+        "relationship": "Holds the needle initially before passing it to the right instrument",
+        "location": "Left foreground to center",
+        "relative_size": "Large",
+        "orientation": "Facing toward the center-right",
+        "pose": "Gripping the needle near its base",
+        "action": "Holds a curved needle steady and then releases it during a transfer",
+        "state_changes": "From a closed grip to an open, retreating position after 0:03",
+        "clothing": "",
+        "expression": "",
+        "gender": "Unknown",
+        "age": "",
+        "skin_tone_and_texture": "",
+        "facial_features": "",
+        "number_of_subjects": 1,
+        "number_of_arms": 1,
+        "number_of_legs": 0
+      },
+      {
+        "description": "A second metallic, articulated robotic needle driver entering from the right",
+        "appearance_details": "Silver metallic finish, articulated wrist, open jaws ready for grasping",
+        "relationship": "Receives the needle from the left instrument",
+        "location": "Right foreground to center",
+        "relative_size": "Large",
+        "orientation": "Facing toward the center-left",
+        "pose": "Jaws open, approaching the needle",
+        "action": "Grasps the needle from the left instrument and pulls it away",
+        "state_changes": "Changes from an open jaw position to a closed grip around 0:02",
+        "clothing": "",
+        "expression": "",
+        "gender": "Unknown",
+        "age": "",
+        "skin_tone_and_texture": "",
+        "facial_features": "",
+        "number_of_subjects": 1,
+        "number_of_arms": 1,
+        "number_of_legs": 0
+      },
+      {
+        "description": "A curved metallic surgical needle",
+        "appearance_details": "Highly reflective, curved, with a dark suture thread attached",
+        "relationship": "The object being exchanged between the two drivers",
+        "location": "Center of the operative field",
+        "relative_size": "Small",
+        "orientation": "Curving upward and toward the back",
+        "pose": "Held by needle drivers",
+        "action": "Transferred from left to right driver",
+        "state_changes": "Changes ownership from left driver to right driver at 0:03",
+        "clothing": "",
+        "expression": "",
+        "gender": "",
+        "age": "",
+        "skin_tone_and_texture": "",
+        "facial_features": "",
+        "number_of_subjects": 1,
+        "number_of_arms": 0,
+        "number_of_legs": 0
+      }
+    ],
+    "background_setting": "Robotic graspers manipulate suture in a deep cavity dominated by dark red-brown tissue with stationary pooled blood in the central/lower-central recess; lighting is uneven with specular glare on tissue surfaces. No active free bleeding is observed; later frames pull back to a wider, brighter view with tools partially occluding the lower field.",
+    "lighting": {
+      "conditions": "Bright, direct internal laparoscopic lighting",
+      "direction": "Front-lit from the camera's perspective",
+      "shadows": "Soft shadows visible in the deeper recesses of the tissue",
+      "illumination_effect": "Creates specular highlights on the metallic instruments and glistening wet tissue."
+    },
+    "aesthetics": {
+      "composition": "Centered on the needle exchange",
+      "color_scheme": "Dominant deep reds, pinks, and browns of tissue contrasted with the silver metallic instruments",
+      "mood_atmosphere": "Clinical, precise, focused",
+      "patterns": ""
+    },
+    "cinematography": {
+      "camera_motion": "Static until approximately 0:04, then a subtle upward tilt and pan",
+      "framing": "Close-up",
+      "camera_angle": "Eye-level relative to the surgical workspace",
+      "depth_of_field": "Deep within the immediate workspace",
+      "focus": "Sharp focus on the needle and instrument tips",
+      "lens_focal_length": "Wide-angle laparoscopic lens"
+    },
+    "style_medium": "live-action video",
+    "artistic_style": "realistic, cinematic",
+    "context": "A robotic surgical procedure showing an instrument-to-instrument needle transfer.",
+    "actions": [
+      {
+        "time": "0:00-0:02",
+        "description": "The left needle driver holds the curved needle steady while the right driver approaches with open jaws."
+      },
+      {
+        "time": "0:02-0:03",
+        "description": "The right needle driver clamps its jaws onto the body of the needle."
+      },
+      {
+        "time": "0:03-0:06",
+        "description": "The left needle driver releases the needle and moves away as the right driver pulls the needle downward and adjusts its position."
+      }
+    ],
+    "text_and_signage_elements": [],
+    "segments": [
+      {
+        "segment_index": 0,
+        "time_range": "0:00-0:02",
+        "description": "Preparation for the hand-off with the right instrument moving into position.",
+        "key_changes": "Right driver's jaws approach the needle.",
+        "camera": "Static"
+      },
+      {
+        "segment_index": 1,
+        "time_range": "0:02-0:03",
+        "description": "The actual exchange where the right instrument takes control of the needle.",
+        "key_changes": "Right driver closes its jaws; left driver remains closed briefly then opens.",
+        "camera": "Static"
+      },
+      {
+        "segment_index": 2,
+        "time_range": "0:03-0:06",
+        "description": "Post-transfer adjustment and instruments moving apart.",
+        "key_changes": "Left driver retreats; right driver maneuvers the needle; camera shifts slightly.",
+        "camera": "Subtle upward tilt and pan"
+      }
+    ],
+    "transitions": [],
+    "temporal_caption": "At the start, the left robotic needle driver holds a curved metallic needle in the center of the surgical field. Simultaneously, the right needle driver approaches with open jaws. By the middle of the moment, the right driver closes its jaws around the needle's curve, and the left driver releases its grip. Toward the end, the left instrument moves back to the left while the right instrument pulls the needle downward and deeper into the tissue, as the camera tilts slightly upward.",
+    "audio_description": ""
+  }
+}

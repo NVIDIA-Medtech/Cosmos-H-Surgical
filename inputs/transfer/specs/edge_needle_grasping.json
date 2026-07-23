@@ -14,7 +14,7 @@
   "resize_mode": "stretch",
   "negative_metadata_mode": "none",
   "negative_prompt_keep_metadata": false,
-  "guidance": 1.0,
+  "guidance": 1.5,
   "name": "needle_grasping_edge",
   "prompt_path": "../prompts/needle_grasping.json",
   "negative_prompt_file": "../negative_prompt.json",

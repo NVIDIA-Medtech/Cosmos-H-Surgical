@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: OpenMDW-1.1
 
 import json
+from pathlib import Path
 
 import pytest
 
@@ -59,3 +60,55 @@ def test_prompt_upsample_forwards_framework_help(monkeypatch: pytest.MonkeyPatch
     monkeypatch.setattr(cli, "run_prompt_upsampling_cli", fake_framework_cli)
     assert main(["prompt-upsample", "--help"]) == 0
     assert observed == ["--help"]
+
+
+def test_prepare_training_data_command(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
+    dataset = tmp_path / "dataset"
+    dataset.mkdir()
+    video = dataset / "clip.mp4"
+    video.touch()
+    video.with_suffix(".json").write_text(json.dumps({"caption_json": {"description": "Action."}}))
+    output = dataset / "train.json"
+
+    assert (
+        main(
+            [
+                "prepare-training-data",
+                "--dataset-dir",
+                str(dataset),
+                "--video-pattern",
+                "*.mp4",
+                "--output",
+                str(output),
+            ]
+        )
+        == 0
+    )
+    assert "Wrote 1 target videos" in capsys.readouterr().out
+
+
+def test_validate_training_data_command_without_media_probe(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
+    dataset = tmp_path / "dataset"
+    dataset.mkdir()
+    video = dataset / "clip.mp4"
+    video.touch()
+    video.with_suffix(".json").write_text(json.dumps({"caption_json": {"description": "Action."}}))
+    manifest = dataset / "train.json"
+    manifest.write_text(json.dumps({"training": ["clip.mp4"]}))
+
+    assert (
+        main(
+            [
+                "validate-training-data",
+                "--mode",
+                "predict",
+                "--dataset-dir",
+                str(dataset),
+                "--manifest",
+                str(manifest),
+                "--skip-media-probe",
+            ]
+        )
+        == 0
+    )
+    assert "Validated 1 videos" in capsys.readouterr().out

@@ -13,6 +13,7 @@ Cosmos-H-Surgical/
 |   |-- checkpoints.py
 |   |-- inference.py
 |   |-- training.py
+|   |-- data/                  # Surgical manifests and Predict/Transfer datasets
 |   |-- provenance.py
 |   |-- release.py
 |   `-- configs/
@@ -58,7 +59,8 @@ process-local and scoped to the inference command.
 ### `cli.py`
 
 Provides the stable `cosmos-h-surgical` command and routes inference, training,
-framework-provenance, and release-validation subcommands.
+training-data preparation and validation, framework-provenance, and
+release-validation subcommands.
 
 ### `inference.py`
 
@@ -71,10 +73,11 @@ the distributed timeout needed by the release test configuration.
 Loads model metadata from `release-manifest.json`. It will expose the public
 model key after the v0.3.0 artifact is approved.
 
-### `training.py` and `configs/`
+### `training.py`, `configs/`, and `data/`
 
 Register project-owned surgical experiment configuration before invoking the
-framework trainer. This interface is a developer preview for v0.3.0.
+framework trainer. The data package preserves the surgical manifest, adjacent
+caption, and transfer-control sidecar contract without embedding storage paths.
 
 ### `provenance.py` and `UPSTREAM.md`
 
@@ -93,6 +96,7 @@ This repository owns:
 - Surgical model metadata and aliases
 - Surgical input examples and documentation
 - Surgical training configuration
+- Surgical dataset loading and portable manifest validation
 - Narrow compatibility adapters required by approved checkpoints
 - Release-manifest validation
 
