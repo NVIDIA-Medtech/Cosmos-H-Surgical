@@ -1,0 +1,124 @@
+{
+  "caption_json": {
+    "subjects": [
+      {
+        "description": "Metallic fenestrated bipolar forceps with ribbed, elongated jaws",
+        "appearance_details": "Silver metallic finish, rectangular holes in the jaw (fenestrations), text engraved on the shaft",
+        "relationship": "Holding the tissue steady for the stapler",
+        "location": "Center-left foreground",
+        "relative_size": "Medium",
+        "orientation": "Pointing towards the center from the lower left",
+        "pose": "Jaws clamped onto a fold of tissue",
+        "action": "Gripping and providing tension to the tissue",
+        "state_changes": "Maintains a steady grip throughout the duration",
+        "clothing": "",
+        "expression": "",
+        "gender": "Unknown",
+        "age": "",
+        "skin_tone_and_texture": "",
+        "facial_features": "",
+        "number_of_subjects": 1,
+        "number_of_arms": 0,
+        "number_of_legs": 0
+      },
+      {
+        "description": "Large surgical stapler with metallic jaws and measurement markings",
+        "appearance_details": "Sturdy metallic body, black numerical markings (e.g., '5') and lines along the side of the jaw",
+        "relationship": "Clamping and preparing to staple/cut the tissue held by the forceps",
+        "location": "Center-right foreground",
+        "relative_size": "Large",
+        "orientation": "Pointing towards the left from the right",
+        "pose": "Jaws partially open then closing onto tissue",
+        "action": "Clamping onto the tissue segment",
+        "state_changes": "Moves slightly and closes its jaws more firmly as the sequence progresses",
+        "clothing": "",
+        "expression": "",
+        "gender": "Unknown",
+        "age": "",
+        "skin_tone_and_texture": "",
+        "facial_features": "",
+        "number_of_subjects": 1,
+        "number_of_arms": 0,
+        "number_of_legs": 0
+      },
+      {
+        "description": "Moist, pinkish-red vascularized anatomical tissue",
+        "appearance_details": "Smooth, glistening surface with visible small blood vessels and fatty deposits",
+        "relationship": "The target of the surgical procedure",
+        "location": "Center and background",
+        "relative_size": "Large",
+        "orientation": "Spread across the central workspace",
+        "pose": "Folded and pulled by surgical instruments",
+        "action": "Being manipulated and clamped",
+        "state_changes": "Compressed as the stapler jaws close upon it",
+        "clothing": "",
+        "expression": "",
+        "gender": "Unknown",
+        "age": "",
+        "skin_tone_and_texture": "",
+        "facial_features": "",
+        "number_of_subjects": 1,
+        "number_of_arms": 0,
+        "number_of_legs": 0
+      }
+    ],
+    "background_setting": "Laparoscopic view dominated by red-pink tissue with adequate but uneven lighting and specular glare on metallic instruments in the upper right; localized active/free blood streaks are visible along the central tissue edge near the grasper/stapler tips, consistent with mild bleeding. Visibility is slightly degraded overall and worst partially occluded by large instruments occupying the upper-right field.",
+    "lighting": {
+      "conditions": "Bright, direct endoscopic lighting",
+      "direction": "Front-lit from the camera's perspective",
+      "shadows": "Minor shadows in the folds of the tissue",
+      "illumination_effect": "Evenly illuminates the central operative field while periphery falls into darkness"
+    },
+    "aesthetics": {
+      "composition": "Centered on the interaction between tools and tissue, typical circular laparoscopic framing",
+      "color_scheme": "Dominant pink and red tones of the tissue contrasted with metallic silver of the tools",
+      "mood_atmosphere": "Clinical, precise, surgical",
+      "patterns": "Ribbed texture on the forceps jaws; linear markings on the stapler"
+    },
+    "cinematography": {
+      "camera_motion": "Mostly static with very minor adjustments to keep the instruments centered",
+      "framing": "Close-up",
+      "camera_angle": "Eye-level with the surgical tools",
+      "depth_of_field": "Shallow, focusing on the foreground instruments and tissue",
+      "focus": "The point of contact between the stapler and the tissue",
+      "lens_focal_length": "Wide-angle (endoscopic)"
+    },
+    "style_medium": "live-action video",
+    "artistic_style": "cinematic surgical documentary",
+    "context": "Laparoscopic surgery involving tissue resection or stapling",
+    "actions": [
+      {
+        "time": "0:00-0:06",
+        "description": "The left fenestrated bipolar forceps holds the tissue while the right stapler clamps down to begin stapling"
+      }
+    ],
+    "text_and_signage_elements": [
+      {
+        "text": "MICROFRANCE",
+        "category": "logo",
+        "appearance": "Small, capitalized sans-serif font engraved on the metallic shaft",
+        "spatial_temporal": "Lower left on the forceps handle from 0:00 to 0:06",
+        "context": "Manufacturer brand name"
+      },
+      {
+        "text": "5",
+        "category": "label",
+        "appearance": "Black numerical marking on the side of the stapler jaw",
+        "spatial_temporal": "Upper right on the stapler body from 0:00 to 0:06",
+        "context": "Measurement or alignment marker"
+      }
+    ],
+    "segments": [
+      {
+        "segment_index": 0,
+        "time_range": "0:00-0:06",
+        "description": "Continuous shot of tissue manipulation and clamping",
+        "key_changes": "The stapler jaws progressively close more tightly on the tissue",
+        "camera": "Static laparoscopic view"
+      }
+    ],
+    "transitions": [],
+    "temporal_caption": "Starting at the beginning of the operative moment, a laparoscopic view shows a pair of metallic fenestrated bipolar forceps on the left gripping a fold of pink, vascularized tissue. To the right, a large surgical stapler with measurement markings is positioned against the same tissue. As the seconds progress, the forceps remains steady, providing counter-traction, while the jaws of the stapler close more firmly around the tissue. The lighting remains constant and bright, centered on the surgical site, highlighting the glistening texture of the internal anatomy and the metallic sheen of the tools until the end of the clip.",
+    "audio_description": ""
+  }
+}

@@ -1,8 +1,0 @@
-.venv
-.git
-/checkpoints
-/datasets
-/output
-/examples/**/checkpoints
-/examples/**/output
-/examples/**/datasets

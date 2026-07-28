@@ -1,0 +1,15 @@
+# Keep inference media in Git LFS while specs, prompts, and docs remain in Git.
+inputs/**/*.jpg filter=lfs diff=lfs merge=lfs -text
+inputs/**/*.jpeg filter=lfs diff=lfs merge=lfs -text
+inputs/**/*.png filter=lfs diff=lfs merge=lfs -text
+inputs/**/*.webp filter=lfs diff=lfs merge=lfs -text
+inputs/**/*.gif filter=lfs diff=lfs merge=lfs -text
+inputs/**/*.mp4 filter=lfs diff=lfs merge=lfs -text
+inputs/**/*.mov filter=lfs diff=lfs merge=lfs -text
+inputs/**/*.m4v filter=lfs diff=lfs merge=lfs -text
+inputs/**/*.avi filter=lfs diff=lfs merge=lfs -text
+inputs/**/*.mkv filter=lfs diff=lfs merge=lfs -text
+inputs/**/*.webm filter=lfs diff=lfs merge=lfs -text
+
+# Keep the public training dataset media in Git LFS.
+datasets/**/*.mp4 filter=lfs diff=lfs merge=lfs -text

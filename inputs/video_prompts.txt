@@ -1,0 +1,2 @@
+real surgery scene: right instrument coagulates the cystic artery
+real surgery scene: left needle driver passes needle to right needle driver, then right needle driver passes needle to left needle driver, then left needle driver passes needle to right needle driver

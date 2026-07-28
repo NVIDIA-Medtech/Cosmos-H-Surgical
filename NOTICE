@@ -1,0 +1,18 @@
+Cosmos-H-Surgical
+
+Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES.
+
+Cosmos-H-Surgical 0.3.0 uses NVIDIA Cosmos Framework as an external,
+commit-pinned dependency. Cosmos Framework is provided under OpenMDW-1.1 and
+retains its own copyright, origin, and third-party notices:
+
+  Source: https://github.com/NVIDIA/cosmos-framework
+  Revision: ed8287fd7477113f8ac4f6b84290514d55cf0cdc
+  License: OpenMDW-1.1
+
+Project-owned files and the Cosmos-H-Surgical v0.3.0 model weights, including
+the surgical training integration, are provided under OpenMDW-1.1. Installed
+Cosmos Framework files are not overwritten.
+
+Third-party attribution information is summarized in ATTRIBUTIONS.md. The
+locked dependency graph is recorded in `uv.lock`.

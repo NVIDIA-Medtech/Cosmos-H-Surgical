@@ -1,0 +1,26 @@
+{
+  "model_mode": "video2video",
+  "resolution": "480",
+  "aspect_ratio": "16,9",
+  "num_frames": 93,
+  "fps": 16,
+  "shift": 5.0,
+  "num_steps": 50,
+  "seed": 2790,
+  "num_video_frames_per_chunk": 93,
+  "num_conditional_frames": 1,
+  "num_first_chunk_conditional_frames": 0,
+  "share_vision_temporal_positions": true,
+  "resize_mode": "stretch",
+  "negative_metadata_mode": "none",
+  "negative_prompt_keep_metadata": false,
+  "guidance": 1.5,
+  "name": "needle_grasping_edge",
+  "prompt_path": "../prompts/needle_grasping.json",
+  "negative_prompt_file": "../negative_prompt.json",
+  "control_guidance": 1.0,
+  "vision_path": "../media/needle_grasping.mp4",
+  "edge": {
+    "preset_edge_threshold": "medium"
+  }
+}

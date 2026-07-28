@@ -1,0 +1,97 @@
+{
+  "caption_json": {
+    "subjects": [
+      {
+        "description": "Atraumatic duckbill forceps with a smooth metal shaft and rounded, duckbill-shaped grasping tips",
+        "appearance_details": "Metallic finish, non-serrated tips designed for gentle tissue handling",
+        "relationship": "Maneuvers the tissue specimen into the specimen bag",
+        "location": "Bottom center foreground, moving upwards and deeper into the workspace",
+        "relative_size": "Large",
+        "orientation": "Facing away from the viewer towards the specimen bag",
+        "pose": "Grasping and pushing a tissue specimen",
+        "action": "Placing a tissue specimen into a specimen bag",
+        "state_changes": "Moves from grasping tissue in the foreground to pushing it inside the bag in the background",
+        "clothing": "",
+        "expression": "",
+        "gender": "Unknown",
+        "age": "",
+        "skin_tone_and_texture": "",
+        "facial_features": "",
+        "number_of_subjects": 1,
+        "number_of_arms": 0,
+        "number_of_legs": 0
+      },
+      {
+        "description": "Left and right fenestrated bipolar forceps with serrated, metallic tips",
+        "appearance_details": "Metal shafts with openings in the tips",
+        "relationship": "Holding the specimen bag open for tissue insertion",
+        "location": "Upper left and upper right of the workspace",
+        "relative_size": "Medium",
+        "orientation": "Facing towards the center to hold the bag rims",
+        "pose": "Static grip on the bag rim",
+        "action": "Holding the specimen bag open",
+        "state_changes": "Maintain a steady hold throughout the retrieval process",
+        "clothing": "",
+        "expression": "",
+        "gender": "Unknown",
+        "age": "",
+        "skin_tone_and_texture": "",
+        "facial_features": "",
+        "number_of_subjects": 2,
+        "number_of_arms": 0,
+        "number_of_legs": 0
+      }
+    ],
+    "background_setting": "Laparoscopic close-up of mixed red-pink tissue and yellow-tan fat with a clear specimen bag and instruments in the central field; a small focal active/free blood spot/streak is seen on the lower-central tissue (frames 0-2) consistent with trace bleeding, and frame 3 is a motion-blurred out-of-focus close-up giving worst visibility as poor.",
+    "lighting": {
+      "conditions": "Brightly illuminated laparoscopic field",
+      "direction": "Front-lit from the camera's perspective",
+      "shadows": "Soft, minimal shadows",
+      "illumination_effect": "Clear visibility of anatomical textures and instrument surfaces"
+    },
+    "aesthetics": {
+      "composition": "Centered on the interaction between the surgical instruments and the specimen bag",
+      "color_scheme": "Natural reds and yellows of internal anatomy with metallic silver tools and an orange-rimmed clear bag",
+      "mood_atmosphere": "Clinical, precise, surgical",
+      "patterns": ""
+    },
+    "cinematography": {
+      "camera_motion": "Static",
+      "framing": "Close-up",
+      "camera_angle": "Eye-level laparoscopic view",
+      "depth_of_field": "Shallow",
+      "focus": "The opening of the specimen bag and the tissue being inserted",
+      "lens_focal_length": "Wide-angle"
+    },
+    "style_medium": "live-action video",
+    "artistic_style": "realistic",
+    "context": "Laparoscopic surgical procedure involving tissue retrieval",
+    "actions": [
+      {
+        "time": "0:00-0:02",
+        "description": "The bottom atraumatic duckbill forceps holds the tissue specimen in the foreground while the bag is prepared."
+      },
+      {
+        "time": "0:02-0:05",
+        "description": "The left and right fenestrated bipolar forceps hold the specimen bag open as the duckbill forceps approaches the opening."
+      },
+      {
+        "time": "0:05-0:06",
+        "description": "The duckbill forceps pushes the tissue specimen deep into the specimen bag and prepares to release its grip."
+      }
+    ],
+    "text_and_signage_elements": [],
+    "segments": [
+      {
+        "segment_index": 0,
+        "time_range": "0:00-0:06",
+        "description": "Retrieval of a tissue specimen into a specimen bag during a laparoscopic procedure.",
+        "key_changes": "Guided insertion of the specimen into the pouch.",
+        "camera": "Static close-up."
+      }
+    ],
+    "transitions": [],
+    "temporal_caption": "At the start, the bottom atraumatic duckbill forceps is seen holding a pinkish, fleshy tissue specimen. In the background, a transparent specimen bag with a prominent orange rim is held open by two fenestrated bipolar forceps entering from the upper left and upper right. Between 0:02 and 0:04, the duckbill forceps lifts the specimen towards the open mouth of the bag. By 0:05, the specimen is guided through the opening. In the final second, the specimen is fully placed inside the bag as the duckbill forceps pushes it deep into the pouch within the operative field.",
+    "audio_description": ""
+  }
+}

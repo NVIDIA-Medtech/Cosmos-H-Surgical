@@ -1,0 +1,2 @@
+inputs/transfer/media/coagulation.mp4
+inputs/transfer/media/needle_grasping.mp4

@@ -1,0 +1,129 @@
+{
+  "subjects": [
+    {
+      "description": "A metallic surgical needle driver with articulated jaws",
+      "appearance_details": "Reflective silver surface, serrated gripping inner surface on the jaws",
+      "relationship": "Interacts with the right needle driver and the surgical needle",
+      "location": "Left side of the operative field",
+      "relative_size": "Medium",
+      "orientation": "Faces towards the center and right of the workspace",
+      "pose": "Actively opening and closing jaws to grip or release",
+      "action": "Receives the needle from the right driver, then passes it back",
+      "state_changes": "Transitions from receiving to holding to passing the needle",
+      "clothing": "",
+      "expression": "",
+      "gender": "",
+      "age": "",
+      "skin_tone_and_texture": "",
+      "facial_features": "",
+      "number_of_subjects": 1,
+      "number_of_arms": 0,
+      "number_of_legs": 0
+    },
+    {
+      "description": "A second metallic surgical needle driver with articulated jaws",
+      "appearance_details": "Reflective silver surface, similar in design to the left tool",
+      "relationship": "Interacts with the left needle driver and the surgical needle",
+      "location": "Right side of the operative field",
+      "relative_size": "Medium",
+      "orientation": "Faces towards the center and left of the workspace",
+      "pose": "Maneuvering needle and coordinating transfers",
+      "action": "Initial holder of the needle, passes it to the left, then receives it back",
+      "state_changes": "Transitions from holding to passing to receiving the needle",
+      "clothing": "",
+      "expression": "",
+      "gender": "",
+      "age": "",
+      "skin_tone_and_texture": "",
+      "facial_features": "",
+      "number_of_subjects": 1,
+      "number_of_arms": 0,
+      "number_of_legs": 0
+    },
+    {
+      "description": "A curved surgical needle with purple suture thread",
+      "appearance_details": "Thin, curved metallic needle attached to a dark purple filament",
+      "relationship": "The object being transferred between surgical tools",
+      "location": "Center of the workspace, moving between tools",
+      "relative_size": "Small",
+      "orientation": "Changing as it is manipulated by the drivers",
+      "pose": "N/A",
+      "action": "Being passed between drivers",
+      "state_changes": "Position shifts according to the grip of the needle drivers",
+      "clothing": "",
+      "expression": "",
+      "gender": "",
+      "age": "",
+      "skin_tone_and_texture": "",
+      "facial_features": "",
+      "number_of_subjects": 1,
+      "number_of_arms": 0,
+      "number_of_legs": 0
+    }
+  ],
+  "background_setting": "Robotic instruments work over a dark red-brown field dominated by a stationary pooled blood/clot collection in the central-to-lower cavity, with suture thread crossing the upper central tissue. Lighting is adequate but uneven with specular glare on instrument shafts; no active free-flowing blood is observed, and visibility is slightly degraded with partial tool occlusion at peak in the central field.",
+  "lighting": {
+    "conditions": "Bright interior illumination consistent with endoscope lighting",
+    "direction": "Front-lit from the camera's perspective",
+    "shadows": "Soft shadows cast onto the irregular tissue surfaces below",
+    "illumination_effect": "Highlights the wet textures of the surgical field"
+  },
+  "aesthetics": {
+    "composition": "Centered on the needle transfer action",
+    "color_scheme": "Dominant reds and browns of the tissue with high-contrast metallic silver and purple suture",
+    "mood_atmosphere": "Clinical, precise, focused surgical environment",
+    "patterns": "Irregular textures of biological tissue"
+  },
+  "cinematography": {
+    "camera_motion": "Static",
+    "framing": "Close-up",
+    "camera_angle": "Eye-level laparoscopic perspective",
+    "depth_of_field": "Shallow",
+    "focus": "Sharp on the surgical tools and the needle",
+    "lens_focal_length": "Standard laparoscopic lens"
+  },
+  "style_medium": "Live-action video",
+  "artistic_style": "Realistic medical documentation",
+  "context": "Robotic or laparoscopic surgical procedure focusing on needle handling",
+  "actions": [
+    {
+      "time": "0:00-0:02",
+      "description": "The right needle driver passes the curved needle to the left needle driver"
+    },
+    {
+      "time": "0:02-0:04",
+      "description": "The left needle driver passes the needle back to the right needle driver"
+    },
+    {
+      "time": "0:04-0:06",
+      "description": "The right needle driver maneuvers the needle and prepares to pass it to the left driver again"
+    }
+  ],
+  "text_and_signage_elements": [],
+  "segments": [
+    {
+      "segment_index": 0,
+      "time_range": "0:00-0:02",
+      "description": "Initial transfer from right to left needle driver",
+      "key_changes": "Needle changes ownership from the right to the left tool",
+      "camera": "Static"
+    },
+    {
+      "segment_index": 1,
+      "time_range": "0:02-0:04",
+      "description": "Middle transfer from left to right needle driver",
+      "key_changes": "Needle changes ownership back to the right tool",
+      "camera": "Static"
+    },
+    {
+      "segment_index": 2,
+      "time_range": "0:04-0:06",
+      "description": "Final positioning and start of next transfer attempt",
+      "key_changes": "Right tool secures the needle as the left tool prepares to regrip it",
+      "camera": "Static"
+    }
+  ],
+  "transitions": [],
+  "temporal_caption": "At the start, a right needle driver holds a curved needle with purple suture over a bloody operative field. It brings the needle toward the center where the left needle driver reaches out and secures a grip, completing the first transfer by 0:02. From 0:02 to 0:04, the left driver holds the needle briefly before the right driver maneuvers back in to take the needle again. In the final seconds, the right driver holds the needle steady while the left driver opens its jaws and approaches the needle's body, preparing for another exchange.",
+  "audio_description": ""
+}

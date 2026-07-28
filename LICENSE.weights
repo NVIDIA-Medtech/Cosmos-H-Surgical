@@ -1,22 +1,12 @@
-Cosmos-H-Surgical Model Weight Licenses
+# Cosmos-H-Surgical Model Weights License
 
-Legacy checkpoints
-------------------
+The Cosmos-H-Surgical v0.3.0 model weights are provided under
+OpenMDW License Agreement, version 1.1 (OpenMDW-1.1).
 
-Checkpoint artifacts under predict/ and transfer/ are licensed under the
-NVIDIA-OneWay-Noncommercial-License, except for artifacts explicitly identified
-as OpenMDW-1.1 in release-manifest.json.
+Full license text: [LICENSE](LICENSE)
 
-Full license text: https://developer.download.nvidia.com/licenses/NVIDIA-OneWay-Noncommercial-License-22Mar2022.pdf
+Official license source:
+https://github.com/OpenMDW/OpenMDW/blob/main/1.1/LICENSE.OpenMDW-1.1
 
-OpenMDW-1.1 checkpoints
------------------------
-
-Only checkpoint artifacts under openmdw-1.1/ that are explicitly identified
-with license_id "OpenMDW-1.1" in release-manifest.json are licensed under the
-OpenMDW License Agreement, version 1.1.
-
-Full license text: https://github.com/OpenMDW/OpenMDW/blob/main/1.1/LICENSE.OpenMDW-1.1
-
-Existing checkpoint artifacts are not relicensed. See NOTICE.weights and
-release-manifest.json for origin notices, artifact paths, and checksums.
+Cosmos 2.5 model artifacts and their applicable terms remain available from
+the `cosmos-2.5` release branch.

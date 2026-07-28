@@ -1,0 +1,10 @@
+inputs/predict/media/aspiration.jpg
+inputs/predict/media/coagulation.jpg
+inputs/predict/media/dissection.jpg
+inputs/predict/media/knotting.jpg
+inputs/predict/media/needle_puncture.jpg
+inputs/predict/media/suture_pulling.jpg
+inputs/predict/media/needle_grasping.jpg
+inputs/predict/media/clipping.jpg
+inputs/predict/media/packing.jpg
+inputs/predict/media/tissue_retraction.jpg

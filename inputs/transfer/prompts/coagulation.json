@@ -1,0 +1,98 @@
+{
+  "subjects": [
+    {
+      "description": "A laparoscopic surgical grasper with metallic serrated jaws and blue-tipped shafts",
+      "appearance_details": "Metallic finish on the tips, distinctive blue color on the lower shafts, serrated inner surface of the jaws",
+      "relationship": "Manipulates and applies thermal energy to the cystic artery",
+      "location": "Enters from the right foreground towards the center",
+      "relative_size": "Large",
+      "orientation": "Facing towards the left and center of the field",
+      "pose": "Jaws are open and then close around a tissue structure",
+      "action": "Grasping and coagulating a bleeding vessel",
+      "state_changes": "Closes jaws on the vessel and remains steady while applying energy",
+      "clothing": "",
+      "expression": "",
+      "gender": "Unknown",
+      "age": "",
+      "skin_tone_and_texture": "",
+      "facial_features": "",
+      "number_of_subjects": 1,
+      "number_of_arms": 0,
+      "number_of_legs": 0
+    },
+    {
+      "description": "The cystic artery amidst pooled blood and connective tissue",
+      "appearance_details": "Tubular structure obscured by active bleeding and thin translucent membranes",
+      "relationship": "Target of the surgical intervention",
+      "location": "Center of the operative field",
+      "relative_size": "Medium",
+      "orientation": "Horizontally aligned across the center",
+      "pose": "Partially submerged in blood",
+      "action": "Being grasped and coagulated",
+      "state_changes": "Transitions from active bleeding to being compressed and thermally treated",
+      "clothing": "",
+      "expression": "",
+      "gender": "Unknown",
+      "age": "",
+      "skin_tone_and_texture": "",
+      "facial_features": "",
+      "number_of_subjects": 1,
+      "number_of_arms": 0,
+      "number_of_legs": 0
+    }
+  ],
+  "background_setting": "Laparoscopic close-up dominated by dark red-brown tissue and blood, with moderate active/free blood streaks and a glossy pooled collection in the central to lower-central dissection field. Visibility is slightly degraded by central blood and specular glare, becoming partially occluded when the right-sided clip applier and grasper cover the central field.",
+  "lighting": {
+    "conditions": "Bright endoscopic lighting",
+    "direction": "Directly from the camera viewpoint",
+    "shadows": "Minimal, soft shadows within the recessed tissue areas",
+    "illumination_effect": "Creates strong specular highlights on the wet, bloody surfaces"
+  },
+  "aesthetics": {
+    "composition": "Centered on the surgical action",
+    "color_scheme": "Dominant deep reds, maroons, and fleshy pinks with metallic and blue accents from the tool",
+    "mood_atmosphere": "Clinical, high-precision, intense",
+    "patterns": "Vascular patterns on the liver surface"
+  },
+  "cinematography": {
+    "camera_motion": "Static",
+    "framing": "Close-up",
+    "camera_angle": "Eye-level laparoscopic view",
+    "depth_of_field": "Shallow",
+    "focus": "Sharp focus on the grasper jaws and the vessel",
+    "lens_focal_length": "Wide-angle endoscopic lens"
+  },
+  "style_medium": "live-action video",
+  "artistic_style": "realistic",
+  "context": "Laparoscopic surgery, likely a cholecystectomy",
+  "actions": [
+    {
+      "time": "0:00-0:02",
+      "description": "The surgical grasper approaches a bleeding cystic artery in the center of the field."
+    },
+    {
+      "time": "0:02-0:06",
+      "description": "The grasper jaws close on the vessel and apply thermal energy, resulting in bubbling of blood and coagulation of the tissue."
+    }
+  ],
+  "text_and_signage_elements": [],
+  "segments": [
+    {
+      "segment_index": 0,
+      "time_range": "0:00-0:02",
+      "description": "Initial approach of the instrument to the site of bleeding.",
+      "key_changes": "Instrument positioning relative to the artery.",
+      "camera": "Static close-up."
+    },
+    {
+      "segment_index": 1,
+      "time_range": "0:02-0:06",
+      "description": "Active coagulation process with thermal effects.",
+      "key_changes": "Tissue blanching, bubbling of fluid, and smoke production.",
+      "camera": "Static close-up."
+    }
+  ],
+  "transitions": [],
+  "temporal_caption": "The laparoscopic view begins with a surgical grasper, identified by its blue-tipped shafts, moving into the center from the right to address a bleeding cystic artery. From 0:00 to 0:02, the instrument maneuvers through a pool of blood and connective tissue to isolate the vessel. At 0:02, the metallic jaws of the grasper clamp onto the artery. For the remainder of the interval until 0:06, the grasper remains closed, applying thermal energy. This action causes the surrounding blood to bubble and steam to rise as the tissue coagulates, effectively sealing the vessel against the background of the glistening liver surface.",
+  "audio_description": ""
+}

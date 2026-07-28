@@ -1,13 +1,11 @@
 # Cosmos-H-Surgical
 
-[![License](https://img.shields.io/badge/Code-Apache%202.0-blue)](LICENSE)
-[![Legacy Weights](https://img.shields.io/badge/Legacy%20Weights-NVIDIA--OneWay--Noncommercial-green)](LICENSE.weights)
-[![OpenMDW Weights](https://img.shields.io/badge/OpenMDW%20Weights-OpenMDW--1.1-blue)](LICENSE.OpenMDW-1.1)
+[![License](https://img.shields.io/badge/Code%20and%20Weights-OpenMDW--1.1-blue)](LICENSE)
 [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-Hugging%20Face-yellow)](https://huggingface.co/nvidia/Cosmos-H-Surgical)
 [![arXiv](https://img.shields.io/badge/arXiv-2512.23162-b31b1b)](https://arxiv.org/abs/2512.23162)
-[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3.13-3776AB)](https://www.python.org/)
 
-A surgical video world foundation model suite based on [NVIDIA Cosmos](https://www.nvidia.com/en-us/ai/cosmos/) and [SurgWorld](https://arxiv.org/abs/2512.23162), part of the NVIDIA MedTech Open Models.
+A surgical video world foundation model suite based on [NVIDIA Cosmos](https://github.com/NVIDIA/cosmos) and [SurgWorld](https://arxiv.org/abs/2512.23162), part of the NVIDIA MedTech Open Models.
 
 <p align="center">
 <img width="935" height="224" alt="Cosmos-H-Surgical overview" src="https://github.com/user-attachments/assets/69656a2a-e6b0-4ca9-aa6c-5c2f572a2656" />
@@ -15,139 +13,76 @@ A surgical video world foundation model suite based on [NVIDIA Cosmos](https://w
 
 ## Overview
 
-Cosmos-H-Surgical delivers high-quality video prediction and transfer for surgical scenes, including future-state simulation and control-conditioned generation across modalities. It comprises two sub-projects — **Predict** for image-to-video generation and **Transfer** for multi-modal control-based generation — both adapted from NVIDIA Cosmos 2.5 for surgical video data. For action-conditioned surgical simulation with robot kinematics, see the companion repo [Cosmos-H-Surgical-Simulator](https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical-Simulator).
-
-This project was conducted by NVIDIA in collaboration with [Chinese University of Hong Kong](https://www.cse.cuhk.edu.hk/~qdou/), [National University of Singapore](https://yuemingjin.github.io/), and [Shanghai Jiao Tong University](https://gc.sjtu.edu.cn/about/faculty-staff/faculty-directory/faculty-detail/75745/).
+Cosmos-H-Surgical delivers high-quality video prediction and transfer for surgical scenes, including future-state simulation and control-conditioned generation across modalities. The Cosmos 3 release unifies Predict and Transfer in a single mixed-capability checkpoint that supports both image-to-video prediction and multi-modal control-based generation. This project was conducted by NVIDIA in collaboration with [Chinese University of Hong Kong](https://www.cse.cuhk.edu.hk/~qdou/), [National University of Singapore](https://yuemingjin.github.io/), and [Shanghai Jiao Tong University](https://gc.sjtu.edu.cn/about/faculty-staff/faculty-directory/faculty-detail/75745/).
 
 ## News
 
+- **[July 2026]** — Released Cosmos-H-Surgical, built on NVIDIA Cosmos 3, with **Predict** and **Transfer** unified in a single mixed-capability checkpoint.
 - **[July 2026]** — Added OpenMDW-1.1 checkpoint editions for Predict and Transfer while retaining the original checkpoint paths and license terms.
 - **[March 2026]** — Released [SurgΣ](https://arxiv.org/abs/2603.16822): a large-scale multimodal surgical dataset and foundation model suite for surgical intelligence.
 - **[March 2026]** — Released [BSA](https://arxiv.org/abs/2603.12787): generalized recognition of basic surgical actions enabling skill assessment and VLM-based surgical planning.
-- **[March 2026]** — Released [Cosmos-H-Surgical-Predict](predict/) and [Cosmos-H-Surgical-Transfer](transfer/) as part of the NVIDIA MedTech Open Models.
+- **[March 2026]** — Released [Cosmos-H-Surgical-Predict](https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical/tree/cosmos-2.5/predict) and [Cosmos-H-Surgical-Transfer](https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical/tree/cosmos-2.5/transfer) as part of the NVIDIA MedTech Open Models.
 
-## Model Variants
 
-| Model | Base Model | Params | Capability | Input | HuggingFace | License |
-|-------|-----------|--------|------------|-------|-------------|---------|
-| [Cosmos-H-Surgical-Predict](predict/) (legacy) | [Cosmos-Predict2.5-2B](https://github.com/nvidia-cosmos/cosmos-predict2.5) | 2B | Future-state video prediction (Image2World) | text + image | [Weights](https://huggingface.co/nvidia/Cosmos-H-Surgical/tree/main/predict) | [NVIDIA-OneWay-Noncommercial-License](LICENSE.weights) |
-| [Cosmos-H-Surgical-Predict](predict/) (OpenMDW) | [Cosmos-Predict2.5-2B](https://github.com/nvidia-cosmos/cosmos-predict2.5) | 2B | Future-state video prediction (Image2World) | text + image | [Weights](https://huggingface.co/nvidia/Cosmos-H-Surgical/tree/main/openmdw-1.1/predict) | [OpenMDW-1.1](LICENSE.OpenMDW-1.1) |
-| [Cosmos-H-Surgical-Transfer](transfer/) (legacy) | [Cosmos-Transfer2.5-2B](https://github.com/nvidia-cosmos/cosmos-transfer2.5) | 2B | Control-conditioned generation (depth, edge, seg, blur) | text + video + control maps | [Weights](https://huggingface.co/nvidia/Cosmos-H-Surgical/tree/main/transfer) | [NVIDIA-OneWay-Noncommercial-License](LICENSE.weights) |
-| [Cosmos-H-Surgical-Transfer](transfer/) (OpenMDW) | [Cosmos-Transfer2.5-2B](https://github.com/nvidia-cosmos/cosmos-transfer2.5) | 2B | Control-conditioned generation (depth, edge, seg, blur) | text + video + control maps | [Weights](https://huggingface.co/nvidia/Cosmos-H-Surgical/tree/main/openmdw-1.1/transfer) | [OpenMDW-1.1](LICENSE.OpenMDW-1.1) |
+> The complete Cosmos 2.5 release remains available on the
+> [`cosmos-2.5`](https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical/tree/cosmos-2.5)
+> branch and under the
+> [`v0.2.0`](https://github.com/NVIDIA-Medtech/Cosmos-H-Surgical/tree/v0.2.0)
+> tag.
 
 ## Repository Structure
 
-```
+```text
 Cosmos-H-Surgical/
-├── predict/                          # Cosmos-H-Surgical-Predict
-│   ├── cosmos_predict2/              # Predict package (experiments, datasets)
-│   ├── packages/                     # Workspace deps (cosmos-oss, cosmos-cuda, cosmos-gradio)
-│   ├── docs/                         # Setup, inference, post-training
-│   ├── examples/                     # Inference scripts
-│   ├── assets/                       # Example inputs (JSON configs, images)
-│   ├── Dockerfile
-│   └── pyproject.toml
-├── transfer/                         # Cosmos-H-Surgical-Transfer
-│   ├── cosmos_transfer2/             # Transfer package
-│   ├── packages/                     # Workspace deps
-│   ├── docs/                         # Setup, inference, post-training
-│   ├── examples/                     # Inference scripts
-│   ├── assets/                       # Example inputs (JSON specs, control maps)
-│   ├── Dockerfile
-│   └── pyproject.toml
-├── LICENSE                           # Apache 2.0 (source code)
-├── LICENSE.weights                   # Legacy checkpoint license
-├── LICENSE.OpenMDW-1.1               # OpenMDW checkpoint license
-├── NOTICE.weights                    # Checkpoint origin and license scope
-└── release-manifest.json             # Released artifact paths and checksums
+|-- cosmos_h_surgical/          # Surgical package and CLI
+|-- datasets/                   # Synthetic toy post-training dataset
+|-- examples/
+|   |-- post_training/          # Public post-training recipes
+|-- inputs/                     # Predict, Transfer, and prompt examples
+|-- docs/                       # Setup, inference, and migration guides
+|-- tests/                      # Release and integration checks
+|-- pyproject.toml              # Package and uv configuration
+|-- uv.lock                     # Reproducible dependency lock
+|-- UPSTREAM.md                 # Framework provenance and update policy
+`-- release-manifest.json       # Public release artifact inventory
 ```
+### Scaling World State Diversity Examples
 
-## Quick Start
+<p align="center">
+  <video src="https://github.com/user-attachments/assets/90f67345-0e42-4c53-a328-4dde0821783f"
+         width="100%"
+         alt="Input video"
+         controls>
+  </video>
+</p>
 
-**System Requirements**: NVIDIA Ampere+ GPU (A100, H100, B200), Linux x86-64, CUDA 12.8+, Python 3.10+
+## Architecture
 
-### Install
+Cosmos-H-Surgical is a focused package layered on an immutable public revision
+of [NVIDIA Cosmos Framework](https://github.com/NVIDIA/cosmos-framework). The
+framework is installed as a commit-pinned dependency. See [UPSTREAM.md](UPSTREAM.md).
 
-```bash
-git clone git@github.com:NVIDIA-Medtech/Cosmos-H-Surgical.git
-cd Cosmos-H-Surgical
-git lfs pull
-```
-
-Each sub-project has its own environment. For example, to set up **Predict**:
-
-```bash
-cd predict
-curl -LsSf https://astral.sh/uv/install.sh | sh
-uv python install && uv sync --extra=cu128
-source .venv/bin/activate
-```
-
-See [predict/docs/setup.md](predict/docs/setup.md) or [transfer/docs/setup.md](transfer/docs/setup.md) for full instructions including Docker.
-
-### Inference
-
-**Predict** (Image2World):
-```bash
-cd predict
-python examples/inference.py -i assets/base/coagulation.json -o outputs/base_video2world --inference-type=video2world
-```
-
-**Transfer** (control-conditioned):
-```bash
-cd transfer
-python examples/inference.py -i assets/coagulation_example/depth/coagulation_depth_spec.json -o outputs/depth
-```
-
-The existing legacy checkpoints remain the default. Select an OpenMDW-1.1 checkpoint explicitly with the model key:
-
-```bash
-# From the repository root: Predict
-(cd predict && python examples/inference.py -i assets/base/coagulation.json \
-  -o outputs/openmdw_predict --inference-type=video2world \
-  --model=2B/post-trained/openmdw-1.1)
-
-# From the repository root: Transfer depth
-(cd transfer && python examples/inference.py \
-  -i assets/coagulation_example/depth/coagulation_depth_spec.json \
-  -o outputs/openmdw_depth --model=depth/openmdw-1.1)
-```
 
 ## Documentation
 
-| Topic | Predict | Transfer |
-|-------|---------|----------|
-| Setup | [predict/docs/setup.md](predict/docs/setup.md) | [transfer/docs/setup.md](transfer/docs/setup.md) |
-| Inference | [predict/docs/inference.md](predict/docs/inference.md) | [transfer/docs/inference.md](transfer/docs/inference.md) |
-| Post-training | [predict/docs/post-training.md](predict/docs/post-training.md) | [transfer/docs/post-training.md](transfer/docs/post-training.md) |
-| Troubleshooting | [predict/docs/troubleshooting.md](predict/docs/troubleshooting.md) | [transfer/docs/troubleshooting.md](transfer/docs/troubleshooting.md) |
+| Guide | Description |
+| --- | --- |
+| [Setup](docs/setup.md) | CUDA 13/12.8 installation and environment verification. |
+| [Inference](docs/inference.md) | Structured prompts, checkpoints, I2V, and all transfer controls. |
+| [Prompt upsampling](docs/prompt_upsampling.md) | Convert short surgical prompts into Cosmos 3 JSON prompts. |
+| [Environment variables](docs/environment_variables.md) | Inference, prompt-upsampling, and training variables. |
+| [Troubleshooting](docs/troubleshooting.md) | Installation, checkpoint, input, and distributed failures. |
+| [Code structure](docs/code_structure.md) | Package architecture and framework ownership boundary. |
+| [Cosmos 2.5 migration](docs/migration_from_cosmos25.md) | Archive locations, command mapping, and compatibility. |
+| [Post-training](docs/post_training.md) | Predict and Transfer LoRA recipes and dataset contracts. |
 
-## Performance
-
-### Transfer Inference (Segmentation control, 720p 16FPS, 93 frames, 65.4 GB VRAM)
-
-| GPU Hardware | Generation Time | End-to-End Time |
-|-------------|----------------|-----------------|
-| NVIDIA B200 | 92.25 sec | 186.92 sec |
-| NVIDIA H100 NVL | 445.52 sec | 895.33 sec |
-| NVIDIA H100 PCIe | 264.13 sec | 533.58 sec |
-| NVIDIA H20 | 683.65 sec | 1370.39 sec |
-
-End-to-end time measured for 121-frame input video (two 93-frame chunk generations). Guardrails disabled.
 
 ## License
 
-| Component | License |
-|-----------|---------|
-| Source code | [Apache 2.0](LICENSE) |
-| Legacy Predict weights under `predict/` | [NVIDIA-OneWay-Noncommercial-License](LICENSE.weights) |
-| Legacy Transfer weights under `transfer/` | [NVIDIA-OneWay-Noncommercial-License](LICENSE.weights) |
-| Predict weights under `openmdw-1.1/predict/` | [OpenMDW-1.1](LICENSE.OpenMDW-1.1) |
-| Transfer weights under `openmdw-1.1/transfer/` | [OpenMDW-1.1](LICENSE.OpenMDW-1.1) |
-
-Only artifacts identified as `OpenMDW-1.1` in [release-manifest.json](release-manifest.json) are provided under OpenMDW-1.1. Existing checkpoint artifacts are not relicensed. See [NOTICE.weights](NOTICE.weights) for origin and redistribution notices.
-
-This project will download and install additional third-party open source software projects. Review the license terms of these open source projects before use.
+Code and model weights in this release are
+provided under [OpenMDW-1.1](LICENSE). Third-party software remains
+subject to its own license terms. See [NOTICE](NOTICE) and
+[ATTRIBUTIONS.md](ATTRIBUTIONS.md).
 
 ## Citation
 
