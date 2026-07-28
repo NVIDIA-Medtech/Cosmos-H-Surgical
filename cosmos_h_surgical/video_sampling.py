@@ -112,9 +112,7 @@ def sample_video_frames(
         raise ValueError(f"Unable to determine a positive source FPS for {video_path}")
     source_fps = float(source_fps)
     if source_fps < min_fps:
-        raise ValueError(
-            f"Source video FPS {source_fps:.3f} is below the requested minimum sampling FPS {min_fps:.3f}"
-        )
+        raise ValueError(f"Source video FPS {source_fps:.3f} is below the requested minimum sampling FPS {min_fps:.3f}")
 
     relative_timestamps = calculate_sample_timestamps(
         duration_seconds,

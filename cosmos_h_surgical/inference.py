@@ -120,11 +120,7 @@ def _normalized_cli_argv(argv: Sequence[str]):
             value_end = index
 
             expanded = sorted(
-                {
-                    match
-                    for pattern in normalized[value_start:value_end]
-                    for match in _expand_input_pattern(pattern)
-                }
+                {match for pattern in normalized[value_start:value_end] for match in _expand_input_pattern(pattern)}
             )
             normalized[value_start:value_end] = expanded
             index = value_start
@@ -251,10 +247,7 @@ def _migrate_checkpoint_config(checkpoint_path: Path, destination: Path) -> bool
 
 def _with_default_checkpoint_argv(argv: Sequence[str]) -> list[str]:
     normalized = list(argv)
-    if any(
-        argument == "--checkpoint-path" or argument.startswith("--checkpoint-path=")
-        for argument in normalized
-    ):
+    if any(argument == "--checkpoint-path" or argument.startswith("--checkpoint-path=") for argument in normalized):
         return normalized
     return [*normalized, "--checkpoint-path", DEFAULT_MODEL_KEY]
 
