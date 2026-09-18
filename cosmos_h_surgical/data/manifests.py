@@ -12,8 +12,8 @@ from pathlib import Path
 
 import av
 
-CONTROL_SUFFIXES = (".blur.mp4", ".depth.mp4", ".seg.mp4")
-SUPPORTED_CONTROL_MODALITIES = frozenset({"edge", "blur", "depth", "seg"})
+CONTROL_SUFFIXES = (".blur.mp4", ".depth.mp4", ".seg.mp4", ".seg_tool.mp4")
+SUPPORTED_CONTROL_MODALITIES = frozenset({"edge", "blur", "depth", "seg", "seg_tool"})
 
 
 @dataclass(frozen=True)

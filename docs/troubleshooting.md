@@ -37,10 +37,10 @@ Confirm that `uv sync` completed and that the framework revision is present in
 
 ### The default checkpoint cannot be downloaded
 
-Confirm that the `v0.3.0` revision is reachable:
+Confirm that the `v0.3.1` revision is reachable:
 
 ```bash
-hf download nvidia/Cosmos-H-Surgical --revision v0.3.0
+hf download nvidia/Cosmos-H-Surgical --revision v0.3.1
 ```
 
 Check network access, Hugging Face authentication, and any

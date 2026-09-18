@@ -10,7 +10,7 @@ inherited from the pinned Cosmos Framework and its dependencies.
 | `HF_HOME` | Hugging Face cache root for downloaded models and tokenizers. |
 | `HF_TOKEN` | Optional Hugging Face token for gated artifacts or higher request limits. |
 | `COSMOS_H_SURGICAL_HF_REPOSITORY` | Override the default `nvidia/Cosmos-H-Surgical` repository for inference and post-training. |
-| `COSMOS_H_SURGICAL_HF_REVISION` | Override the default `v0.3.0` model revision for inference and post-training. |
+| `COSMOS_H_SURGICAL_HF_REVISION` | Override the default `v0.3.1` model revision for inference and post-training. |
 | `TORCH_NCCL_HEARTBEAT_TIMEOUT_SEC` | Distributed timeout in seconds; defaults to `1800` in the surgical wrapper. |
 | `CUDA_VISIBLE_DEVICES` | Standard CUDA device selection. |
 | `MASTER_ADDR` | Distributed launch coordinator address. |
@@ -48,6 +48,7 @@ The included surgical LoRA recipe uses:
 | `COSMOS_H_SURGICAL_TRANSFER_JSON_PATHS` | Comma-separated Transfer manifest JSON files paired with the dataset roots. |
 | `COSMOS_H_SURGICAL_TRANSFER_ENLARGED_FACTORS` | Optional comma-separated Transfer repeat/subsample factors; defaults to `1.0`. |
 | `BASE_CHECKPOINT_PATH` | Shared path to the released Cosmos-H-Surgical checkpoint after conversion to DCP. |
+| `COSMOS_H_SURGICAL_DISTILL_TEACHER_DCP` | Private DCP conversion root used as the DMD2 teacher during training. |
 | `WAN_VAE_PATH` | Resolved local path to `Wan2.2_VAE.pth`, normally returned by `hf download` under `HF_HOME`. |
 
 Download the released safetensors using the repository and revision variables
@@ -55,7 +56,8 @@ above, then convert that complete snapshot once with
 `cosmos_framework.scripts.convert_model_to_dcp`. New post-training runs load
 the resulting `BASE_CHECKPOINT_PATH`; subsequent run checkpoints remain DCP
 until explicitly exported back to Hugging Face safetensors. See
-[post_training.md](post_training.md) for the conversion and export commands.
+[post_training.md](post_training.md) for the standard conversion and export
+commands, and [dmd2_distillation.md](dmd2_distillation.md) for DMD2.
 
 ## Example
 

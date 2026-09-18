@@ -37,7 +37,7 @@ from cosmos_h_surgical.data.surgical_video_json_dataset import (
     SurgicalVideoJSONDataset,
 )
 
-_SUPPORTED_MODALITIES = {"edge", "blur", "depth", "seg"}
+_SUPPORTED_MODALITIES = {"edge", "blur", "depth", "seg", "seg_tool"}
 
 
 def _normalize_weights(weights: dict[str, float] | None) -> dict[str, float]:
@@ -89,13 +89,14 @@ class SurgicalTransferJSONDataset(SurgicalVideoJSONDataset):
         foo.json
         foo.depth.mp4
         foo.seg.mp4        # configurable via seg_suffix
+        foo.seg_tool.mp4   # configurable via seg_tool_suffix
         foo.blur.mp4       # optional, configurable via blur_suffix
 
     ``edge`` controls are computed from the RGB target clip on the fly. ``blur``
     first tries to load a precomputed sidecar and falls back to on-the-fly blur
-    when the sidecar is absent or unreadable. ``depth`` and ``seg`` controls
-    are loaded from sidecar MP4s using the exact same frame range as the RGB
-    target. Samples are returned as preprocessed
+    when the sidecar is absent or unreadable. ``depth``, ``seg``, and
+    ``seg_tool`` controls are loaded from sidecar MP4s using the exact same
+    frame range as the RGB target. Samples are returned as preprocessed
     ``video=[control, target]`` float tensors in ``[-1, 1]`` with shared temporal
     mRoPE positions.
     """
@@ -126,6 +127,7 @@ class SurgicalTransferJSONDataset(SurgicalVideoJSONDataset):
         depth_suffix: str = ".depth.mp4",
         blur_suffix: str = ".blur.mp4",
         seg_suffix: str = ".seg.mp4",
+        seg_tool_suffix: str = ".seg_tool.mp4",
         edge_use_random: bool = True,
         blur_use_random: bool = True,
         **kwargs: Any,
@@ -159,6 +161,7 @@ class SurgicalTransferJSONDataset(SurgicalVideoJSONDataset):
         self.depth_suffix = depth_suffix
         self.blur_suffix = blur_suffix
         self.seg_suffix = seg_suffix
+        self.seg_tool_suffix = seg_tool_suffix
         self._edge_augmentor = AddControlInputEdge(
             input_keys=["video"], output_keys=["control_input_edge"], use_random=edge_use_random
         )
@@ -269,8 +272,9 @@ class SurgicalTransferJSONDataset(SurgicalVideoJSONDataset):
             depth = self._decode_sidecar_video(sidecar_path, start_frame, end_frame, scale_flags="bicubic")
             data = self._depth_augmentor({"video": video, "depth": depth})
             return data["control_input_depth"]
-        if modality == "seg":
-            sidecar_path = _resolve_sidecar_path(video_path, self.seg_suffix)
+        if modality in {"seg", "seg_tool"}:
+            suffix = self.seg_suffix if modality == "seg" else self.seg_tool_suffix
+            sidecar_path = _resolve_sidecar_path(video_path, suffix)
             if not Path(sidecar_path).exists():
                 raise FileNotFoundError(f"{modality} sidecar not found: {sidecar_path}")
             segmentation = self._decode_sidecar_video(sidecar_path, start_frame, end_frame, scale_flags="neighbor")
@@ -407,6 +411,7 @@ def get_surgical_transfer_json_dataset(
     depth_suffix: str = ".depth.mp4",
     blur_suffix: str = ".blur.mp4",
     seg_suffix: str = ".seg.mp4",
+    seg_tool_suffix: str = ".seg_tool.mp4",
     **kwargs: Any,
 ) -> SurgicalTransferJSONDataset:
     return SurgicalTransferJSONDataset(
@@ -434,5 +439,6 @@ def get_surgical_transfer_json_dataset(
         depth_suffix=depth_suffix,
         blur_suffix=blur_suffix,
         seg_suffix=seg_suffix,
+        seg_tool_suffix=seg_tool_suffix,
         **kwargs,
     )

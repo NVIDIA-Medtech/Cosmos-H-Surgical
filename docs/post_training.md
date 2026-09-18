@@ -7,7 +7,12 @@ user.
 
 These capability-specific recipes do not exactly reproduce the release
 checkpoint's joint Predict, Transfer, and Action training run. Action training
-is outside the v0.3.0 public interface.
+is outside the v0.3.1 public interface.
+
+For four-step transfer distillation, use the dedicated
+[DMD2 tutorial](dmd2_distillation.md). Its public recipe is a recommended
+starting configuration rather than an exact reconstruction of the released
+student's training run.
 
 The pinned Cosmos Framework video loader requires `ffmpeg` and `ffprobe` on
 `PATH` during training. The dataset validation command uses the PyAV dependency
@@ -181,7 +186,7 @@ source .venv/bin/activate
 
 export HF_HOME=/path/to/huggingface-cache
 export COSMOS_H_SURGICAL_HF_REPOSITORY=nvidia/Cosmos-H-Surgical
-export COSMOS_H_SURGICAL_HF_REVISION=v0.3.0
+export COSMOS_H_SURGICAL_HF_REVISION=v0.3.1
 
 export RELEASE_CHECKPOINT_PATH="$(
   hf download \

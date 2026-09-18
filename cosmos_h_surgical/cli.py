@@ -10,6 +10,7 @@ from pathlib import Path
 
 from cosmos_h_surgical.__about__ import __version__
 from cosmos_h_surgical.data.manifests import prepare_training_manifest, validate_training_manifests
+from cosmos_h_surgical.distillation_checkpoint import validate_release_teacher_checkpoint
 from cosmos_h_surgical.inference import run_framework_cli
 from cosmos_h_surgical.prompt_upsampling import run_framework_cli as run_prompt_upsampling_cli
 from cosmos_h_surgical.provenance import FRAMEWORK_REPOSITORY, FRAMEWORK_REVISION, FRAMEWORK_STATUS
@@ -38,6 +39,12 @@ def _build_parser() -> argparse.ArgumentParser:
         help="Generate structured Cosmos 3 prompts with OpenAI-compatible defaults",
     )
     subparsers.add_parser("framework-info", help="Print immutable framework provenance")
+
+    teacher_parser = subparsers.add_parser(
+        "validate-distillation-teacher",
+        help="Preflight the released Surgical Hugging Face checkpoint for DMD2 conversion",
+    )
+    teacher_parser.add_argument("--checkpoint-path", type=Path, required=True)
 
     prepare_parser = subparsers.add_parser(
         "prepare-training-data",
@@ -153,6 +160,14 @@ def main(argv: Sequence[str] | None = None) -> int:
                 print(f"ERROR: {error}")
             return 1
         print(f"Validated {args.manifest}")
+        return 0
+    if args.command == "validate-distillation-teacher":
+        try:
+            report = validate_release_teacher_checkpoint(args.checkpoint_path)
+        except ValueError as error:
+            print(f"ERROR: {error}")
+            return 1
+        print(json.dumps(report.to_dict(), indent=2, sort_keys=True))
         return 0
 
     parser.print_help()

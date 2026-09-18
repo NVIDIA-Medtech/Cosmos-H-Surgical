@@ -78,3 +78,6 @@ imaginaire4-output/
 /tmp/
 /predict/
 /transfer/
+/tools/
+*.slurm
+*.sh
