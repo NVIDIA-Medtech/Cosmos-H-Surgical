@@ -252,6 +252,11 @@ def _with_default_checkpoint_argv(argv: Sequence[str]) -> list[str]:
     return [*normalized, "--checkpoint-path", DEFAULT_MODEL_KEY]
 
 
+def _uses_training_config(argv: Sequence[str]) -> bool:
+    """Expose Framework config arguments when loading a training DCP."""
+    return any(argument == "--config-file" or argument.startswith("--config-file=") for argument in argv)
+
+
 @contextmanager
 def _normalized_checkpoint_argv(argv: Sequence[str]):
     normalized = list(argv)
@@ -296,7 +301,7 @@ def run_framework_cli(
     entrypoint: Callable[[], Any] | None = None,
 ) -> int:
     """Run the pinned Cosmos Framework inference CLI with surgical compatibility."""
-    os.environ["COSMOS_TRAINING"] = "0"
+    os.environ["COSMOS_TRAINING"] = "1" if _uses_training_config(argv) else "0"
     _configure_distributed_timeout()
     with _normalized_cli_argv(argv) as (input_argv, needs_resize_compat):
         with _normalized_checkpoint_argv(_with_default_checkpoint_argv(input_argv)) as normalized_argv:

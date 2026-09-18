@@ -25,7 +25,7 @@ def test_toy_dataset_manifest_and_sidecars() -> None:
     assert manifest == {"training": [{"video": f"videos/{stem}.mp4"} for stem in EXPECTED_STEMS]}
 
     for stem in EXPECTED_STEMS:
-        for suffix in (".mp4", ".blur.mp4", ".depth.mp4", ".seg.mp4"):
+        for suffix in (".mp4", ".blur.mp4", ".depth.mp4", ".seg.mp4", ".seg_tool.mp4"):
             path = DATASET_ROOT / "videos" / f"{stem}{suffix}"
             assert path.is_file()
             assert path.stat().st_size > 0

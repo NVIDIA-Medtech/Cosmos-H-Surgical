@@ -3,8 +3,9 @@
 This directory contains a small, training-ready synthetic surgical video
 dataset for the Cosmos-H-Surgical Predict and Transfer post-training examples.
 All ten RGB target videos are synthetic data selected from the corresponding
-action examples in the synthetic training corpus. Aligned caption, blur, depth, and segmentation sidecars
-support the repository's training data contract.
+action examples in the synthetic training corpus. Aligned caption, blur, depth,
+segmentation, and tool-segmentation sidecars support the repository's training
+data contract.
 
 ## Layout
 
@@ -16,7 +17,8 @@ videos/
 |-- aspiration.json
 |-- aspiration.blur.mp4
 |-- aspiration.depth.mp4
-`-- aspiration.seg.mp4
+|-- aspiration.seg.mp4
+`-- aspiration.seg_tool.mp4
 ```
 
 Caption files contain only the structured prompt consumed by the training
@@ -30,9 +32,10 @@ loader:
 }
 ```
 
-Blur, depth, and segmentation are materialized as aligned videos. Edge control
-is computed from the RGB target at load time and therefore has no `.edge.mp4`
-sidecar.
+Blur, depth, segmentation, and tool segmentation are materialized as aligned
+videos. Edge control is computed from the RGB target at load time and therefore
+has no `.edge.mp4` sidecar. The compact toy dataset aliases `.seg_tool.mp4` to
+`.seg.mp4`; production datasets should provide their distinct tool masks.
 
 The portable training split is defined in `manifests/train.json`. All media
 files are managed with Git LFS; JSON and documentation remain regular Git
@@ -52,7 +55,7 @@ cosmos-h-surgical validate-training-data \
   --mode transfer \
   --dataset-dir datasets/cosmos-h-surgical-assets \
   --manifest datasets/cosmos-h-surgical-assets/manifests/train.json \
-  --control-modalities edge,blur,depth,seg
+  --control-modalities edge,blur,depth,seg,seg_tool
 ```
 
 See the repository `LICENSE` and `NOTICE` files for applicable terms and

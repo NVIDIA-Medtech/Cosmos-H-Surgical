@@ -22,6 +22,7 @@ from cosmos_h_surgical.inference import (
     _iter_transfer_safe_batches,
     _normalized_checkpoint_argv,
     _normalized_cli_argv,
+    _uses_training_config,
     _with_default_checkpoint_argv,
     run_framework_cli,
 )
@@ -61,6 +62,33 @@ def test_framework_cli_forwards_arguments_and_restores_argv(monkeypatch: pytest.
     ]
     assert sys.argv == original
     assert os.environ["COSMOS_TRAINING"] == "0"
+
+
+@pytest.mark.parametrize(
+    "config_arguments",
+    [
+        ["--config-file", "/tmp/run/config.yaml"],
+        ["--config-file=/tmp/run/config.yaml"],
+    ],
+)
+def test_framework_cli_enables_training_config_for_dcp_inference(
+    monkeypatch: pytest.MonkeyPatch,
+    config_arguments: list[str],
+) -> None:
+    observed: list[str] = []
+    monkeypatch.delenv("COSMOS_TRAINING", raising=False)
+
+    def fake_entrypoint() -> None:
+        observed.extend(sys.argv)
+
+    argv = ["-i", "sample.json", "--checkpoint-path", "/tmp/checkpoint", *config_arguments]
+    assert run_framework_cli(argv, entrypoint=fake_entrypoint) == 0
+    assert observed == ["cosmos-h-surgical infer", *argv]
+    assert os.environ["COSMOS_TRAINING"] == "1"
+
+
+def test_uses_training_config_ignores_unrelated_arguments() -> None:
+    assert _uses_training_config(["--checkpoint-path", "/tmp/checkpoint"]) is False
 
 
 def test_normalized_cli_argv_preserves_relative_path_context(tmp_path: Path) -> None:

@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 
 import pytest
+import torch
 
 from cosmos_h_surgical.data.manifests import (
     VideoMetadata,
@@ -13,7 +14,11 @@ from cosmos_h_surgical.data.manifests import (
     prepare_training_manifest,
     validate_training_manifests,
 )
-from cosmos_h_surgical.data.surgical_transfer_json_dataset import _normalize_weights, _resolve_sidecar_path
+from cosmos_h_surgical.data.surgical_transfer_json_dataset import (
+    SurgicalTransferJSONDataset,
+    _normalize_weights,
+    _resolve_sidecar_path,
+)
 from cosmos_h_surgical.data.surgical_video_json_dataset import _as_list, _parse_factors
 
 
@@ -44,7 +49,7 @@ def test_prepare_manifest_excludes_transfer_sidecars(tmp_path: Path) -> None:
     target = videos / "clip_000001.mp4"
     target.touch()
     _write_caption(target)
-    for suffix in (".blur.mp4", ".depth.mp4", ".seg.mp4"):
+    for suffix in (".blur.mp4", ".depth.mp4", ".seg.mp4", ".seg_tool.mp4"):
         videos.joinpath(f"clip_000001{suffix}").touch()
 
     output = root / "manifests" / "train.json"
@@ -120,21 +125,54 @@ def test_validate_transfer_requires_aligned_depth_and_seg(tmp_path: Path) -> Non
         frames = 92 if path.name.endswith(".depth.mp4") else 93
         return VideoMetadata(width=832, height=480, frames=frames, fps=16.0)
 
-    report = validate_training_manifests(root, [manifest], mode="transfer", media_probe=metadata)
+    report = validate_training_manifests(
+        root,
+        [manifest],
+        mode="transfer",
+        control_modalities=("edge", "blur", "depth", "seg", "seg_tool"),
+        media_probe=metadata,
+    )
 
     assert not report.ok
     assert any("misaligned depth control" in error for error in report.errors)
     assert any("seg control not found" in error for error in report.errors)
+    assert any("seg_tool control not found" in error for error in report.errors)
     assert not any("blur control not found" in error for error in report.errors)
 
 
 def test_transfer_loader_supports_only_public_controls() -> None:
-    assert _normalize_weights({"edge": 2, "blur": 2, "depth": 2, "seg": 2}) == {
+    assert _normalize_weights({"edge": 2, "blur": 2, "depth": 2, "seg": 1, "seg_tool": 1}) == {
         "edge": 0.25,
         "blur": 0.25,
         "depth": 0.25,
-        "seg": 0.25,
+        "seg": 0.125,
+        "seg_tool": 0.125,
     }
     with pytest.raises(ValueError, match="Unsupported transfer modalities"):
         _normalize_weights({"flow": 1})
     assert _resolve_sidecar_path("clip.mp4", ".depth.mp4") == "clip.depth.mp4"
+
+
+def test_transfer_loader_resolves_seg_tool_sidecar(tmp_path: Path) -> None:
+    video_path = tmp_path / "clip.mp4"
+    video_path.touch()
+    seg_tool_path = tmp_path / "clip.seg_tool.mp4"
+    seg_tool_path.touch()
+
+    dataset = object.__new__(SurgicalTransferJSONDataset)
+    dataset.seg_suffix = ".seg.mp4"
+    dataset.seg_tool_suffix = ".seg_tool.mp4"
+    decoded = torch.ones((3, 1, 2, 2), dtype=torch.uint8)
+    decode_calls: list[tuple[str, int, int, str]] = []
+
+    def decode_sidecar(path: str, start_frame: int, end_frame: int, scale_flags: str) -> torch.Tensor:
+        decode_calls.append((path, start_frame, end_frame, scale_flags))
+        return decoded
+
+    dataset._decode_sidecar_video = decode_sidecar
+    dataset._seg_augmentor = lambda data: {"control_input_seg": data["segmentation"]}
+
+    control = dataset._build_control(str(video_path), torch.zeros_like(decoded), 0, 0, "seg_tool")
+
+    assert torch.equal(control, decoded)
+    assert decode_calls == [(str(seg_tool_path), 0, 0, "neighbor")]

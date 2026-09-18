@@ -9,6 +9,7 @@ import pytest
 import cosmos_h_surgical.cli as cli
 from cosmos_h_surgical.__about__ import __version__
 from cosmos_h_surgical.cli import main
+from cosmos_h_surgical.distillation_checkpoint import TeacherCheckpointReport
 
 
 def test_version(capsys: pytest.CaptureFixture[str]) -> None:
@@ -24,6 +25,40 @@ def test_framework_info(capsys: pytest.CaptureFixture[str]) -> None:
     assert value["repository"] == "https://github.com/NVIDIA/cosmos-framework.git"
     assert len(value["revision"]) == 40
     assert value["status"] == "pinned-release"
+
+
+def test_validate_distillation_teacher_command(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    report = TeacherCheckpointReport(
+        checkpoint_path=str(tmp_path),
+        tensors=1448,
+        lora_tensors=288,
+        action_tensors=5,
+        shards=7,
+        shard_bytes=31_529_928_152,
+    )
+    monkeypatch.setattr(cli, "validate_release_teacher_checkpoint", lambda path: report)
+
+    assert main(["validate-distillation-teacher", "--checkpoint-path", str(tmp_path)]) == 0
+
+    assert json.loads(capsys.readouterr().out) == report.to_dict()
+
+
+def test_validate_distillation_teacher_command_reports_failure(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    def fail_validation(_path: Path) -> TeacherCheckpointReport:
+        raise ValueError("missing release LoRA")
+
+    monkeypatch.setattr(cli, "validate_release_teacher_checkpoint", fail_validation)
+
+    assert main(["validate-distillation-teacher", "--checkpoint-path", str(tmp_path)]) == 1
+    assert capsys.readouterr().out.strip() == "ERROR: missing release LoRA"
 
 
 def test_infer_forwards_framework_help(monkeypatch: pytest.MonkeyPatch) -> None:
