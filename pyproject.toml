@@ -7,7 +7,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "cosmos-h-surgical"
-version = "0.3.0"
+version = "0.3.1"
 authors = [
   {name = "NVIDIA Corporation"},
 ]

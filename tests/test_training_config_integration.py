@@ -127,11 +127,9 @@ def test_transfer_dmd2_recipe_composes_with_release_lora_teacher(monkeypatch: py
     assert config.dataloader_train.dataset_name == "surgical_transfer"
     dataset = config.dataloader_train.dataloader.datasets["surgical_transfer"].dataset
     assert dataset.control_modalities == {
-        "edge": 2.0,
-        "blur": 2.0,
-        "depth": 2.0,
+        "edge": 1.0,
+        "blur": 1.0,
+        "depth": 1.0,
         "seg": 1.0,
-        "seg_tool": 1.0,
     }
     assert dataset.seg_suffix == ".seg.mp4"
-    assert dataset.seg_tool_suffix == ".seg_tool.mp4"

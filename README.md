@@ -17,6 +17,7 @@ Cosmos-H-Surgical delivers high-quality video prediction and transfer for surgic
 
 ## News
 
+- **[September 2026]** — Added a four-step DMD2 transfer recipe, tutorial, and student checkpoint.
 - **[July 2026]** — Released Cosmos-H-Surgical, built on NVIDIA Cosmos 3, with **Predict** and **Transfer** unified in a single mixed-capability checkpoint.
 - **[July 2026]** — Added OpenMDW-1.1 checkpoint editions for Predict and Transfer while retaining the original checkpoint paths and license terms.
 - **[March 2026]** — Released [SurgΣ](https://arxiv.org/abs/2603.16822): a large-scale multimodal surgical dataset and foundation model suite for surgical intelligence.
@@ -75,6 +76,7 @@ framework is installed as a commit-pinned dependency. See [UPSTREAM.md](UPSTREAM
 | [Code structure](docs/code_structure.md) | Package architecture and framework ownership boundary. |
 | [Cosmos 2.5 migration](docs/migration_from_cosmos25.md) | Archive locations, command mapping, and compatibility. |
 | [Post-training](docs/post_training.md) | Predict and Transfer LoRA recipes and dataset contracts. |
+| [Four-step DMD2 distillation](docs/dmd2_distillation.md) | Train, resume, export, and run the low-latency transfer student. |
 
 
 ## License

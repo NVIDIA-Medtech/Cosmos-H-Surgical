@@ -12,7 +12,7 @@ torchrun --nproc-per-node=8 \
   -m cosmos_h_surgical infer \
   --parallelism-preset=latency \
   --dp-shard-size=1 \
-  -i inputs/predict/surgical_predict.json \
+  -i inputs/predict/surgical_predict.jsonl \
   -o outputs/predict-smoke \
   --no-guardrails \
   --seed=0

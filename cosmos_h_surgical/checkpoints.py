@@ -11,11 +11,16 @@ from typing import Any
 from cosmos_h_surgical.release import load_manifest
 
 DEFAULT_MODEL_KEY = "Cosmos-H-Surgical"
+DMD2_MODEL_KEY = "Cosmos-H-Surgical-Transfer-DMD2-4Step"
 DEFAULT_HF_REPOSITORY = "nvidia/Cosmos-H-Surgical"
-DEFAULT_HF_REVISION = "v0.3.0"
+DEFAULT_HF_REVISION = "v0.3.1"
+DMD2_HF_SUBDIRECTORY = "dmd2-transfer-480p-4step"
 HF_REPOSITORY_ENV = "COSMOS_H_SURGICAL_HF_REPOSITORY"
 HF_REVISION_ENV = "COSMOS_H_SURGICAL_HF_REVISION"
-MODEL_CONFIG_PATH = Path(__file__).parent / "configs" / "cosmos_h_surgical_v0.3.0.json"
+BASE_MODEL_CONFIG_PATH = Path(__file__).parent / "configs" / "cosmos_h_surgical_v0.3.0.json"
+DMD2_MODEL_CONFIG_PATH = Path(__file__).parent / "configs" / "cosmos_h_surgical_transfer_dmd2_4step_v0.3.1.json"
+# Retain the original constant for downstream callers that import it.
+MODEL_CONFIG_PATH = BASE_MODEL_CONFIG_PATH
 
 
 @dataclass(frozen=True)
@@ -51,7 +56,7 @@ def resolve_checkpoint(model_key: str, manifest_path: Path) -> CheckpointArtifac
         return registry[model_key]
     except KeyError as error:
         if not registry:
-            raise KeyError("No Cosmos 3 checkpoint has been published for v0.3.0") from error
+            raise KeyError("No Cosmos 3 checkpoint has been published for v0.3.1") from error
         raise KeyError(f"Unknown model key {model_key!r}; available: {sorted(registry)}") from error
 
 
@@ -63,11 +68,20 @@ def register_checkpoint_alias() -> None:
 
     repository = os.environ.get(HF_REPOSITORY_ENV, DEFAULT_HF_REPOSITORY)
     revision = os.environ.get(HF_REVISION_ENV, DEFAULT_HF_REVISION)
-    _CHECKPOINTS[DEFAULT_MODEL_KEY] = CheckpointConfig(
-        model_memory_bytes=MODEL_MEMORY_BYTES_BY_SIZE["8B"],
-        config_file=str(MODEL_CONFIG_PATH),
-        # The inference path always uses checkpoint_hf. This URI satisfies the
-        # upstream registry schema without introducing a private object-store path.
-        s3_uri=f"hf://{repository}",
-        hf=CheckpointDirHf(repository=repository, revision=revision),
+    aliases = (
+        (DEFAULT_MODEL_KEY, BASE_MODEL_CONFIG_PATH, ""),
+        (DMD2_MODEL_KEY, DMD2_MODEL_CONFIG_PATH, DMD2_HF_SUBDIRECTORY),
     )
+    for model_key, config_path, subdirectory in aliases:
+        _CHECKPOINTS[model_key] = CheckpointConfig(
+            model_memory_bytes=MODEL_MEMORY_BYTES_BY_SIZE["8B"],
+            config_file=str(config_path),
+            # The inference path always uses checkpoint_hf. This URI satisfies the
+            # upstream registry schema without introducing a private object-store path.
+            s3_uri=f"hf://{repository}/{subdirectory}" if subdirectory else f"hf://{repository}",
+            hf=CheckpointDirHf(
+                repository=repository,
+                revision=revision,
+                subdirectory=subdirectory,
+            ),
+        )

@@ -1,6 +1,6 @@
 # Inference Inputs
 
-This directory contains portable Cosmos-H-Surgical v0.3.0 inference inputs for
+This directory contains portable Cosmos-H-Surgical v0.3.1 inference inputs for
 the two release workflows:
 
 - `predict/`: image-to-video surgical prediction.

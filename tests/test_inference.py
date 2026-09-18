@@ -11,6 +11,9 @@ import pytest
 
 from cosmos_h_surgical.checkpoints import (
     DEFAULT_MODEL_KEY,
+    DMD2_HF_SUBDIRECTORY,
+    DMD2_MODEL_CONFIG_PATH,
+    DMD2_MODEL_KEY,
     HF_REPOSITORY_ENV,
     HF_REVISION_ENV,
     MODEL_CONFIG_PATH,
@@ -241,7 +244,7 @@ def test_default_checkpoint_is_appended_when_omitted() -> None:
 def test_checkpoint_alias_uses_repository_overrides(monkeypatch: pytest.MonkeyPatch) -> None:
     from cosmos_framework.inference.args import _CHECKPOINTS
 
-    previous = _CHECKPOINTS.get(DEFAULT_MODEL_KEY)
+    previous = {key: _CHECKPOINTS.get(key) for key in (DEFAULT_MODEL_KEY, DMD2_MODEL_KEY)}
     monkeypatch.setenv(HF_REPOSITORY_ENV, "example-org/Cosmos-H-Surgical-private")
     monkeypatch.setenv(HF_REVISION_ENV, "test-revision")
     try:
@@ -251,8 +254,14 @@ def test_checkpoint_alias_uses_repository_overrides(monkeypatch: pytest.MonkeyPa
         assert checkpoint.hf.repository == "example-org/Cosmos-H-Surgical-private"
         assert checkpoint.hf.revision == "test-revision"
         assert checkpoint.hf.subdirectory == ""
+        dmd2_checkpoint = _CHECKPOINTS[DMD2_MODEL_KEY]
+        assert dmd2_checkpoint.config_file == str(DMD2_MODEL_CONFIG_PATH)
+        assert dmd2_checkpoint.hf.repository == "example-org/Cosmos-H-Surgical-private"
+        assert dmd2_checkpoint.hf.revision == "test-revision"
+        assert dmd2_checkpoint.hf.subdirectory == DMD2_HF_SUBDIRECTORY
     finally:
-        if previous is None:
-            _CHECKPOINTS.pop(DEFAULT_MODEL_KEY, None)
-        else:
-            _CHECKPOINTS[DEFAULT_MODEL_KEY] = previous
+        for key, value in previous.items():
+            if value is None:
+                _CHECKPOINTS.pop(key, None)
+            else:
+                _CHECKPOINTS[key] = value

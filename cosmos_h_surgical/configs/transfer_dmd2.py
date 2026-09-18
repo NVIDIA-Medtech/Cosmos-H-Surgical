@@ -167,18 +167,16 @@ config.dataloader_train = make_packing_dataloader(
         **common_dataset_kwargs(),
         blur_suffix=".blur.mp4",
         control_modalities={
-            "edge": 2.0,
-            "blur": 2.0,
-            "depth": 2.0,
+            "edge": 1.0,
+            "blur": 1.0,
+            "depth": 1.0,
             "seg": 1.0,
-            "seg_tool": 1.0,
         },
         dataset_dir="${oc.env:COSMOS_H_SURGICAL_TRANSFER_DATASET_DIRS}",
         depth_suffix=".depth.mp4",
         enlarged_factor="${oc.env:COSMOS_H_SURGICAL_TRANSFER_ENLARGED_FACTORS,1.0}",
         json_path="${oc.env:COSMOS_H_SURGICAL_TRANSFER_JSON_PATHS}",
         seg_suffix=".seg.mp4",
-        seg_tool_suffix=".seg_tool.mp4",
     ),
 )
 

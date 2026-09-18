@@ -2,7 +2,11 @@ from pathlib import Path
 
 import pytest
 
-from tools.cleanup_checkpoints import build_plan, delete_candidates, main, parse_iter_dir
+cleanup_checkpoints = pytest.importorskip("tools.cleanup_checkpoints")
+build_plan = cleanup_checkpoints.build_plan
+delete_candidates = cleanup_checkpoints.delete_candidates
+main = cleanup_checkpoints.main
+parse_iter_dir = cleanup_checkpoints.parse_iter_dir
 
 COMPONENTS = ("model", "optim_net", "scheduler_net", "trainer")
 

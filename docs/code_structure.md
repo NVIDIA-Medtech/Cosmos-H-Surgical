@@ -72,7 +72,8 @@ the distributed timeout needed by the release test configuration.
 ### `checkpoints.py`
 
 Loads model metadata from `release-manifest.json` and registers the public
-`Cosmos-H-Surgical` model key at the pinned `v0.3.0` revision.
+`Cosmos-H-Surgical` and `Cosmos-H-Surgical-Transfer-DMD2-4Step` model keys at
+the pinned `v0.3.1` revision.
 
 ### `training.py`, `configs/`, and `data/`
 

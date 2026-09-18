@@ -13,7 +13,8 @@ supported environment manager is [uv](https://docs.astral.sh/uv/).
 - Git and Git LFS
 - uv 0.11.3 or newer
 
-The v0.3.0 release has been validated with eight H100 GPUs. Smaller GPU
+The v0.3.1 base release has been validated with eight H100 GPUs. The DMD2
+student additionally supports the documented one-H100 inference path. Smaller GPU
 configurations may require different parallelism or offloading settings and are
 not yet part of the release test matrix.
 

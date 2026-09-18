@@ -17,14 +17,14 @@ Release inference uses structured JSON prompts. There are two JSON layers:
 2. The `prompt` value is a serialized JSON object describing the scene and
    temporal evolution.
 
-An abbreviated input looks like this:
+An abbreviated record saved under `inputs/predict/` looks like this:
 
 ```json
 {
-  "name": "needle_transfer",
+  "name": "needle_grasping",
   "model_mode": "image2video",
   "prompt": "{\"subjects\":[{\"description\":\"Two robotic needle drivers\",\"action\":\"The right driver passes a curved needle to the left driver\"}],\"background_setting\":\"Close laparoscopic view of soft tissue\",\"actions\":[{\"time\":\"0:00-0:03\",\"description\":\"The right driver approaches the left driver with the needle\"},{\"time\":\"0:03-0:06\",\"description\":\"The left driver grasps the needle and the right driver releases it\"}],\"temporal_caption\":\"The right needle driver passes the curved needle to the left needle driver.\"}",
-  "vision_path": "inputs/needle_transfer.png",
+  "vision_path": "media/needle_grasping.jpg",
   "resolution": "480",
   "aspect_ratio": "16,9",
   "fps": 16,
@@ -48,8 +48,8 @@ from short natural-language descriptions.
 | `prompt` | Serialized structured JSON prompt. |
 | `prompt_path` | Alternative file containing the structured prompt. |
 | `vision_path` | Starting image or source video, depending on the mode. |
-| `resolution` | Resolution tier; the v0.3.0 release uses `480`. |
-| `aspect_ratio` | Aspect-ratio key; the v0.3.0 release uses `16,9`. |
+| `resolution` | Resolution tier; the v0.3.1 release uses `480`. |
+| `aspect_ratio` | Aspect-ratio key; the v0.3.1 release uses `16,9`. |
 | `fps` | Output frame rate; validated at 16 FPS. |
 | `num_frames` | Output frame count; validated at 93 frames. |
 | `seed` | Per-sample random seed. A CLI `--seed` override takes precedence. |
@@ -70,9 +70,20 @@ cosmos-h-surgical infer --help
 
 The wrapper injects `--checkpoint-path Cosmos-H-Surgical` when the option is
 omitted. That registered name resolves to `nvidia/Cosmos-H-Surgical` at revision
-`v0.3.0`. The release manifest records the model name, revision, and SHA-256
+`v0.3.1`. The release manifest records the model name, revision, and SHA-256
 digest. Cosmos 2.5 checkpoints are not compatible with this loader and remain
 available from the `cosmos-2.5` release branch.
+
+The four-step transfer student is a separate registered checkpoint:
+
+```text
+--checkpoint-path Cosmos-H-Surgical-Transfer-DMD2-4Step
+```
+
+It resolves to the `dmd2-transfer-480p-4step` directory in the same Hugging
+Face revision. It supports video-to-video transfer only. See
+[Four-step DMD2 distillation](dmd2_distillation.md) for its fixed-step settings,
+training recipe, and one-GPU launch example.
 
 To test a local export, provide an explicit path:
 
@@ -92,14 +103,15 @@ not modify the source checkpoint.
 
 ## Image-to-Video Prediction
 
-Save one or more I2V records in `inputs/i2v.json` or `inputs/i2v.jsonl`. Run the
-validated eight-GPU configuration with:
+The repository provides ten ready-to-run I2V records in
+`inputs/predict/surgical_predict.jsonl`. Run the validated eight-GPU
+configuration with:
 
 ```bash
 torchrun --nproc_per_node=8 \
   -m cosmos_h_surgical infer \
-  -i inputs/i2v.json \
-  --output-dir outputs/i2v \
+  -i inputs/predict/surgical_predict.jsonl \
+  --output-dir outputs/predict \
   --seed 0
 ```
 
@@ -124,7 +136,7 @@ Common transfer fields include:
 {
   "name": "transfer_example",
   "model_mode": "video2video",
-  "prompt_path": "prompts/transfer_example.json",
+  "prompt_path": "../prompts/coagulation.json",
   "resolution": "480",
   "aspect_ratio": "16,9",
   "num_frames": 93,
@@ -142,7 +154,7 @@ Common transfer fields include:
 
 ```json
 {
-  "vision_path": "inputs/source.mp4",
+  "vision_path": "../media/coagulation.mp4",
   "edge": {
     "preset_edge_threshold": "medium"
   }
@@ -153,7 +165,7 @@ Common transfer fields include:
 
 ```json
 {
-  "vision_path": "inputs/source.mp4",
+  "vision_path": "../media/coagulation.mp4",
   "blur": {
     "preset_blur_strength": "medium"
   }
@@ -165,7 +177,7 @@ Common transfer fields include:
 ```json
 {
   "depth": {
-    "control_path": "inputs/source.depth.mp4"
+    "control_path": "../media/coagulation.depth.mp4"
   }
 }
 ```
@@ -175,13 +187,14 @@ Common transfer fields include:
 ```json
 {
   "seg": {
-    "control_path": "inputs/source.seg.mp4"
+    "control_path": "../media/coagulation.seg.mp4"
   }
 }
 ```
 
 The fragments above are additions to the common transfer record; they are not
-standalone input files.
+standalone input files. Their relative paths assume the completed record is
+saved under `inputs/transfer/specs/`, matching the checked-in examples.
 
 ### Resize Modes
 

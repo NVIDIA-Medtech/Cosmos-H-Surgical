@@ -2,11 +2,11 @@
   "schema_version": 2,
   "release": {
     "name": "Cosmos-H-Surgical Cosmos 3",
-    "version": "v0.3.0",
+    "version": "v0.3.1",
     "status": "released",
     "base_model_family": "NVIDIA Cosmos 3",
     "hugging_face_repository": "nvidia/Cosmos-H-Surgical",
-    "release_revision": "v0.3.0"
+    "release_revision": "v0.3.1"
   },
   "framework": {
     "repository": "https://github.com/NVIDIA/cosmos-framework.git",
@@ -24,14 +24,21 @@
   },
   "previous_release": {
     "branch": "cosmos-2.5",
-    "tag": "v0.2.0"
+    "tag": "v0.3.0"
   },
   "artifacts": [
     {
       "model_key": "Cosmos-H-Surgical",
       "path": ".",
-      "revision": "v0.3.0",
+      "revision": "v0.3.1",
       "sha256": "f57de647af91a0f3e28b9abf819ea60e1f6de7ff8474bf94a165fad58e572623",
+      "license_id": "OpenMDW-1.1"
+    },
+    {
+      "model_key": "Cosmos-H-Surgical-Transfer-DMD2-4Step",
+      "path": "dmd2-transfer-480p-4step",
+      "revision": "v0.3.1",
+      "sha256": "72369654e395c6842d5bd88ecc67bf492e354466ba83fc1f6b8c40c4004c81c7",
       "license_id": "OpenMDW-1.1"
     }
   ]
